@@ -7,17 +7,15 @@ import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
-public class TC01 extends TestBase {
+public class TC02 extends TestBase {
     @Test
     public void testcase1() {
         LoginPage loginPage = new LoginPage();
         HomePage homePage = new HomePage();
 
         homePage.goToLoginPage();
-        loginPage.login(Constants.validUserName, Constants.validPassword);
+        loginPage.login("", Constants.validPassword);
 
-        boolean welcomeTextIsDisplayed = homePage.checkWelcomeTextAfterLoginSuccess(Constants.validUserName);
-        Assert.assertTrue(welcomeTextIsDisplayed);
+        Assert.assertTrue(loginPage.checkLoginWithBlankField());
     }
 }

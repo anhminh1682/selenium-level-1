@@ -1,4 +1,40 @@
 package com.example.pages;
 
+import com.example.constant.Constants;
+import com.example.driver.DriverManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
 public class LoginPage {
+    private final By userNameTextBox = By.id("username");
+    private final By passwordTextBox = By.id("password");
+    private final By loginButton = By.xpath("//input[@type='submit'][@title='Login']");
+    private final By errorMessage = By.xpath("//p[@class='message error LoginForm']");
+
+    private WebElement getUserNameTextBox() {
+        return DriverManager.getDriver().findElement(userNameTextBox);
+    }
+
+    private WebElement getPasswordTextBox() {
+        return DriverManager.getDriver().findElement(passwordTextBox);
+    }
+
+    private WebElement getLoginButton() {
+        return DriverManager.getDriver().findElement(loginButton);
+    }
+
+    private WebElement getErrorMessage() {
+        return DriverManager.getDriver().findElement(errorMessage);
+    }
+
+    public void login(String username, String password) {
+        getUserNameTextBox().sendKeys(username);
+        getPasswordTextBox().sendKeys(password);
+
+        getLoginButton().click();
+    }
+
+    public boolean checkLoginWithBlankField() {
+        return getErrorMessage().getText().equals(Constants.errorMessageLoginWithBlankField);
+    }
 }
