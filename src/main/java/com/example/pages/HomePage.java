@@ -4,6 +4,8 @@ import com.example.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.Objects;
+
 public class HomePage extends BasePage {
     private final By welcomeText = By.xpath("//div[@class='account']/strong");
 
@@ -12,6 +14,6 @@ public class HomePage extends BasePage {
     }
 
     public boolean checkWelcomeTextAfterLoginSuccess(String username) {
-        return getWelcomeText().getText().equals("Welcome " + username);
+        return Objects.equals(getWelcomeText().getText(), "Welcome " + username);
     }
 }

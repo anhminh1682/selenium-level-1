@@ -19,5 +19,6 @@ public class DriverManager {
 
     public static void quitDriver() {
         _driver.quit();
+        _driver = null;
     }
 }

@@ -2,6 +2,9 @@
     <test name="Login">
         <classes>
             <class name="com.tests.login.TC01" />
+            <class name="com.tests.login.TC02" />
+            <class name="com.tests.login.TC03" />
+            <class name="com.tests.login.TC04" />
         </classes>
     </test>
 </suite>

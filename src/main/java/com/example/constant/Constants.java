@@ -7,4 +7,6 @@ public class Constants {
     public static String invalidPassword = "abc1234";
 
     public static String errorMessageLoginWithBlankField = "There was a problem with your login and/or errors exist in your form.";
+
+    public static String loginPageTitle = "Safe Railway - Login";
 }

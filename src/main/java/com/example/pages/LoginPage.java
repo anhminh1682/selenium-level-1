@@ -5,6 +5,8 @@ import com.example.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.Objects;
+
 public class LoginPage {
     private final By userNameTextBox = By.id("username");
     private final By passwordTextBox = By.id("password");
@@ -35,6 +37,10 @@ public class LoginPage {
     }
 
     public boolean checkLoginFailed(String errorMessage) {
-        return getErrorMessage().getText().equals(errorMessage);
+        return Objects.equals(getErrorMessage().getText(), errorMessage);
+    }
+
+    public boolean checkLoginPageDisplayed() {
+        return Objects.equals(DriverManager.getDriver().getTitle(), Constants.loginPageTitle);
     }
 }

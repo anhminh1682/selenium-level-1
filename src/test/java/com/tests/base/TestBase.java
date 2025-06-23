@@ -13,6 +13,6 @@ public class TestBase {
 
     @AfterMethod
     public void afterTest() {
-        DriverManager.getDriver().quit();
+        DriverManager.quitDriver();
     }
 }
