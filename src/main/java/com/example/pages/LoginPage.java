@@ -34,7 +34,7 @@ public class LoginPage {
         getLoginButton().click();
     }
 
-    public boolean checkLoginWithBlankField() {
-        return getErrorMessage().getText().equals(Constants.errorMessageLoginWithBlankField);
+    public boolean checkLoginFailed(String errorMessage) {
+        return getErrorMessage().getText().equals(errorMessage);
     }
 }
