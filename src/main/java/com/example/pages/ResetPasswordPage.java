@@ -64,7 +64,6 @@ public class ResetPasswordPage {
         if(resetToken.isEmpty()) {
             getResetTokenTextBox().sendKeys(Keys.CONTROL + "a");
             getResetTokenTextBox().sendKeys(Keys.DELETE);
-            getResetTokenTextBox().sendKeys("");
         }
         else
             getResetTokenTextBox().sendKeys(resetToken);
