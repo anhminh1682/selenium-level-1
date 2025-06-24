@@ -12,6 +12,7 @@ public class LoginPage {
     private final By passwordTextBox = By.id("password");
     private final By loginButton = By.xpath("//input[@type='submit'][@title='Login']");
     private final By errorMessage = By.xpath("//p[@class='message error LoginForm']");
+    private final By forgotPasswordLink = By.linkText("Forgot Password page");
 
     private WebElement getUserNameTextBox() {
         return DriverManager.getDriver().findElement(userNameTextBox);
@@ -29,6 +30,10 @@ public class LoginPage {
         return DriverManager.getDriver().findElement(errorMessage);
     }
 
+    private WebElement getForgotPasswordLink() {
+        return DriverManager.getDriver().findElement(forgotPasswordLink);
+    }
+
     public void login(String username, String password) {
         getUserNameTextBox().sendKeys(username);
         getPasswordTextBox().sendKeys(password);
@@ -42,5 +47,9 @@ public class LoginPage {
 
     public boolean checkLoginPageDisplayed() {
         return Objects.equals(DriverManager.getDriver().getTitle(), Constants.loginPageTitle);
+    }
+
+    public void goToForgotPasswordLink() {
+        getForgotPasswordLink().click();
     }
 }

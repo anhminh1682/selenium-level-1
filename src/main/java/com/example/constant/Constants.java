@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 public class Constants {
     public static DateTimeFormatter myTimeFormat = DateTimeFormatter.ofPattern("HH_mm_ss");
 
-    public static String validUserName = "nguyenanhminh168202@gmail.com";
+    public static String validUserName = "vffaebxr@sharklasers.com";
     public static String validPassword = "minh12345";
     public static String validPID = "27183714777";
 
@@ -29,9 +29,14 @@ public class Constants {
     // Change Password message
     public static String changePasswordSuccessfulMessage = "Your password has been updated";
 
+    // Reset Password message
+    public static String errorMessageIncorrectResetTokenAbove = "The password reset token is incorrect or may be expired. Visit the forgot password page to generate a new one.";
+    public static String errorMessageInvalidResetTokenNextToField = "The password reset token is invalid.";
+
     // Page titles
     public static String loginPageTitle = "Safe Railway - Login";
     public static String myTicketPageTitle = "Safe Railway - My Ticket";
     public static String changePasswordPageTitle = "Safe Railway - Change Password";
     public static String bookTicketPageTitle = "Safe Railway - Book Ticket";
+    public static String resetPasswordPageTitle = "Safe Railway - Password Reset";
 }
