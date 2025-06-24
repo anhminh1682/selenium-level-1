@@ -1,5 +1,5 @@
 <suite name="TestSuite1">
-    <test name="Login">
+    <test name="Railway">
         <classes>
             <class name="com.tests.login.TC01" />
             <class name="com.tests.login.TC02" />
