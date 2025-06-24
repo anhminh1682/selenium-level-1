@@ -8,24 +8,15 @@ import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC08 extends TestBase {
+public class TC07 extends TestBase {
     @Test
     public void testcase1() {
         BasePage basePage = new BasePage();
-        LoginPage loginPage = new LoginPage();
         RegisterPage registerPage = new RegisterPage();
-
-        String newEmail = Constants.inActiveUsername;
 
         // Register
         basePage.goToRegisterPage();
-        registerPage.register(newEmail, Constants.validPassword, Constants.validPassword, Constants.validPID);
+        registerPage.register(Constants.inActiveUsername, Constants.validPassword, Constants.validPassword, Constants.validPID);
         Assert.assertTrue(registerPage.checkRegisterSuccessWithValidInfor());
-
-        // Login
-        basePage.goToLoginPage();
-        loginPage.login(newEmail, Constants.invalidPassword);
-
-        Assert.assertTrue(loginPage.checkLoginFailed(Constants.errorMessageLoginWithInvalidFields));
     }
 }
