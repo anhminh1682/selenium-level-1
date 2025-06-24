@@ -2,6 +2,7 @@ package com.example.pages;
 
 import com.example.constant.Constants;
 import com.example.driver.DriverManager;
+import com.example.utilities.Helpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -68,9 +69,7 @@ public class ResetPasswordPage {
         else
             getResetTokenTextBox().sendKeys(resetToken);
 
-        new Actions(DriverManager.getDriver())
-                .scrollByAmount(0, getSubmitButton().getRect().y)
-                .perform();
+        Helpers.scrollToElement(getSubmitButton());
 
         getSubmitButton().click();
     }

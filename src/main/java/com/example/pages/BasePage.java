@@ -12,15 +12,15 @@ public class BasePage {
     }
 
     public boolean checkMyTicketTabDisplayed() {
-        return DriverManager.getDriver().findElement(myTicketTab).isDisplayed();
+        return getTab("My ticket").isDisplayed();
     }
 
     public boolean checkChangePasswordTabDisplayed() {
-        return DriverManager.getDriver().findElement(changePasswordTab).isDisplayed();
+        return getTab("Change password").isDisplayed();
     }
 
     public boolean checkLogOutTabDisplayed() {
-        return DriverManager.getDriver().findElement(logOutTab).isDisplayed();
+        return getTab("Log out").isDisplayed();
     }
 
     public void clickToTab(String tab) {

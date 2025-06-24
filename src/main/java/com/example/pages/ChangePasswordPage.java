@@ -2,6 +2,7 @@ package com.example.pages;
 
 import com.example.constant.Constants;
 import com.example.driver.DriverManager;
+import com.example.utilities.Helpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -40,9 +41,7 @@ public class ChangePasswordPage {
         getNewPasswordTextBox().sendKeys(newPassword);
         getConfirmPasswordTextBox().sendKeys(confirmPassword);
 
-        new Actions(DriverManager.getDriver())
-                .scrollByAmount(0, getChangePasswordButton().getRect().y)
-                .perform();
+        Helpers.scrollToElement(getChangePasswordButton());
 
         getChangePasswordButton().click();
     }

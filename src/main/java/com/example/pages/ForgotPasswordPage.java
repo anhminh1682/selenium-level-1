@@ -1,6 +1,7 @@
 package com.example.pages;
 
 import com.example.driver.DriverManager;
+import com.example.utilities.Helpers;
 import com.example.utilities.MailBoxManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -21,9 +22,7 @@ public class ForgotPasswordPage {
     public void sendInstructions(String email) {
         getEmailTextBox().sendKeys(email);
 
-        new Actions(DriverManager.getDriver())
-                .scrollByAmount(0, getSubmitButton().getRect().y)
-                .perform();
+        Helpers.scrollToElement(getSubmitButton());
 
         getSubmitButton().click();
     }
