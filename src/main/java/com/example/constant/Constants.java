@@ -1,11 +1,26 @@
 package com.example.constant;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+
 public class Constants {
     public static String validUserName = "nguyenanhminh168202@gmail.com";
     public static String validPassword = "minh12345";
+    public static String validPID = "27183714777";
 
+    public static String invalidUserName = "minhtest@gmail.com";
     public static String invalidPassword = "abc1234";
 
+    public static DateTimeFormatter myDateFormat = DateTimeFormatter.ofPattern("HH_mm_ss");
+    public static String inActiveUsername = "minh" + LocalDateTime.now().format(myDateFormat) + "@gmail.com";
+
+    // Register message
+    public static String registerValidInfoHeading = "Thank you for registering your account";
+
+    // Login message
+    public static String errorMessageLoginWithInvalidFields = "Invalid username or password. Please try again.";
     public static String errorMessageLoginWithBlankField = "There was a problem with your login and/or errors exist in your form.";
     public static String warningMessageLoginInvalidTooMuch = "You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.";
 
