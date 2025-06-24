@@ -25,7 +25,7 @@ public class Constants {
     public static String warningMessageLoginInvalidTooMuch = "You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.";
 
     // Change Password message
-    public static String changePasswordSuccessfulMessage = "Your password has been updated!";
+    public static String changePasswordSuccessfulMessage = "Your password has been updated";
 
     // Page titles
     public static String loginPageTitle = "Safe Railway - Login";

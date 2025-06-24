@@ -5,6 +5,12 @@
             <class name="com.tests.login.TC02" />
             <class name="com.tests.login.TC03" />
             <class name="com.tests.login.TC04" />
+            <class name="com.tests.login.TC05" />
+            <class name="com.tests.login.TC06" />
+            <class name="com.tests.register.TC07" />
+            <class name="com.tests.login.TC08" />
+            <class name="com.tests.login.TC09" />
+            <class name="com.tests.register.TC10" />
         </classes>
     </test>
 </suite>
