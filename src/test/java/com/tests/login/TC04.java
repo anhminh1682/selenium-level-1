@@ -14,7 +14,7 @@ public class TC04 extends TestBase {
         BasePage basePage = new BasePage();
         LoginPage loginPage = new LoginPage();
 
-        basePage.goToBookTicketPage();
+        basePage.clickToTab("Book ticket");
 
         Assert.assertTrue(loginPage.checkLoginPageDisplayed());
     }

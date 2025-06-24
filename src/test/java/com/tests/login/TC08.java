@@ -18,12 +18,12 @@ public class TC08 extends TestBase {
         String newEmail = Constants.inActiveUsername;
 
         // Register
-        basePage.goToRegisterPage();
+        basePage.clickToTab("Register");
         registerPage.register(newEmail, Constants.validPassword, Constants.validPassword, Constants.validPID);
         Assert.assertTrue(registerPage.checkRegisterSuccessWithValidInfor());
 
         // Login
-        basePage.goToLoginPage();
+        basePage.clickToTab("Login");
         loginPage.login(newEmail, Constants.invalidPassword);
 
         Assert.assertTrue(loginPage.checkLoginFailed(Constants.errorMessageLoginWithInvalidFields));

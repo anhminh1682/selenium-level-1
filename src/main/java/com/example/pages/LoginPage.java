@@ -4,6 +4,7 @@ import com.example.constant.Constants;
 import com.example.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.Objects;
 
@@ -37,6 +38,10 @@ public class LoginPage {
     public void login(String username, String password) {
         getUserNameTextBox().sendKeys(username);
         getPasswordTextBox().sendKeys(password);
+
+        new Actions(DriverManager.getDriver())
+                .scrollByAmount(0, getLoginButton().getRect().y)
+                .perform();
 
         getLoginButton().click();
     }

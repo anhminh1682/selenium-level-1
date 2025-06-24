@@ -14,7 +14,7 @@ public class TC11 extends TestBase {
         RegisterPage registerPage = new RegisterPage();
 
         // Register
-        basePage.goToRegisterPage();
+        basePage.clickToTab("Register");
         registerPage.register(Constants.validUserName, "", "", "");
 
         Assert.assertTrue(registerPage.checkRegisterFailedWithInvalidPassword(Constants.errorRegisterWithInvalidPasswordLength));

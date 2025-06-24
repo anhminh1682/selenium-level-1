@@ -4,6 +4,7 @@ import com.example.constant.Constants;
 import com.example.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.Objects;
 
@@ -59,6 +60,10 @@ public class RegisterPage {
         getPasswordTextBox().sendKeys(password);
         getConfirmPasswordTextBox().sendKeys(confirmPassword);
         getPIDTextBox().sendKeys(pid);
+
+        new Actions(DriverManager.getDriver())
+                .scrollByAmount(0, getRegisterButton().getRect().y)
+                .perform();
 
         getRegisterButton().click();
     }

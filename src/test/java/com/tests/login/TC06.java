@@ -15,7 +15,7 @@ public class TC06 extends TestBase {
         BasePage basePage = new BasePage();
         LoginPage loginPage = new LoginPage();
 
-        basePage.goToLoginPage();
+        basePage.clickToTab("Login");
 
         loginPage.login(Constants.validUserName, Constants.validPassword);
 
@@ -23,10 +23,10 @@ public class TC06 extends TestBase {
         Assert.assertTrue(basePage.checkChangePasswordTabDisplayed());
         Assert.assertTrue(basePage.checkLogOutTabDisplayed());
 
-        basePage.goToMyTicketTab();
+        basePage.clickToTab("My ticket");
         Assert.assertTrue(new MyTicketPage().checkMyTicketPageDisplayed());
 
-        basePage.goToChangePassword();
+        basePage.clickToTab("Change password");
         Assert.assertTrue(new ChangePasswordPage().checkChangePasswordPageDisplayed());
     }
 }
