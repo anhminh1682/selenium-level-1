@@ -15,6 +15,8 @@ public class RegisterPage {
     private final By registerButton = By.xpath("//input[@value='Register']");
     private final By registerValidInfoHeading = By.xpath("//h1[text()='" + Constants.registerValidInfoHeading + "']");
     private final By errorRegisterMessage = By.xpath("//p[@class='message error']");
+    private final By errorMessageOfPasswordField = By.xpath("//label[@class='validation-error' and @for='password']");
+    private final By errorMessageOfPIDField = By.xpath("//label[@class='validation-error' and @for='pid']");
 
     private WebElement getEmailTextBox() {
         return DriverManager.getDriver().findElement(emailTextBox);
@@ -44,6 +46,14 @@ public class RegisterPage {
         return DriverManager.getDriver().findElement(errorRegisterMessage);
     }
 
+    private WebElement getErrorMessageOfPasswordField() {
+        return DriverManager.getDriver().findElement(errorMessageOfPasswordField);
+    }
+
+    private WebElement getErrorMessageOfPIDField() {
+        return DriverManager.getDriver().findElement(errorMessageOfPIDField);
+    }
+
     public void register(String email, String password, String confirmPassword, String pid) {
         getEmailTextBox().sendKeys(email);
         getPasswordTextBox().sendKeys(password);
@@ -59,5 +69,13 @@ public class RegisterPage {
 
     public boolean checkRegisterFailedWithInvalidInfo() {
         return Objects.equals(getErrorRegisterMessage().getText().trim(), Constants.errorRegisterWithInvalidInfo);
+    }
+
+    public boolean checkRegisterFailedWithInvalidPassword(String errorMessage) {
+        return Objects.equals(getErrorMessageOfPasswordField().getText().trim(), errorMessage);
+    }
+
+    public boolean checkRegisterFailedWithInvalidPID(String errorMessage) {
+        return Objects.equals(getErrorMessageOfPIDField().getText().trim(), errorMessage);
     }
 }

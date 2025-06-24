@@ -18,6 +18,8 @@ public class Constants {
     // Register message
     public static String registerValidInfoHeading = "Thank you for registering your account";
     public static String errorRegisterWithInvalidInfo = "There're errors in the form. Please correct the errors and try again.";
+    public static String errorRegisterWithInvalidPasswordLength = "Invalid password length.";
+    public static String errorRegisterWithInvalidPIDLength = "Invalid ID length.";
 
     // Login message
     public static String errorMessageLoginWithInvalidFields = "Invalid username or password. Please try again.";
