@@ -1,7 +1,7 @@
 package com.tests.login;
 
-import com.example.constant.Constants;
-import com.example.pages.*;
+import com.railway.constant.Constants;
+import com.railway.pages.*;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;

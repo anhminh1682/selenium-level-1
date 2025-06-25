@@ -1,11 +1,7 @@
-package com.example.pages;
+package com.railway.pages;
 
-import com.example.constant.Constants;
-import com.example.driver.DriverManager;
-import com.example.utilities.Helpers;
+import com.railway.utilities.Helpers;
 import org.openqa.selenium.By;
-
-import java.util.Objects;
 
 public class ChangePasswordPage extends BasePage {
     private final By currentPasswordTextBox = By.id("currentPassword");

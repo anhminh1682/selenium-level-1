@@ -1,4 +1,4 @@
-package com.example.pages;
+package com.railway.pages;
 
 import org.openqa.selenium.By;
 

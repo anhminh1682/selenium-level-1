@@ -1,4 +1,4 @@
-package com.example.constant;
+package com.railway.constant;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -19,7 +19,8 @@ public class Constants {
         public static String VALID_PID = "27183714777";
 
         public static String INVALID_PASSWORD = "abc1234";
-        public static String IN_ACTIVE_USERNAME = "minh" + LocalDateTime.now().format(MyDateTimeFormat.HH_mm_ss) + "@gmail.com";
+        public static String INACTIVE_USERNAME_REGISTER = "minh" + LocalDateTime.now().format(MyDateTimeFormat.HH_mm_ss) + "@gmail.com";
+        public static String INACTIVE_USERNAME_LOGIN = "minh@gmail.com";
     }
 
     public static class RegisterMessage {
@@ -56,6 +57,8 @@ public class Constants {
         public static String BOOK_TICKET_PAGE_TITLE = "Safe Railway - Book Ticket";
         public static String RESET_PASSWORD_PAGE_TITLE = "Safe Railway - Password Reset";
         public static String REGISTER_PAGE_TITLE = "Safe Railway - Register an Account";
+        public static String HOME_PAGE_TITLE = "Safe Railway";
+        public static String THANK_REGISTER_PAGE_TITLE = "Safe Railway - Thanks for registering";
     }
 
     public static class TabMenu {

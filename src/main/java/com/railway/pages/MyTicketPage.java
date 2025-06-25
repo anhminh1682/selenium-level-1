@@ -1,6 +1,6 @@
-package com.example.pages;
+package com.railway.pages;
 
-import com.example.driver.DriverManager;
+import com.railway.driver.DriverManager;
 
 public class MyTicketPage extends BasePage {
 
