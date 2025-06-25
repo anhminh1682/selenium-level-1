@@ -7,7 +7,6 @@ import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
 public class TC01 extends TestBase {
     @Test
     public void userCanLogIntoRailwayWithValidUsernameAndPassword() {

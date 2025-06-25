@@ -11,6 +11,7 @@ public class Constants {
 
     public static class MyDateTimeFormat {
         public static final DateTimeFormatter HH_mm_ss = DateTimeFormatter.ofPattern("HH_mm_ss");
+        public static final DateTimeFormatter M_d_yyyy = DateTimeFormatter.ofPattern("M/d/yyyy");
     }
 
     public static class Account {
@@ -57,6 +58,7 @@ public class Constants {
         public static final String MY_TICKET_PAGE_TITLE = "Safe Railway - My Ticket";
         public static final String CHANGE_PASSWORD_PAGE_TITLE = "Safe Railway - Change Password";
         public static final String BOOK_TICKET_PAGE_TITLE = "Safe Railway - Book Ticket";
+        public static final String BOOK_TICKET_SUCCESS_PAGE_TITLE = "Safe Railway - Success";
         public static final String RESET_PASSWORD_PAGE_TITLE = "Safe Railway - Password Reset";
         public static final String REGISTER_PAGE_TITLE = "Safe Railway - Register an Account";
         public static final String HOME_PAGE_TITLE = "Safe Railway";
@@ -70,5 +72,25 @@ public class Constants {
         public static final String BOOK_TICKET_TAB = "Book ticket";
         public static final String MY_TICKET_TAB = "My ticket";
         public static final String CHANGE_PASSWORD_TAB = "Change password";
+    }
+
+    public static class BookTicket {
+        public static final String DEPART_DATE_VALUE = LocalDateTime.now().plusDays(25).format(MyDateTimeFormat.M_d_yyyy);
+        public static final String DEPART_FROM_VALUE = "Sài Gòn";
+        public static final String ARRIVE_AT_VALUE = "Nha Trang";
+        public static final String SEAT_TYPE_VALUE = "Soft bed with air conditioner";
+        public static final String TICKET_AMOUNT_VALUE = "1";
+    }
+
+    public static class BookTicketSuccess {
+        public static final String DEPART_DATE_COLUMN_NAME = "Depart Date";
+        public static final String DEPART_STATION_COLUMN_NAME = "Depart Station";
+        public static final String SEAT_TYPE_COLUMN_NAME = "Seat Type";
+        public static final String ARRIVE_STATION_COLUMN_NAME = "Arrive Station";
+        public static final String AMOUNT_COLUMN_NAME = "Amount";
+    }
+
+    public static class BookTicketMessage {
+        public static final String SUCCESSFUL_MESSAGE = "Ticket booked successfully!";
     }
 }
