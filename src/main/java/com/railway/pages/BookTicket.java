@@ -3,6 +3,7 @@ package com.railway.pages;
 import com.railway.constant.Constants;
 import com.railway.driver.DriverManager;
 import com.railway.utilities.Helpers;
+import com.railway.utilities.Ticket;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -21,12 +22,12 @@ public class BookTicket extends BasePage {
         selectBox.selectByVisibleText(option);
     }
 
-    public void bookATicket(String departDate, String departFrom, String arriveAt, String seatType, String ticketAmount) {
-        selectAnOption("Date", departDate);
-        selectAnOption("DepartStation", departFrom);
-        selectAnOption("ArriveStation", arriveAt);
-        selectAnOption("SeatType", seatType);
-        selectAnOption("TicketAmount", ticketAmount);
+    public void bookATicket(Ticket ticket) {
+        selectAnOption("Date", ticket.getDate());
+        selectAnOption("DepartStation", ticket.getDepartStation());
+        selectAnOption("ArriveStation", ticket.getArriveStation());
+        selectAnOption("SeatType", ticket.getSeatType());
+        selectAnOption("TicketAmount", ticket.getTicketAmount());
 
         Helpers.scrollToElement(webElement(bookTicketButton));
         webElement(bookTicketButton).click();
