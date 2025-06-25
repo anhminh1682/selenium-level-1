@@ -15,6 +15,7 @@ public class ResetPasswordPage extends BasePage {
     private final By submitButton = By.xpath("//input[@type='submit']");
     private final By errorMessage = By.xpath("//p[@class='message error']");
     private final By errorResetTokenMessage = By.xpath("//label[@for='resetToken' and @class='validation-error']");
+    private final By errorConfirmPasswordMessage = By.xpath("//label[@for='confirmPassword' and @class='validation-error']");
 
     public void switchToResetPasswordTab() {
         for(String handle : DriverManager.getDriver().getWindowHandles()) {
@@ -24,31 +25,33 @@ public class ResetPasswordPage extends BasePage {
         }
     }
 
-    public void resetPassword(String newPassword, String confirmPassword, String resetToken) {
+    public void resetPassword(String newPassword, String confirmPassword, boolean isResetToken) {
         webElement(newPasswordTextBox).sendKeys(newPassword);
         webElement(confirmPasswordTextBox).sendKeys(confirmPassword);
 
-        if(resetToken.isEmpty()) {
+        if(!isResetToken) {
             webElement(resetTokenTextBox).sendKeys(Keys.CONTROL + "a");
             webElement(resetTokenTextBox).sendKeys(Keys.DELETE);
         }
-        else
-            webElement(resetTokenTextBox).sendKeys(resetToken);
 
         Helpers.scrollToElement(webElement(submitButton));
 
         webElement(submitButton).click();
     }
 
-    public boolean isErrorMessageIncorrectResetTokenAboveDsiplayed() {
+    public boolean isErrorMessageAboveDisplayed() {
         return !DriverManager.getDriver().findElements(errorMessage).isEmpty();
     }
 
-    public String getErrorMessageIncorrectResetTokenAbove() {
+    public String getErrorMessageAbove() {
         return getElementText(webElement(errorMessage));
     }
 
     public String getErrorMessageInvalidResetTokenNextToField() {
         return getElementText(webElement(errorResetTokenMessage));
+    }
+
+    public String getErrorMessageConfirmPasswordNextToField() {
+        return getElementText(webElement(errorConfirmPasswordMessage));
     }
 }

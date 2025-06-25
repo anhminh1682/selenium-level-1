@@ -17,6 +17,7 @@
             <class name="com.tests.register.TC10" />
             <class name="com.tests.register.TC11" />
             <class name="com.tests.forgotpassword.TC12" />
+            <class name="com.tests.forgotpassword.TC13" />
         </classes>
     </test>
 </suite>
