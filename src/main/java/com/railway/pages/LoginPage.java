@@ -1,13 +1,8 @@
-package com.example.pages;
+package com.railway.pages;
 
-import com.example.constant.Constants;
-import com.example.driver.DriverManager;
-import com.example.utilities.Helpers;
+import com.railway.driver.DriverManager;
+import com.railway.utilities.Helpers;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-
-import java.util.Objects;
 
 public class LoginPage extends BasePage {
     private final By userNameTextBox = By.id("username");
@@ -27,7 +22,7 @@ public class LoginPage extends BasePage {
 
     public void loginMultipleTimes(int num, String username, String password) {
         for (int i = 0; i < num; i++) {
-            loginPage.login(username, password);
+            this.login(username, password);
         }
     }
 

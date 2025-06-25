@@ -1,6 +1,6 @@
-package com.example.utilities;
+package com.railway.utilities;
 
-import com.example.driver.DriverManager;
+import com.railway.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;

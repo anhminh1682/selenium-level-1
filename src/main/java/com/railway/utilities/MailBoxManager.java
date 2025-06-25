@@ -1,7 +1,7 @@
-package com.example.utilities;
+package com.railway.utilities;
 
-import com.example.constant.Constants;
-import com.example.driver.DriverManager;
+import com.railway.constant.Constants;
+import com.railway.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.*;
@@ -46,7 +46,7 @@ public class MailBoxManager {
     }
 
     public static void clickResetPasswordLink() {
-        String validEmail = Constants.validUserName;
+        String validEmail = Constants.Account.VALID_USERNAME;
         String[] emailSplit = validEmail.split("@");
 
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(20));

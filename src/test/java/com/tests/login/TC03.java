@@ -1,8 +1,8 @@
 package com.tests.login;
 
-import com.example.constant.Constants;
-import com.example.pages.HomePage;
-import com.example.pages.LoginPage;
+import com.railway.constant.Constants;
+import com.railway.pages.HomePage;
+import com.railway.pages.LoginPage;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -14,7 +14,7 @@ public class TC03 extends TestBase {
         HomePage homePage = new HomePage();
 
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
-        loginPage.login(Constants.Account.VALID_USERNAME, Constants.Account.INVALID_PASSWORD);
+        loginPage.login(Constants.Account.VALID_USERNAME, Constants.Account.INACTIVE_USERNAME_LOGIN);
 
         Assert.assertEquals(loginPage.getErrorMessage(), Constants.LoginMessage.ERROR_MESSAGE_LOGIN_WITH_BLANK_FIELD);
     }

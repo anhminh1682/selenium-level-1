@@ -1,6 +1,6 @@
 package com.tests.ultilities;
 
-import com.example.driver.DriverManager;
+import com.railway.driver.DriverManager;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.io.FileHandler;

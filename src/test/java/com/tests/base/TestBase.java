@@ -1,7 +1,7 @@
 package com.tests.base;
 
-import com.example.constant.Constants;
-import com.example.driver.DriverManager;
+import com.railway.constant.Constants;
+import com.railway.driver.DriverManager;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.asserts.SoftAssert;

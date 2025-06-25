@@ -1,8 +1,8 @@
 package com.tests.forgotpassword;
 
-import com.example.constant.Constants;
-import com.example.pages.*;
-import com.example.utilities.MailBoxManager;
+import com.railway.constant.Constants;
+import com.railway.pages.*;
+import com.railway.utilities.MailBoxManager;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -30,6 +30,8 @@ public class TC12 extends TestBase {
         Assert.assertEquals(resetPasswordPage.getPageTitle(), Constants.PageTitles.RESET_PASSWORD_PAGE_TITLE);
 
         resetPasswordPage.resetPassword(Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PASSWORD, "");
+
+        Assert.assertTrue(resetPasswordPage.isErrorMessageIncorrectResetTokenAboveDsiplayed(), "Error message element does not exist");
         Assert.assertEquals(resetPasswordPage.getErrorMessageIncorrectResetTokenAbove(), Constants.ResetPasswordMessage.ERROR_MESSAGE_INCORRECT_RESET_TOKEN_ABOVE);
         Assert.assertEquals(resetPasswordPage.getErrorMessageInvalidResetTokenNextToField(), Constants.ResetPasswordMessage.ERROR_MESSAGE_INVALID_RESET_TOKEN_NEXT_TO_FIELD);
     }

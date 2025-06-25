@@ -1,9 +1,9 @@
 package com.tests.login;
 
-import com.example.constant.Constants;
-import com.example.pages.ChangePasswordPage;
-import com.example.pages.HomePage;
-import com.example.pages.LoginPage;
+import com.railway.constant.Constants;
+import com.railway.pages.ChangePasswordPage;
+import com.railway.pages.HomePage;
+import com.railway.pages.LoginPage;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -23,6 +23,7 @@ public class TC09 extends TestBase {
         homePage.clickOnTab(Constants.TabMenu.CHANGE_PASSWORD_TAB);
         changePasswordPage.changePassword(Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PASSWORD);
 
+        Assert.assertTrue(changePasswordPage.isChangePasswordTabDisplayed());
         Assert.assertEquals(changePasswordPage.getChangePasswordSuccessMessage(), Constants.ChangePasswordMessage.CHANGE_PASSWORD_SUCCESSFUL_MESSAGE);
     }
 };

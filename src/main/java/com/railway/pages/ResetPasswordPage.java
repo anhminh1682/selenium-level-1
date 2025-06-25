@@ -1,11 +1,10 @@
-package com.example.pages;
+package com.railway.pages;
 
-import com.example.constant.Constants;
-import com.example.driver.DriverManager;
-import com.example.utilities.Helpers;
+import com.railway.constant.Constants;
+import com.railway.driver.DriverManager;
+import com.railway.utilities.Helpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 
 import java.util.Objects;
 
@@ -21,7 +20,7 @@ public class ResetPasswordPage extends BasePage {
         for(String handle : DriverManager.getDriver().getWindowHandles()) {
             DriverManager.getDriver().switchTo().window(handle);
 
-            if(Objects.equals(DriverManager.getDriver().getTitle(), Constants.resetPasswordPageTitle)) break;
+            if(Objects.equals(DriverManager.getDriver().getTitle(), Constants.PageTitles.RESET_PASSWORD_PAGE_TITLE)) break;
         }
     }
 
@@ -39,6 +38,10 @@ public class ResetPasswordPage extends BasePage {
         Helpers.scrollToElement(webElement(submitButton));
 
         webElement(submitButton).click();
+    }
+
+    public boolean isErrorMessageIncorrectResetTokenAboveDsiplayed() {
+        return !DriverManager.getDriver().findElements(errorMessage).isEmpty();
     }
 
     public String getErrorMessageIncorrectResetTokenAbove() {
