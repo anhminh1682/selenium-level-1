@@ -1,8 +1,8 @@
 package com.tests.login;
 
 import com.example.constant.Constants;
-import com.example.pages.BasePage;
 import com.example.pages.ChangePasswordPage;
+import com.example.pages.HomePage;
 import com.example.pages.LoginPage;
 import com.tests.base.TestBase;
 import org.testng.Assert;
@@ -10,19 +10,19 @@ import org.testng.annotations.Test;
 
 public class TC09 extends TestBase {
     @Test
-    public void testcase1() {
+    public void userCanChangePassword() {
         LoginPage loginPage = new LoginPage();
+        HomePage homePage = new HomePage();
         ChangePasswordPage changePasswordPage = new ChangePasswordPage();
-        BasePage basePage = new BasePage();
 
         // Login
-        basePage.clickToTab("Login");
-        loginPage.login(Constants.validUserName, Constants.validPassword);
+        homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
+        loginPage.login(Constants.Account.VALID_USERNAME, Constants.Account.VALID_PASSWORD);
 
         // Change Password
-        basePage.clickToTab("Change password");
-        changePasswordPage.changePassword(Constants.validPassword, Constants.validPassword, Constants.validPassword);
+        homePage.clickOnTab(Constants.TabMenu.CHANGE_PASSWORD_TAB);
+        changePasswordPage.changePassword(Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PASSWORD);
 
-        Assert.assertTrue(changePasswordPage.checkChangePasswordSuccessful());
+        Assert.assertEquals(changePasswordPage.getChangePasswordSuccessMessage(), Constants.ChangePasswordMessage.CHANGE_PASSWORD_SUCCESSFUL_MESSAGE);
     }
 };

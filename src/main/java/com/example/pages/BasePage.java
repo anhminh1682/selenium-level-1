@@ -1,5 +1,6 @@
 package com.example.pages;
 
+import com.example.constant.Constants;
 import com.example.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -11,19 +12,31 @@ public class BasePage {
         return DriverManager.getDriver().findElement(By.xpath(String.format(tabXpath, tab)));
     }
 
-    public boolean checkMyTicketTabDisplayed() {
-        return getTab("My ticket").isDisplayed();
+    protected static WebElement webElement(By element) {
+        return DriverManager.getDriver().findElement(element);
     }
 
-    public boolean checkChangePasswordTabDisplayed() {
-        return getTab("Change password").isDisplayed();
+    public boolean isMyTicketTabDisplayed() {
+        return getTab(Constants.TabMenu.MY_TICKET_TAB).isDisplayed();
     }
 
-    public boolean checkLogOutTabDisplayed() {
-        return getTab("Log out").isDisplayed();
+    public boolean isChangePasswordTabDisplayed() {
+        return getTab(Constants.TabMenu.CHANGE_PASSWORD_TAB).isDisplayed();
     }
 
-    public void clickToTab(String tab) {
+    public boolean isLogOutTabDisplayed() {
+        return getTab(Constants.TabMenu.LOG_OUT_TAB).isDisplayed();
+    }
+
+    public void clickOnTab(String tab) {
         getTab(tab).click();
+    }
+
+    public String getPageTitle() {
+        return DriverManager.getDriver().getTitle();
+    }
+
+    public static String getElementText(WebElement element) {
+        return element.getText().trim();
     }
 }

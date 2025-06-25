@@ -1,7 +1,6 @@
 package com.tests.login;
 
 import com.example.constant.Constants;
-import com.example.pages.BasePage;
 import com.example.pages.HomePage;
 import com.example.pages.LoginPage;
 import com.tests.base.TestBase;
@@ -10,12 +9,12 @@ import org.testng.annotations.Test;
 
 public class TC04 extends TestBase {
     @Test
-    public void testcase1() {
-        BasePage basePage = new BasePage();
+    public void loginPageDisplaysWhenUnLoggedUserClicksOnBookTicketTab() {
+        HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
 
-        basePage.clickToTab("Book ticket");
+        homePage.clickOnTab(Constants.TabMenu.BOOK_TICKET_TAB);
 
-        Assert.assertTrue(loginPage.checkLoginPageDisplayed());
+        Assert.assertEquals(loginPage.getLoginPageTitle(), Constants.PageTitles.LOGIN_PAGE_TITLE);
     }
 }

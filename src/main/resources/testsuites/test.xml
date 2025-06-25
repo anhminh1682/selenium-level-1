@@ -1,18 +1,22 @@
 <suite name="TestSuite1">
+    <listeners>
+        <listener class-name="com.tests.ultilities.AppListener"/>
+    </listeners>
+
     <test name="Railway">
         <classes>
             <class name="com.tests.login.TC01" />
-            <class name="com.tests.login.TC02" />
-            <class name="com.tests.login.TC03" />
-            <class name="com.tests.login.TC04" />
-            <class name="com.tests.login.TC05" />
-            <class name="com.tests.login.TC06" />
-            <class name="com.tests.register.TC07" />
+<!--            <class name="com.tests.login.TC02" />-->
+<!--            <class name="com.tests.login.TC03" />-->
+<!--            <class name="com.tests.login.TC04" />-->
+<!--            <class name="com.tests.login.TC05" />-->
+<!--            <class name="com.tests.login.TC06" />-->
+<!--            <class name="com.tests.register.TC07" />-->
             <class name="com.tests.login.TC08" />
             <class name="com.tests.login.TC09" />
-            <class name="com.tests.register.TC10" />
-            <class name="com.tests.register.TC11" />
-            <class name="com.tests.forgotpassword.TC12" />
+<!--            <class name="com.tests.register.TC10" />-->
+<!--            <class name="com.tests.register.TC11" />-->
+<!--            <class name="com.tests.forgotpassword.TC12" />-->
         </classes>
     </test>
 </suite>

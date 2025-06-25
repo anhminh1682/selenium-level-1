@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class ForgotPasswordPage {
+public class ForgotPasswordPage extends BasePage {
     private final By emailTextBox = By.id("email");
     private final By submitButton = By.xpath("//input[@type='submit']");
 

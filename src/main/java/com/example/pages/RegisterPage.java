@@ -5,14 +5,13 @@ import com.example.driver.DriverManager;
 import com.example.utilities.Helpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.Objects;
 
-public class RegisterPage {
+public class RegisterPage extends BasePage {
     private final By emailTextBox = By.id("email");
     private final By passwordTextBox = By.id("password");
     private final By confirmPasswordTextBox = By.id("confirmPassword");
@@ -23,69 +22,35 @@ public class RegisterPage {
     private final By errorMessageOfPasswordField = By.xpath("//label[@class='validation-error' and @for='password']");
     private final By errorMessageOfPIDField = By.xpath("//label[@class='validation-error' and @for='pid']");
 
-    private WebElement getEmailTextBox() {
-        return DriverManager.getDriver().findElement(emailTextBox);
+    public void registerUserAccount(String email, String password, String confirmPassword, String pid) {
+        webElement(emailTextBox).clear();
+        webElement(emailTextBox).sendKeys(email);
+
+        webElement(passwordTextBox).clear();
+        webElement(passwordTextBox).sendKeys(password);
+
+        webElement(confirmPasswordTextBox).sendKeys(confirmPassword);
+
+        webElement(pidTextBox).clear();
+        webElement(pidTextBox).sendKeys(pid);
+
+        Helpers.scrollToElement(webElement(registerButton));
+        webElement(registerButton).click();
     }
 
-    private WebElement getPasswordTextBox() {
-        return DriverManager.getDriver().findElement(passwordTextBox);
+    public String getRegisterValidInforHeading() {
+        return getElementText(webElement(registerValidInfoHeading));
     }
 
-    private WebElement getConfirmPasswordTextBox() {
-        return DriverManager.getDriver().findElement(confirmPasswordTextBox);
+    public String getErrorRegisterMessage() {
+        return getElementText(webElement(errorRegisterMessage));
     }
 
-    private WebElement getPIDTextBox() {
-        return DriverManager.getDriver().findElement(pidTextBox);
+    public String getRegisterFailedWithInvalidPasswordMessage() {
+        return getElementText(webElement(errorMessageOfPasswordField));
     }
 
-    private WebElement getRegisterButton() {
-        return DriverManager.getDriver().findElement(registerButton);
-    }
-
-    private WebElement getRegisterValidInfoHeading() {
-        return DriverManager.getDriver().findElement(registerValidInfoHeading);
-    }
-
-    private WebElement getErrorRegisterMessage() {
-        return DriverManager.getDriver().findElement(errorRegisterMessage);
-    }
-
-    private WebElement getErrorMessageOfPasswordField() {
-        return DriverManager.getDriver().findElement(errorMessageOfPasswordField);
-    }
-
-    private WebElement getErrorMessageOfPIDField() {
-        return DriverManager.getDriver().findElement(errorMessageOfPIDField);
-    }
-
-    public void register(String email, String password, String confirmPassword, String pid) {
-        getEmailTextBox().sendKeys(email);
-        getPasswordTextBox().sendKeys(password);
-        getConfirmPasswordTextBox().sendKeys(confirmPassword);
-        getPIDTextBox().sendKeys(pid);
-
-        Helpers.scrollToElement(getRegisterButton());
-
-        getRegisterButton().click();
-    }
-
-    public boolean checkRegisterSuccessWithValidInfor() {
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(registerValidInfoHeading));
-
-        return Objects.equals(getRegisterValidInfoHeading().getText(), Constants.registerValidInfoHeading);
-    }
-
-    public boolean checkRegisterFailedWithInvalidInfo() {
-        return Objects.equals(getErrorRegisterMessage().getText().trim(), Constants.errorRegisterWithInvalidInfo);
-    }
-
-    public boolean checkRegisterFailedWithInvalidPassword(String errorMessage) {
-        return Objects.equals(getErrorMessageOfPasswordField().getText().trim(), errorMessage);
-    }
-
-    public boolean checkRegisterFailedWithInvalidPID(String errorMessage) {
-        return Objects.equals(getErrorMessageOfPIDField().getText().trim(), errorMessage);
+    public String getRegisterFailedWithInvalidPIDMessage() {
+        return getElementText(webElement(errorMessageOfPIDField));
     }
 }

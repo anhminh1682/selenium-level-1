@@ -1,32 +1,31 @@
 package com.tests.login;
 
 import com.example.constant.Constants;
-import com.example.pages.BasePage;
-import com.example.pages.ChangePasswordPage;
-import com.example.pages.LoginPage;
-import com.example.pages.MyTicketPage;
+import com.example.pages.*;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC06 extends TestBase {
     @Test
-    public void testcase1() {
-        BasePage basePage = new BasePage();
+    public void additionalPagesDisplayOnceUserLoggedIn() {
         LoginPage loginPage = new LoginPage();
+        HomePage homePage = new HomePage();
+        ChangePasswordPage changePasswordPage = new ChangePasswordPage();
+        MyTicketPage myTicketPage = new MyTicketPage();
 
-        basePage.clickToTab("Login");
+        homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
 
-        loginPage.login(Constants.validUserName, Constants.validPassword);
+        loginPage.login(Constants.Account.VALID_USERNAME, Constants.Account.VALID_PASSWORD);
 
-        Assert.assertTrue(basePage.checkMyTicketTabDisplayed());
-        Assert.assertTrue(basePage.checkChangePasswordTabDisplayed());
-        Assert.assertTrue(basePage.checkLogOutTabDisplayed());
+        Assert.assertTrue(homePage.isMyTicketTabDisplayed(), "Check my ticket tab is displayed");
+        Assert.assertTrue(homePage.isChangePasswordTabDisplayed(), "Check change password tab is displayed");
+        Assert.assertTrue(homePage.isLogOutTabDisplayed(), "Check log out tab is displayed");
 
-        basePage.clickToTab("My ticket");
-        Assert.assertTrue(new MyTicketPage().checkMyTicketPageDisplayed());
+        homePage.clickOnTab(Constants.TabMenu.MY_TICKET_TAB);
+        Assert.assertEquals(myTicketPage.getMyTicketPageTitle(), Constants.PageTitles.MY_TICKET_PAGE_TITLE);
 
-        basePage.clickToTab("Change password");
-        Assert.assertTrue(new ChangePasswordPage().checkChangePasswordPageDisplayed());
+        myTicketPage.clickOnTab(Constants.TabMenu.CHANGE_PASSWORD_TAB);
+        Assert.assertEquals(changePasswordPage.getPageTitle(), Constants.PageTitles.CHANGE_PASSWORD_PAGE_TITLE);
     }
 }
