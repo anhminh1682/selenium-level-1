@@ -19,7 +19,7 @@ public class AppListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         File srcFile = ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.FILE);
-        File destFile = new File("/test-images/failure.png");
+        File destFile = new File("D:\\AGEST\\SeleniumExercise\\SeleniumLevel1\\test-images\\failed-image");
 
         try {
             FileHandler.copy(srcFile, destFile);
