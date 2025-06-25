@@ -30,4 +30,9 @@ public class Helpers {
             return !newList.equals(oldList);
         });
     }
+
+    public static void waitAlert(int duration) {
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(duration));
+        wait.until(ExpectedConditions.alertIsPresent());
+    }
 }
