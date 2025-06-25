@@ -47,6 +47,8 @@ public class Constants {
         // Reset Password message
         public static final String ERROR_MESSAGE_INCORRECT_RESET_TOKEN_ABOVE = "The password reset token is incorrect or may be expired. Visit the forgot password page to generate a new one.";
         public static final String ERROR_MESSAGE_INVALID_RESET_TOKEN_NEXT_TO_FIELD = "The password reset token is invalid.";
+        public static final String ERROR_MESSAGE_COULD_NOT_RESET_PASSWORD = "Could not reset password. Please correct the errors and try again.";
+        public static final String ERROR_MESSAGE_CONFIRM_PASSWORD_NEXT_TO_FIELD = "The password confirmation did not match the new password.";
     }
 
     public static class PageTitles {

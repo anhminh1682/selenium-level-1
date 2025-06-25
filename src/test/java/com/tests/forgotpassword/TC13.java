@@ -1,15 +1,18 @@
 package com.tests.forgotpassword;
 
 import com.railway.constant.Constants;
-import com.railway.pages.*;
+import com.railway.pages.ForgotPasswordPage;
+import com.railway.pages.HomePage;
+import com.railway.pages.LoginPage;
+import com.railway.pages.ResetPasswordPage;
 import com.railway.utilities.MailBoxManager;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC12 extends TestBase {
+public class TC13 extends TestBase {
     @Test
-    public void errorsDisplayWhenPasswordResetTokenIsBlank() {
+    public void errorsDisplayIfPasswordAndConfirmPasswordDontMatchWhenResettingPassword() {
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
@@ -29,10 +32,10 @@ public class TC12 extends TestBase {
         resetPasswordPage.switchToResetPasswordTab();
         Assert.assertEquals(resetPasswordPage.getPageTitle(), Constants.PageTitles.RESET_PASSWORD_PAGE_TITLE);
 
-        resetPasswordPage.resetPassword(Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PASSWORD, false);
+        resetPasswordPage.resetPassword(Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PASSWORD + "1", true);
 
         Assert.assertTrue(resetPasswordPage.isErrorMessageAboveDisplayed(), "Error message element does not exist");
-        Assert.assertEquals(resetPasswordPage.getErrorMessageAbove(), Constants.ResetPasswordMessage.ERROR_MESSAGE_INCORRECT_RESET_TOKEN_ABOVE);
-        Assert.assertEquals(resetPasswordPage.getErrorMessageInvalidResetTokenNextToField(), Constants.ResetPasswordMessage.ERROR_MESSAGE_INVALID_RESET_TOKEN_NEXT_TO_FIELD);
+        Assert.assertEquals(resetPasswordPage.getErrorMessageAbove(), Constants.ResetPasswordMessage.ERROR_MESSAGE_COULD_NOT_RESET_PASSWORD);
+        Assert.assertEquals(resetPasswordPage.getErrorMessageConfirmPasswordNextToField(), Constants.ResetPasswordMessage.ERROR_MESSAGE_CONFIRM_PASSWORD_NEXT_TO_FIELD);
     }
 }
