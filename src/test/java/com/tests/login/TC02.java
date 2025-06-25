@@ -1,7 +1,7 @@
 package com.tests.login;
 
 import com.example.constant.Constants;
-import com.example.pages.BasePage;
+import com.example.pages.HomePage;
 import com.example.pages.LoginPage;
 import com.tests.base.TestBase;
 import org.testng.Assert;
@@ -9,13 +9,13 @@ import org.testng.annotations.Test;
 
 public class TC02 extends TestBase {
     @Test
-    public void testcase1() {
+    public void userCannotLoginWithBlankUsernameTextbox() {
         LoginPage loginPage = new LoginPage();
-        BasePage basePage = new BasePage();
+        HomePage homePage = new HomePage();
 
-        basePage.clickToTab("Login");
-        loginPage.login("", Constants.validPassword);
+        homePage.clickOnTab("Login");
+        loginPage.login("", Constants.Account.VALID_PASSWORD);
 
-        Assert.assertTrue(loginPage.checkLoginFailed(Constants.errorMessageLoginWithBlankField));
+        Assert.assertEquals(loginPage.getErrorMessage(), Constants.LoginMessage.ERROR_MESSAGE_LOGIN_WITH_BLANK_FIELD);
     }
 }

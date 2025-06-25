@@ -9,51 +9,31 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.util.Objects;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
     private final By userNameTextBox = By.id("username");
     private final By passwordTextBox = By.id("password");
     private final By loginButton = By.xpath("//input[@type='submit'][@title='Login']");
     private final By errorMessage = By.xpath("//p[@class='message error LoginForm']");
     private final By forgotPasswordLink = By.linkText("Forgot Password page");
 
-    private WebElement getUserNameTextBox() {
-        return DriverManager.getDriver().findElement(userNameTextBox);
-    }
-
-    private WebElement getPasswordTextBox() {
-        return DriverManager.getDriver().findElement(passwordTextBox);
-    }
-
-    private WebElement getLoginButton() {
-        return DriverManager.getDriver().findElement(loginButton);
-    }
-
-    private WebElement getErrorMessage() {
-        return DriverManager.getDriver().findElement(errorMessage);
-    }
-
-    private WebElement getForgotPasswordLink() {
-        return DriverManager.getDriver().findElement(forgotPasswordLink);
-    }
-
     public void login(String username, String password) {
-        getUserNameTextBox().sendKeys(username);
-        getPasswordTextBox().sendKeys(password);
+        webElement(userNameTextBox).sendKeys(username);
+        webElement(passwordTextBox).sendKeys(password);
 
-        Helpers.scrollToElement(getLoginButton());
+        Helpers.scrollToElement(webElement(loginButton));
 
-        getLoginButton().click();
+        webElement(loginButton).click();
     }
 
-    public boolean checkLoginFailed(String errorMessage) {
-        return Objects.equals(getErrorMessage().getText(), errorMessage);
+    public String getErrorMessage() {
+        return webElement(errorMessage).getText();
     }
 
-    public boolean checkLoginPageDisplayed() {
-        return Objects.equals(DriverManager.getDriver().getTitle(), Constants.loginPageTitle);
+    public String getLoginPageTitle() {
+        return DriverManager.getDriver().getTitle();
     }
 
     public void goToForgotPasswordLink() {
-        getForgotPasswordLink().click();
+        webElement(forgotPasswordLink).click();
     }
 }

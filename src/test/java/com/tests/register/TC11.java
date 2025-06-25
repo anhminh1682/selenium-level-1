@@ -1,23 +1,25 @@
 package com.tests.register;
 
 import com.example.constant.Constants;
-import com.example.pages.BasePage;
+import com.example.pages.HomePage;
 import com.example.pages.RegisterPage;
 import com.tests.base.TestBase;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC11 extends TestBase {
     @Test
-    public void testcase1() {
-        BasePage basePage = new BasePage();
+    public void userCannotCreateAccountWhilePasswordAndPIDFieldsAreEmpty() {
+        HomePage homePage = new HomePage();
         RegisterPage registerPage = new RegisterPage();
 
         // Register
-        basePage.clickToTab("Register");
-        registerPage.register(Constants.validUserName, "", "", "");
+        homePage.clickOnTab("Register");
+        registerPage.registerUserAccount(Constants.Account.VALID_USERNAME, "", "", "");
 
-        Assert.assertTrue(registerPage.checkRegisterFailedWithInvalidPassword(Constants.errorRegisterWithInvalidPasswordLength));
-        Assert.assertTrue(registerPage.checkRegisterFailedWithInvalidPID(Constants.errorRegisterWithInvalidPIDLength));
+        softAssert.assertEquals(registerPage.getErrorRegisterMessage(), Constants.RegisterMessage.ERROR_REGISTER_WITH_INVALID_INFO);
+        softAssert.assertEquals(registerPage.getRegisterFailedWithInvalidPasswordMessage(), Constants.RegisterMessage.ERROR_REGISTER_WITH_INVALID_PASSWORD_LENGTH);
+        softAssert.assertEquals(registerPage.getRegisterFailedWithInvalidPIDMessage(), Constants.RegisterMessage.ERROR_REGISTER_WITH_INVALID_PID_LENGTH);
+
+        softAssert.assertAll();
     }
 }

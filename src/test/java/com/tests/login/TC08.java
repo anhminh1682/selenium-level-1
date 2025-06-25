@@ -1,7 +1,7 @@
 package com.tests.login;
 
 import com.example.constant.Constants;
-import com.example.pages.BasePage;
+import com.example.pages.HomePage;
 import com.example.pages.LoginPage;
 import com.example.pages.RegisterPage;
 import com.tests.base.TestBase;
@@ -10,22 +10,22 @@ import org.testng.annotations.Test;
 
 public class TC08 extends TestBase {
     @Test
-    public void testcase1() {
-        BasePage basePage = new BasePage();
+    public void userCannotLoginWithAnAccountHasNotBeenActivated() {
+        HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
         RegisterPage registerPage = new RegisterPage();
 
-        String newEmail = Constants.inActiveUsername;
+        String newEmail = Constants.Account.IN_ACTIVE_USERNAME;
 
         // Register
-        basePage.clickToTab("Register");
-        registerPage.register(newEmail, Constants.validPassword, Constants.validPassword, Constants.validPID);
-        Assert.assertTrue(registerPage.checkRegisterSuccessWithValidInfor());
+        homePage.clickOnTab("Register");
+        registerPage.registerUserAccount(newEmail, Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PID);
+        Assert.assertEquals(registerPage.getRegisterValidInforHeading(), Constants.RegisterMessage.REGISTER_VALID_INFOR_HEADING);
 
         // Login
-        basePage.clickToTab("Login");
-        loginPage.login(newEmail, Constants.invalidPassword);
+        homePage.clickOnTab("Login");
+        loginPage.login(newEmail, Constants.Account.INVALID_PASSWORD);
 
-        Assert.assertTrue(loginPage.checkLoginFailed(Constants.errorMessageLoginWithInvalidFields));
+        Assert.assertEquals(loginPage.getErrorMessage(), Constants.LoginMessage.ERROR_MESSAGE_LOGIN_WITH_INVALID_FIELDS);
     }
 }

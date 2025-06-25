@@ -11,19 +11,31 @@ public class BasePage {
         return DriverManager.getDriver().findElement(By.xpath(String.format(tabXpath, tab)));
     }
 
-    public boolean checkMyTicketTabDisplayed() {
+    protected static WebElement webElement(By element) {
+        return DriverManager.getDriver().findElement(element);
+    }
+
+    public boolean isMyTicketTabDisplayed() {
         return getTab("My ticket").isDisplayed();
     }
 
-    public boolean checkChangePasswordTabDisplayed() {
+    public boolean isChangePasswordTabDisplayed() {
         return getTab("Change password").isDisplayed();
     }
 
-    public boolean checkLogOutTabDisplayed() {
+    public boolean isLogOutTabDisplayed() {
         return getTab("Log out").isDisplayed();
     }
 
-    public void clickToTab(String tab) {
+    public void clickOnTab(String tab) {
         getTab(tab).click();
+    }
+
+    public String getPageTitle() {
+        return DriverManager.getDriver().getTitle();
+    }
+
+    public static String getElementText(WebElement element) {
+        return element.getText().trim();
     }
 }
