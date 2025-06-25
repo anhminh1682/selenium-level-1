@@ -13,7 +13,7 @@ public class TC11 extends TestBase {
         RegisterPage registerPage = new RegisterPage();
 
         // Register
-        homePage.clickOnTab("Register");
+        homePage.clickOnTab(Constants.TabMenu.REGISTER_TAB);
         registerPage.registerUserAccount(Constants.Account.VALID_USERNAME, "", "", "");
 
         softAssert.assertEquals(registerPage.getErrorRegisterMessage(), Constants.RegisterMessage.ERROR_REGISTER_WITH_INVALID_INFO);

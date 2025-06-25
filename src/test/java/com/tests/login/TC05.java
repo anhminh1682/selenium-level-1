@@ -14,11 +14,8 @@ public class TC05 extends TestBase {
         LoginPage loginPage = new LoginPage();
         int n = 4;
 
-        homePage.clickOnTab("Login");
-
-        for (int i = 0; i < n; i++) {
-            loginPage.login(Constants.Account.VALID_USERNAME, Constants.Account.INVALID_PASSWORD);
-        }
+        homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
+        loginPage.loginMultipleTimes(n, Constants.Account.VALID_USERNAME, Constants.Account.INVALID_PASSWORD);
 
         Assert.assertEquals(loginPage.getErrorMessage(), Constants.LoginMessage.WARNING_MESSAGE_LOGIN_INVALID_TOO_MUCH);
     }

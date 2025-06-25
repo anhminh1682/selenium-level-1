@@ -15,7 +15,7 @@ public class TC12 extends TestBase {
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
         ResetPasswordPage resetPasswordPage = new ResetPasswordPage();
 
-        homePage.clickOnTab("Login");
+        homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
         loginPage.goToForgotPasswordLink();
 
         // Forgot password

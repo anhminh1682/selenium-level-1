@@ -1,5 +1,6 @@
 package com.example.pages;
 
+import com.example.constant.Constants;
 import com.example.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -16,15 +17,15 @@ public class BasePage {
     }
 
     public boolean isMyTicketTabDisplayed() {
-        return getTab("My ticket").isDisplayed();
+        return getTab(Constants.TabMenu.MY_TICKET_TAB).isDisplayed();
     }
 
     public boolean isChangePasswordTabDisplayed() {
-        return getTab("Change password").isDisplayed();
+        return getTab(Constants.TabMenu.CHANGE_PASSWORD_TAB).isDisplayed();
     }
 
     public boolean isLogOutTabDisplayed() {
-        return getTab("Log out").isDisplayed();
+        return getTab(Constants.TabMenu.LOG_OUT_TAB).isDisplayed();
     }
 
     public void clickOnTab(String tab) {

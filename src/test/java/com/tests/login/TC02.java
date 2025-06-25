@@ -13,7 +13,7 @@ public class TC02 extends TestBase {
         LoginPage loginPage = new LoginPage();
         HomePage homePage = new HomePage();
 
-        homePage.clickOnTab("Login");
+        homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
         loginPage.login("", Constants.Account.VALID_PASSWORD);
 
         Assert.assertEquals(loginPage.getErrorMessage(), Constants.LoginMessage.ERROR_MESSAGE_LOGIN_WITH_BLANK_FIELD);

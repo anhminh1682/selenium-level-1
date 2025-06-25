@@ -25,6 +25,12 @@ public class LoginPage extends BasePage {
         webElement(loginButton).click();
     }
 
+    public void loginMultipleTimes(int num, String username, String password) {
+        for (int i = 0; i < num; i++) {
+            loginPage.login(username, password);
+        }
+    }
+
     public String getErrorMessage() {
         return webElement(errorMessage).getText();
     }

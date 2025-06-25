@@ -14,7 +14,7 @@ public class TC07 extends TestBase {
         RegisterPage registerPage = new RegisterPage();
 
         // Register
-        homePage.clickOnTab("Register");
+        homePage.clickOnTab(Constants.TabMenu.REGISTER_TAB);
         registerPage.registerUserAccount(Constants.Account.IN_ACTIVE_USERNAME, Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PID);
 
         Assert.assertEquals(registerPage.getRegisterValidInforHeading(), Constants.RegisterMessage.REGISTER_VALID_INFOR_HEADING);

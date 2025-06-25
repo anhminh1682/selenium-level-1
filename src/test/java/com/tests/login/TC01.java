@@ -14,7 +14,7 @@ public class TC01 extends TestBase {
         LoginPage loginPage = new LoginPage();
         HomePage homePage = new HomePage();
 
-        homePage.clickOnTab("Login");
+        homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
         loginPage.login(Constants.Account.VALID_USERNAME, Constants.Account.VALID_PASSWORD);
 
         Assert.assertEquals(homePage.getWelComeText(), "Welcome " + Constants.Account.VALID_USERNAME);

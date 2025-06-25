@@ -14,7 +14,7 @@ public class TC10 extends TestBase {
         RegisterPage registerPage = new RegisterPage();
 
         // Register
-        homePage.clickOnTab("Register");
+        homePage.clickOnTab(Constants.TabMenu.REGISTER_TAB);
         registerPage.registerUserAccount(Constants.Account.IN_ACTIVE_USERNAME, Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PASSWORD + "1", Constants.Account.VALID_PID);
         Assert.assertEquals(registerPage.getErrorRegisterMessage(), Constants.RegisterMessage.ERROR_REGISTER_WITH_INVALID_INFO);
     }

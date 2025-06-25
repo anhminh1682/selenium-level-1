@@ -5,6 +5,10 @@ import java.time.format.DateTimeFormatter;
 
 public class Constants {
 
+    public static class URL {
+        public static String RAILWAY_URL = "http://saferailway.somee.com/";
+    }
+
     public static class MyDateTimeFormat {
         public static DateTimeFormatter HH_mm_ss = DateTimeFormatter.ofPattern("HH_mm_ss");
     }
@@ -52,5 +56,14 @@ public class Constants {
         public static String BOOK_TICKET_PAGE_TITLE = "Safe Railway - Book Ticket";
         public static String RESET_PASSWORD_PAGE_TITLE = "Safe Railway - Password Reset";
         public static String REGISTER_PAGE_TITLE = "Safe Railway - Register an Account";
+    }
+
+    public static class TabMenu {
+        public static String LOGIN_TAB = "Login";
+        public static String REGISTER_TAB = "Register";
+        public static String LOG_OUT_TAB = "Log out";
+        public static String BOOK_TICKET_TAB = "Book ticket";
+        public static String MY_TICKET_TAB = "My ticket";
+        public static String CHANGE_PASSWORD_TAB = "Change password";
     }
 }

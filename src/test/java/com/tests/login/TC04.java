@@ -13,7 +13,7 @@ public class TC04 extends TestBase {
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
 
-        homePage.clickOnTab("Book ticket");
+        homePage.clickOnTab(Constants.TabMenu.BOOK_TICKET_TAB);
 
         Assert.assertEquals(loginPage.getLoginPageTitle(), Constants.PageTitles.LOGIN_PAGE_TITLE);
     }

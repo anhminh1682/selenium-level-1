@@ -14,7 +14,7 @@ public class TC06 extends TestBase {
         ChangePasswordPage changePasswordPage = new ChangePasswordPage();
         MyTicketPage myTicketPage = new MyTicketPage();
 
-        homePage.clickOnTab("Login");
+        homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
 
         loginPage.login(Constants.Account.VALID_USERNAME, Constants.Account.VALID_PASSWORD);
 
@@ -22,10 +22,10 @@ public class TC06 extends TestBase {
         Assert.assertTrue(homePage.isChangePasswordTabDisplayed(), "Check change password tab is displayed");
         Assert.assertTrue(homePage.isLogOutTabDisplayed(), "Check log out tab is displayed");
 
-        homePage.clickOnTab("My ticket");
+        homePage.clickOnTab(Constants.TabMenu.MY_TICKET_TAB);
         Assert.assertEquals(myTicketPage.getMyTicketPageTitle(), Constants.PageTitles.MY_TICKET_PAGE_TITLE);
 
-        myTicketPage.clickOnTab("Change password");
+        myTicketPage.clickOnTab(Constants.TabMenu.CHANGE_PASSWORD_TAB);
         Assert.assertEquals(changePasswordPage.getPageTitle(), Constants.PageTitles.CHANGE_PASSWORD_PAGE_TITLE);
     }
 }
