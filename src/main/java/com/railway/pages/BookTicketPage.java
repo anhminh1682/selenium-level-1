@@ -6,11 +6,18 @@ import com.railway.utilities.Helpers;
 import com.railway.utilities.Ticket;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.List;
+import java.util.Objects;
 
 public class BookTicketPage extends BasePage {
     private final String selectBoxXpath = "//select[@name='%s']";
     private final String currentOptionOfSelectBoxXpath = "//select[@name='%s']/option[@selected='selected']";
+    private final String listOptionsOfSelectBoxXpath = "//select[@name='%s']/option";
 
     private final By bookTicketButton = By.xpath("//input[@value='Book ticket']");
 
@@ -20,6 +27,10 @@ public class BookTicketPage extends BasePage {
 
     private WebElement getCurrentOptionOfSelectBoxXpath(String name) {
         return DriverManager.getDriver().findElement(By.xpath(String.format(currentOptionOfSelectBoxXpath, name)));
+    }
+
+    private List<WebElement> getListOptionsOfSelectBox(String name) {
+        return DriverManager.getDriver().findElements(By.xpath(String.format(listOptionsOfSelectBoxXpath, name)));
     }
 
     public String getCurrentValueOfASelectBox(String name) {
@@ -33,8 +44,14 @@ public class BookTicketPage extends BasePage {
 
     public void bookATicket(Ticket ticket) {
         selectAnOption(Constants.BookTicket.DEPART_DATE_NAME_SELECT_BOX, ticket.getDate());
+
+        List<WebElement> oldArriveAtOptionList = getListOptionsOfSelectBox(Constants.BookTicket.ARRIVE_AT_NAME_SELECT_BOX);
         selectAnOption(Constants.BookTicket.DEPART_FROM_NAME_SELECT_BOX, ticket.getDepartStation());
+
+        // Wait for arrive at select box update DOM
+        Helpers.waitForDynamicElement(10, String.format(listOptionsOfSelectBoxXpath, Constants.BookTicket.ARRIVE_AT_NAME_SELECT_BOX), oldArriveAtOptionList);
         selectAnOption(Constants.BookTicket.ARRIVE_AT_NAME_SELECT_BOX, ticket.getArriveStation());
+
         selectAnOption(Constants.BookTicket.SEAT_TYPE_NAME_SELECT_BOX, ticket.getSeatType());
         selectAnOption(Constants.BookTicket.TICKET_AMOUNT_NAME_SELECT_BOX, ticket.getTicketAmount());
 

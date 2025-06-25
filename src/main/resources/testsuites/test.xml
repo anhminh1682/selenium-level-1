@@ -18,6 +18,8 @@
             <class name="com.tests.register.TC11" />
             <class name="com.tests.forgotpassword.TC12" />
             <class name="com.tests.forgotpassword.TC13" />
+            <class name="com.tests.bookticket.TC14" />
+            <class name="com.tests.timetable.TC15" />
         </classes>
     </test>
 </suite>

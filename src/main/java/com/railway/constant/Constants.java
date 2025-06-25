@@ -76,12 +76,6 @@ public class Constants {
     }
 
     public static class BookTicket {
-        public static final String DEPART_DATE_VALUE = LocalDateTime.now().plusDays(25).format(MyDateTimeFormat.M_d_yyyy);
-        public static final String DEPART_FROM_VALUE = "Sài Gòn";
-        public static final String ARRIVE_AT_VALUE = "Nha Trang";
-        public static final String SEAT_TYPE_VALUE = "Soft bed with air conditioner";
-        public static final String TICKET_AMOUNT_VALUE = "1";
-
         public static final String DEPART_DATE_NAME_SELECT_BOX = "Date";
         public static final String DEPART_FROM_NAME_SELECT_BOX = "DepartStation";
         public static final String ARRIVE_AT_NAME_SELECT_BOX = "ArriveStation";
