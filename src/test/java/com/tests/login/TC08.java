@@ -3,8 +3,6 @@ package com.tests.login;
 import com.railway.constant.Constants;
 import com.railway.pages.HomePage;
 import com.railway.pages.LoginPage;
-import com.railway.pages.RegisterPage;
-import com.railway.pages.ThankRegisterPage;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
