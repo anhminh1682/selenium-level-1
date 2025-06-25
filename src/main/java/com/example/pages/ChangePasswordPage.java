@@ -2,8 +2,10 @@ package com.example.pages;
 
 import com.example.constant.Constants;
 import com.example.driver.DriverManager;
+import com.example.utilities.Helpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.Objects;
 
@@ -38,6 +40,8 @@ public class ChangePasswordPage {
         getCurrentPasswordTextBox().sendKeys(password);
         getNewPasswordTextBox().sendKeys(newPassword);
         getConfirmPasswordTextBox().sendKeys(confirmPassword);
+
+        Helpers.scrollToElement(getChangePasswordButton());
 
         getChangePasswordButton().click();
     }

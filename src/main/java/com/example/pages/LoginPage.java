@@ -2,8 +2,10 @@ package com.example.pages;
 
 import com.example.constant.Constants;
 import com.example.driver.DriverManager;
+import com.example.utilities.Helpers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.Objects;
 
@@ -37,6 +39,8 @@ public class LoginPage {
     public void login(String username, String password) {
         getUserNameTextBox().sendKeys(username);
         getPasswordTextBox().sendKeys(password);
+
+        Helpers.scrollToElement(getLoginButton());
 
         getLoginButton().click();
     }

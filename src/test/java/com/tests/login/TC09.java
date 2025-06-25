@@ -16,11 +16,11 @@ public class TC09 extends TestBase {
         BasePage basePage = new BasePage();
 
         // Login
-        basePage.goToLoginPage();
+        basePage.clickToTab("Login");
         loginPage.login(Constants.validUserName, Constants.validPassword);
 
         // Change Password
-        basePage.goToChangePassword();
+        basePage.clickToTab("Change password");
         changePasswordPage.changePassword(Constants.validPassword, Constants.validPassword, Constants.validPassword);
 
         Assert.assertTrue(changePasswordPage.checkChangePasswordSuccessful());

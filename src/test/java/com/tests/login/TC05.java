@@ -14,7 +14,7 @@ public class TC05 extends TestBase {
         LoginPage loginPage = new LoginPage();
         int n = 4;
 
-        basePage.goToLoginPage();
+        basePage.clickToTab("Login");
 
         for (int i = 0; i < n; i++) {
             loginPage.login(Constants.validUserName, Constants.invalidPassword);

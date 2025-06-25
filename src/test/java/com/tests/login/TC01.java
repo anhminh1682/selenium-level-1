@@ -16,7 +16,7 @@ public class TC01 extends TestBase {
         BasePage basePage = new BasePage();
         HomePage homePage = new HomePage();
 
-        basePage.goToLoginPage();
+        basePage.clickToTab("Login");
         loginPage.login(Constants.validUserName, Constants.validPassword);
 
         boolean welcomeTextIsDisplayed = homePage.checkWelcomeTextAfterLoginSuccess(Constants.validUserName);

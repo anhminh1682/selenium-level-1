@@ -13,7 +13,7 @@ public class TC03 extends TestBase {
         LoginPage loginPage = new LoginPage();
         BasePage basePage = new BasePage();
 
-        basePage.goToLoginPage();
+        basePage.clickToTab("Login");
         loginPage.login(Constants.validUserName, Constants.invalidPassword);
 
         Assert.assertTrue(loginPage.checkLoginFailed(Constants.errorMessageLoginWithBlankField));

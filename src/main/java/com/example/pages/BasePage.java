@@ -5,70 +5,25 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class BasePage {
-    private final By registerTab = By.xpath("//a//span[text()='Register']");
-    private final By loginTab = By.xpath("//a//span[text()='Login']");
-    private final By bookTicketTab = By.xpath("//a//span[text()='Book ticket']");
-    private final By myTicketTab = By.xpath("//a//span[text()='My ticket']");
-    private final By logOutTab = By.xpath("//a//span[text()='Log out']");
-    private final By changePasswordTab = By.xpath("//a//span[text()='Change password']");
+    private final String tabXpath = "//a//span[text()='%s']";
 
-    private WebElement getRegisterTab() {
-        return DriverManager.getDriver().findElement(registerTab);
-    }
-
-    private WebElement getLoginTab() {
-        return DriverManager.getDriver().findElement(loginTab);
-    }
-
-    private WebElement getBookTicketTab() {
-        return DriverManager.getDriver().findElement(bookTicketTab);
-    }
-
-    private WebElement getMyTicketTab() {
-        return DriverManager.getDriver().findElement(myTicketTab);
-    }
-
-    private WebElement getChangePasswordTab() {
-        return DriverManager.getDriver().findElement(changePasswordTab);
-    }
-
-    private WebElement getLogOutTab() {
-        return DriverManager.getDriver().findElement(logOutTab);
+    private WebElement getTab(String tab) {
+        return DriverManager.getDriver().findElement(By.xpath(String.format(tabXpath, tab)));
     }
 
     public boolean checkMyTicketTabDisplayed() {
-        return DriverManager.getDriver().findElement(myTicketTab).isDisplayed();
+        return getTab("My ticket").isDisplayed();
     }
 
     public boolean checkChangePasswordTabDisplayed() {
-        return DriverManager.getDriver().findElement(changePasswordTab).isDisplayed();
+        return getTab("Change password").isDisplayed();
     }
 
     public boolean checkLogOutTabDisplayed() {
-        return DriverManager.getDriver().findElement(logOutTab).isDisplayed();
+        return getTab("Log out").isDisplayed();
     }
 
-    public void goToRegisterPage() {
-        getRegisterTab().click();
-    }
-
-    public void goToLoginPage() {
-        getLoginTab().click();
-    }
-
-    public void goToBookTicketPage() {
-        getBookTicketTab().click();
-    }
-
-    public void goToMyTicketTab() {
-        getMyTicketTab().click();
-    }
-
-    public void goToChangePassword() {
-        getChangePasswordTab().click();
-    }
-
-    public void logOut() {
-        getLogOutTab().click();
+    public void clickToTab(String tab) {
+        getTab(tab).click();
     }
 }
