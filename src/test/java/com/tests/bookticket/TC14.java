@@ -1,7 +1,7 @@
 package com.tests.bookticket;
 
 import com.railway.constant.Constants;
-import com.railway.pages.BookTicket;
+import com.railway.pages.BookTicketPage;
 import com.railway.pages.BookTicketSuccessfulPage;
 import com.railway.pages.HomePage;
 import com.railway.pages.LoginPage;
@@ -15,7 +15,7 @@ public class TC14 extends TestBase {
     public void userCanBookOneTicketAtATime() {
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
-        BookTicket bookTicketPage = new BookTicket();
+        BookTicketPage bookTicketPage = new BookTicketPage();
         BookTicketSuccessfulPage bookTicketSuccessfulPage = new BookTicketSuccessfulPage();
 
         // Login
