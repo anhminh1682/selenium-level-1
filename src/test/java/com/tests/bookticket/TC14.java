@@ -6,9 +6,13 @@ import com.railway.pages.BookTicketSuccessfulPage;
 import com.railway.pages.HomePage;
 import com.railway.pages.LoginPage;
 import com.railway.utilities.Ticket;
+import com.railway.utilities.enums.ProvincesEnums;
+import com.railway.utilities.enums.SeatTypeEnums;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.time.LocalDateTime;
 
 public class TC14 extends TestBase {
     @Test
@@ -26,11 +30,11 @@ public class TC14 extends TestBase {
         homePage.clickOnTab(Constants.TabMenu.BOOK_TICKET_TAB);
 
         Ticket ticket = new Ticket(
-            Constants.BookTicket.DEPART_DATE_VALUE,
-            Constants.BookTicket.DEPART_FROM_VALUE,
-            Constants.BookTicket.ARRIVE_AT_VALUE,
-            Constants.BookTicket.SEAT_TYPE_VALUE,
-            Constants.BookTicket.TICKET_AMOUNT_VALUE
+            LocalDateTime.now().plusDays(25).format(Constants.MyDateTimeFormat.M_d_yyyy),
+            ProvincesEnums.HUE.getDisplayName(),
+            ProvincesEnums.QUANG_NGAI.getDisplayName(),
+            SeatTypeEnums.SOFT_BED_WITH_AIR_CONDITIONER.getDisplayName(),
+            "1"
         );
 
         bookTicketPage.bookATicket(ticket);

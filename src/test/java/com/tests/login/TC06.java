@@ -23,7 +23,7 @@ public class TC06 extends TestBase {
         Assert.assertTrue(homePage.isLogOutTabDisplayed(), "Check log out tab is displayed");
 
         homePage.clickOnTab(Constants.TabMenu.MY_TICKET_TAB);
-        Assert.assertEquals(myTicketPage.getMyTicketPageTitle(), Constants.PageTitles.MY_TICKET_PAGE_TITLE);
+        Assert.assertEquals(myTicketPage.getPageTitle(), Constants.PageTitles.MY_TICKET_PAGE_TITLE);
 
         myTicketPage.clickOnTab(Constants.TabMenu.CHANGE_PASSWORD_TAB);
         Assert.assertEquals(changePasswordPage.getPageTitle(), Constants.PageTitles.CHANGE_PASSWORD_PAGE_TITLE);
