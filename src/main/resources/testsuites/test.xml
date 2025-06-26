@@ -20,6 +20,7 @@
             <class name="com.tests.forgotpassword.TC13" />
             <class name="com.tests.bookticket.TC14" />
             <class name="com.tests.timetable.TC15" />
+            <class name="com.tests.myticket.TC16" />
         </classes>
     </test>
 </suite>
