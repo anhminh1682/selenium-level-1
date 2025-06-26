@@ -20,7 +20,7 @@ public class MyTicketPage extends BasePage {
                                 ticket.getDepartStation(),
                                 ticket.getArriveStation(),
                                 ticket.getSeatType(),
-                                ticket.getDate(),
+                                ticket.getDepartDate(),
                                 ticket.getTicketAmount()
                         )
                 )
@@ -37,7 +37,7 @@ public class MyTicketPage extends BasePage {
                 ticket.getDepartStation(),
                 ticket.getArriveStation(),
                 ticket.getSeatType(),
-                ticket.getDate(),
+                ticket.getDepartDate(),
                 ticket.getTicketAmount()
         )));
         Helpers.scrollToElement(element);

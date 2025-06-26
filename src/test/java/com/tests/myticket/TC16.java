@@ -9,11 +9,12 @@ import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 
 public class TC16 extends TestBase {
     @Test
-    public void userCanCancelATicket (){
+    public void userCanCancelATicket () throws IOException {
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
         BookTicketPage bookTicketPage = new BookTicketPage();
@@ -27,13 +28,7 @@ public class TC16 extends TestBase {
         // 3. Book a ticket
         homePage.clickOnTab(Constants.TabMenu.BOOK_TICKET_TAB);
 
-        Ticket ticket = new Ticket(
-            LocalDateTime.now().plusDays(25).format(Constants.MyDateTimeFormat.M_d_yyyy),
-            ProvincesEnums.HUE.getDisplayName(),
-            ProvincesEnums.QUANG_NGAI.getDisplayName(),
-            SeatTypeEnums.SOFT_BED_WITH_AIR_CONDITIONER.getDisplayName(),
-            "1"
-        );
+        Ticket ticket = Ticket.getRandomTicket();
 
         bookTicketPage.bookATicket(ticket);
 

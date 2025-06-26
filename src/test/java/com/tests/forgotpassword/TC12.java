@@ -8,7 +8,6 @@ import com.railway.utilities.MailBoxManager;
 import com.railway.utilities.MailSlurp;
 import com.tests.base.TestBase;
 import org.testng.Assert;
-import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import java.util.Objects;

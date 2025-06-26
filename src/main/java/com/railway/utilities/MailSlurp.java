@@ -5,11 +5,10 @@ import com.mailslurp.apis.WaitForControllerApi;
 import com.mailslurp.clients.ApiClient;
 import com.mailslurp.clients.ApiException;
 import com.mailslurp.clients.Configuration;
-import com.mailslurp.models.CreateInboxDto;
 import com.mailslurp.models.Email;
 import com.mailslurp.models.InboxDto;
+import com.railway.constant.Constants;
 
-import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,7 +17,7 @@ public class MailSlurp {
 
     public static void createEmailInbox() throws ApiException {
         ApiClient client = Configuration.getDefaultApiClient();
-        client.setApiKey("03cb16e7a290b8f1606c32e65039b57d0038f6b1d88f48ea6808bce4070baaeb");
+        client.setApiKey(Constants.MailSlurp.API_KEY);
 
         // create an inbox
         InboxControllerApi inboxControllerApi = new InboxControllerApi(client);
@@ -41,7 +40,7 @@ public class MailSlurp {
     }
 
     public static String getResetPasswordLinkInEmail(String body) {
-        Pattern pattern = Pattern.compile("https?://[^\"\\s]*(confirmationCode|resetToken)=[^\"\\s]+");
+        Pattern pattern = Pattern.compile(Constants.MailSlurp.REGEX_GET_LINK_FROM_EMAIL);
         Matcher matcher = pattern.matcher(body);
         if (matcher.find()) {
             return matcher.group(0);

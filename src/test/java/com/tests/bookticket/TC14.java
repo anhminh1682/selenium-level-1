@@ -12,11 +12,12 @@ import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 
 public class TC14 extends TestBase {
     @Test
-    public void userCanBookOneTicketAtATime() {
+    public void userCanBookOneTicketAtATime() throws IOException {
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
         BookTicketPage bookTicketPage = new BookTicketPage();
@@ -29,13 +30,7 @@ public class TC14 extends TestBase {
         // Book ticket
         homePage.clickOnTab(Constants.TabMenu.BOOK_TICKET_TAB);
 
-        Ticket ticket = new Ticket(
-            LocalDateTime.now().plusDays(25).format(Constants.MyDateTimeFormat.M_d_yyyy),
-            ProvincesEnums.HUE.getDisplayName(),
-            ProvincesEnums.QUANG_NGAI.getDisplayName(),
-            SeatTypeEnums.SOFT_BED_WITH_AIR_CONDITIONER.getDisplayName(),
-            "1"
-        );
+        Ticket ticket = Ticket.getRandomTicket();
 
         bookTicketPage.bookATicket(ticket);
 
@@ -58,7 +53,7 @@ public class TC14 extends TestBase {
         );
         Assert.assertEquals(
                 bookTicketSuccessfulPage.getTicketValueInAColumn(Constants.BookTicketSuccess.DEPART_DATE_COLUMN_NAME),
-                ticket.getDate()
+                ticket.getDepartDate()
         );
         Assert.assertEquals(
                 bookTicketSuccessfulPage.getTicketValueInAColumn(Constants.BookTicketSuccess.AMOUNT_COLUMN_NAME),
