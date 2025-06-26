@@ -4,6 +4,7 @@ target/
 !**/src/test/**/target
 
 test-images/
+allure-results/
 
 ### IntelliJ IDEA ###
 .idea/
