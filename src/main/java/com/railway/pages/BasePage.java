@@ -2,6 +2,7 @@ package com.railway.pages;
 
 import com.railway.constant.Constants;
 import com.railway.driver.DriverManager;
+import com.railway.utilities.LogUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -28,8 +29,9 @@ public class BasePage {
         return getTab(Constants.TabMenu.LOG_OUT_TAB).isDisplayed();
     }
 
-    public void clickOnTab(String tab) {
-        getTab(tab).click();
+    public void clickOnTab(String tabName) {
+        LogUtils.info("Click on tab " + tabName);
+        getTab(tabName).click();
     }
 
     public String getPageTitle() {

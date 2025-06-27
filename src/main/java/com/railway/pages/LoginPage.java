@@ -2,6 +2,7 @@ package com.railway.pages;
 
 import com.railway.driver.DriverManager;
 import com.railway.utilities.Helpers;
+import com.railway.utilities.LogUtils;
 import org.openqa.selenium.By;
 
 public class LoginPage extends BasePage {
@@ -12,11 +13,14 @@ public class LoginPage extends BasePage {
     private final By forgotPasswordLink = By.linkText("Forgot Password page");
 
     public void login(String username, String password) {
+        LogUtils.info("Enter username: " + username);
         webElement(userNameTextBox).sendKeys(username);
+        LogUtils.info("Enter password: " + password);
         webElement(passwordTextBox).sendKeys(password);
 
         Helpers.scrollToElement(webElement(loginButton));
 
+        LogUtils.info("click button: " + webElement(loginButton).getText());
         webElement(loginButton).click();
     }
 
@@ -27,6 +31,7 @@ public class LoginPage extends BasePage {
     }
 
     public String getErrorMessage() {
+        LogUtils.info("Error message" + webElement(errorMessage).getText());
         return webElement(errorMessage).getText();
     }
 

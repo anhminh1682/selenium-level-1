@@ -4,6 +4,7 @@ import com.mailslurp.clients.ApiException;
 import com.railway.constant.Constants;
 import com.railway.driver.DriverManager;
 import com.railway.pages.*;
+import com.railway.utilities.LogUtils;
 import com.railway.utilities.MailBoxManager;
 import com.railway.utilities.MailSlurp;
 import com.tests.base.TestBase;
@@ -20,11 +21,19 @@ public class TC12 extends TestBase {
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
         ResetPasswordPage resetPasswordPage = new ResetPasswordPage();
 
+        LogUtils.info("Pre-condition: Create and activate a new account");
+        LogUtils.info("1. Navigate to QA Railway Login page");
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
+
+        LogUtils.info("2. Click on 'Forgot Password page' link");
         loginPage.goToForgotPasswordLink();
 
         // Forgot password
+        LogUtils.info("3. Enter the email address of the created account in Pre-condition");
+        LogUtils.info("4. Click on 'Send Instructions' button");
         forgotPasswordPage.sendInstructions(Constants.Account.VALID_USERNAME);
+
+        LogUtils.info("5. Open mailbox and click on reset password link");
         forgotPasswordPage.goToMailBox();
 
         // Mailbox
@@ -34,6 +43,8 @@ public class TC12 extends TestBase {
         resetPasswordPage.switchToResetPasswordTab();
         Assert.assertEquals(resetPasswordPage.getPageTitle(), Constants.PageTitles.RESET_PASSWORD_PAGE_TITLE);
 
+        LogUtils.info("6. Enter new passwords and remove the Password Reset Token");
+        LogUtils.info("7. Click 'Reset Password' button");
         resetPasswordPage.resetPassword(Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PASSWORD, false);
 
         Assert.assertTrue(resetPasswordPage.isErrorMessageAboveDisplayed(), "Error message element does not exist");
@@ -53,6 +64,7 @@ public class TC12 extends TestBase {
         MailSlurp.createEmailInbox();
         String emailAddress = MailSlurp.getEmailAddressCreated();
 
+        LogUtils.info("Pre-condition: Create and activate a new account");
         homePage.clickOnTab(Constants.TabMenu.REGISTER_TAB);
         registerPage.registerUserAccount(
                 emailAddress,
@@ -63,17 +75,24 @@ public class TC12 extends TestBase {
 
         DriverManager.getDriver().get(Objects.requireNonNull(MailSlurp.getResetPasswordLinkInEmail(MailSlurp.receiveEmail())));
 
+        LogUtils.info("1. Navigate to QA Railway Login page");
+        LogUtils.info("2. Click on 'Forgot Password page' link");
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
         loginPage.goToForgotPasswordLink();
 
         // Forgot password
+        LogUtils.info("3. Enter the email address of the created account in Pre-condition");
+        LogUtils.info("4. Click on 'Send Instructions' button");
         forgotPasswordPage.sendInstructions(emailAddress);
 
+        LogUtils.info("5. Open mailbox and click on reset password link");
         DriverManager.getDriver().get(Objects.requireNonNull(MailSlurp.getResetPasswordLinkInEmail(MailSlurp.receiveEmail())));
 
         // Reset password
         Assert.assertEquals(resetPasswordPage.getPageTitle(), Constants.PageTitles.RESET_PASSWORD_PAGE_TITLE);
 
+        LogUtils.info("6. Enter new passwords and remove the Password Reset Token");
+        LogUtils.info("7. Click 'Reset Password' button");
         resetPasswordPage.resetPassword(Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PASSWORD, false);
 
         Assert.assertTrue(resetPasswordPage.isErrorMessageAboveDisplayed(), "Error message element does not exist");

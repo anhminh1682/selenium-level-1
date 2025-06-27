@@ -35,7 +35,7 @@ public class MailSlurp {
     public static String receiveEmail() throws ApiException {
         WaitForControllerApi waitForControllerApi = new WaitForControllerApi();
 
-        Email email = waitForControllerApi.waitForLatestEmail().inboxId(getInboxDto().getId()).timeout(120000L).unreadOnly(true).execute();
+        Email email = waitForControllerApi.waitForLatestEmail().inboxId(getInboxDto().getId()).timeout(240000L).unreadOnly(true).execute();
         return email.getBody();
     }
 

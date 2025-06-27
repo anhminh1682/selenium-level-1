@@ -2,15 +2,14 @@ package com.tests.myticket;
 
 import com.railway.constant.Constants;
 import com.railway.pages.*;
+import com.railway.utilities.Helpers;
+import com.railway.utilities.LogUtils;
 import com.railway.utilities.Ticket;
-import com.railway.utilities.enums.ProvincesEnums;
-import com.railway.utilities.enums.SeatTypeEnums;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
 
 public class TC16 extends TestBase {
     @Test
@@ -22,17 +21,22 @@ public class TC16 extends TestBase {
         MyTicketPage myTicketPage = new MyTicketPage();
 
         // 2. Login with a valid account
+        LogUtils.info("Pre-condition: Create and activate a new account");
+        LogUtils.info("1. Navigate to QA Railway Website");
+        LogUtils.info("2. Login with a valid account");
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
         loginPage.login(Constants.Account.VALID_USERNAME, Constants.Account.VALID_PASSWORD);
 
         // 3. Book a ticket
+        LogUtils.info("3. Book a ticket");
         homePage.clickOnTab(Constants.TabMenu.BOOK_TICKET_TAB);
 
-        Ticket ticket = Ticket.getRandomTicket();
+        Ticket ticket = Helpers.getRandomTicket();
 
         bookTicketPage.bookATicket(ticket);
 
         // 4. Click on "My ticket" tab
+        LogUtils.info("4. Click on 'My ticket' tab");
         bookTicketSuccessfulPage.clickOnTab(Constants.TabMenu.MY_TICKET_TAB);
 
         // Count the amount of tickets before cancel

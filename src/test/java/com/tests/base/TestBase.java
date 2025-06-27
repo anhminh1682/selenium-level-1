@@ -20,10 +20,13 @@ public class TestBase {
     public void beforeTest() {
         DriverManager.createDriver();
         DriverManager.getDriver().get(Constants.URL.RAILWAY_URL);
+
+//        ExtentReport.createExtentReport();
     }
 
     @AfterMethod
     public void afterTest() {
         DriverManager.quitDriver();
+//        ExtentReport.flushExtent();
     }
 }

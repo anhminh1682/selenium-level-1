@@ -2,6 +2,7 @@ package com.railway.pages;
 
 import com.railway.driver.DriverManager;
 import com.railway.utilities.Helpers;
+import com.railway.utilities.LogUtils;
 import com.railway.utilities.Ticket;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -32,6 +33,7 @@ public class MyTicketPage extends BasePage {
     }
 
     public void cancelATicket(Ticket ticket) {
+        LogUtils.info("5. Click on 'Cancel' button of ticket which user want to cancel.");
         WebElement element = webElement(By.xpath(String.format(
                 rowOfTicketXpath,
                 ticket.getDepartStation(),
@@ -44,6 +46,7 @@ public class MyTicketPage extends BasePage {
         element.click();
 
         // Click pop up
+        LogUtils.info("6. Click on 'OK' button on Confirmation message 'Are you sure?'");
         Helpers.waitAlert(10);
         Alert alert = DriverManager.getDriver().switchTo().alert();
 

@@ -1,6 +1,7 @@
 package com.railway.pages;
 
 import com.railway.utilities.Helpers;
+import com.railway.utilities.LogUtils;
 import org.openqa.selenium.By;
 
 public class RegisterPage extends BasePage {
@@ -14,17 +15,22 @@ public class RegisterPage extends BasePage {
     private final By errorMessageOfPIDField = By.xpath("//label[@class='validation-error' and @for='pid']");
 
     public void registerUserAccount(String email, String password, String confirmPassword, String pid) {
+        LogUtils.info("Enter email: " + email);
         webElement(emailTextBox).clear();
         webElement(emailTextBox).sendKeys(email);
 
+        LogUtils.info("Enter password: " + password);
         webElement(passwordTextBox).clear();
         webElement(passwordTextBox).sendKeys(password);
 
+        LogUtils.info("Enter confirm password: " + confirmPassword);
         webElement(confirmPasswordTextBox).sendKeys(confirmPassword);
 
+        LogUtils.info("Enter PID: " + pid);
         webElement(pidTextBox).clear();
         webElement(pidTextBox).sendKeys(pid);
 
+        LogUtils.info("Click button: " + webElement(registerButton).getText());
         Helpers.scrollToElement(webElement(registerButton));
         webElement(registerButton).click();
     }

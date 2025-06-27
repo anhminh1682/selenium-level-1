@@ -1,6 +1,7 @@
 package com.railway.pages;
 
 import com.railway.utilities.Helpers;
+import com.railway.utilities.LogUtils;
 import org.openqa.selenium.By;
 
 public class ChangePasswordPage extends BasePage {
@@ -11,12 +12,16 @@ public class ChangePasswordPage extends BasePage {
     private final By changePasswordSuccessMessage = By.xpath("//p[@class='message success']");
 
     public void changePassword(String password, String newPassword, String confirmPassword) {
+        LogUtils.info("Password" + password);
         webElement(currentPasswordTextBox).sendKeys(password);
+
+        LogUtils.info("New Password" + newPassword);
         webElement(newPasswordTextBox).sendKeys(newPassword);
+        LogUtils.info("Confirm Password" + confirmPassword);
         webElement(confirmPasswordTextBox).sendKeys(confirmPassword);
 
+        LogUtils.info("Click button " + webElement(changePasswordButton).getText());
         Helpers.scrollToElement(webElement(changePasswordButton));
-
         webElement(changePasswordButton).click();
     }
 

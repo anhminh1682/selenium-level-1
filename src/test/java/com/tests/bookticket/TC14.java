@@ -5,6 +5,8 @@ import com.railway.pages.BookTicketPage;
 import com.railway.pages.BookTicketSuccessfulPage;
 import com.railway.pages.HomePage;
 import com.railway.pages.LoginPage;
+import com.railway.utilities.Helpers;
+import com.railway.utilities.LogUtils;
 import com.railway.utilities.Ticket;
 import com.railway.utilities.enums.ProvincesEnums;
 import com.railway.utilities.enums.SeatTypeEnums;
@@ -23,14 +25,17 @@ public class TC14 extends TestBase {
         BookTicketPage bookTicketPage = new BookTicketPage();
         BookTicketSuccessfulPage bookTicketSuccessfulPage = new BookTicketSuccessfulPage();
 
-        // Login
+        LogUtils.info("Pre-condition: Create and activate a new account");
+        LogUtils.info("1. Navigate to QA Railway Website");
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
+
+        LogUtils.info("2. Login with a valid account");
         loginPage.login(Constants.Account.VALID_USERNAME, Constants.Account.VALID_PASSWORD);
 
-        // Book ticket
+        LogUtils.info("3. Click on 'Book ticket' tab");
         homePage.clickOnTab(Constants.TabMenu.BOOK_TICKET_TAB);
 
-        Ticket ticket = Ticket.getRandomTicket();
+        Ticket ticket = Helpers.getRandomTicket();
 
         bookTicketPage.bookATicket(ticket);
 
