@@ -94,4 +94,9 @@ public class Constants {
     public static class BookTicketMessage {
         public static final String SUCCESSFUL_MESSAGE = "Ticket booked successfully!";
     }
+
+    public static class MailSlurp {
+        public static final String API_KEY = "03cb16e7a290b8f1606c32e65039b57d0038f6b1d88f48ea6808bce4070baaeb";
+        public static final String REGEX_GET_LINK_FROM_EMAIL = "https?://[^\"\\s]*(confirmationCode|resetToken)=[^\"\\s]+";
+    }
 }

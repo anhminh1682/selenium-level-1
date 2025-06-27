@@ -1,0 +1,163 @@
+[
+  {
+    "DepartStation": "Sài Gòn",
+    "ArriveStation": "Phan Thiết",
+    "Date": "7/16/2025",
+    "SeatType": "Soft bed with air conditioner",
+    "Amount": 2
+  },
+  {
+    "DepartStation": "Sài Gòn",
+    "ArriveStation": "Nha Trang",
+    "Date": "7/12/2025",
+    "SeatType": "Soft bed",
+    "Amount": 2
+  },
+  {
+    "DepartStation": "Sài Gòn",
+    "ArriveStation": "Đà Nẵng",
+    "Date": "7/8/2025",
+    "SeatType": "Hard bed",
+    "Amount": 1
+  },
+  {
+    "DepartStation": "Sài Gòn",
+    "ArriveStation": "Huế",
+    "Date": "7/13/2025",
+    "SeatType": "Hard bed",
+    "Amount": 2
+  },
+  {
+    "DepartStation": "Sài Gòn",
+    "ArriveStation": "Quảng Ngãi",
+    "Date": "7/7/2025",
+    "SeatType": "Hard bed",
+    "Amount": 1
+  },
+  {
+    "DepartStation": "Phan Thiết",
+    "ArriveStation": "Sài Gòn",
+    "Date": "7/1/2025",
+    "SeatType": "Soft seat with air conditioner",
+    "Amount": 1
+  },
+  {
+    "DepartStation": "Phan Thiết",
+    "ArriveStation": "Nha Trang",
+    "Date": "7/6/2025",
+    "SeatType": "Hard bed",
+    "Amount": 2
+  },
+  {
+    "DepartStation": "Phan Thiết",
+    "ArriveStation": "Đà Nẵng",
+    "Date": "7/2/2025",
+    "SeatType": "Soft bed with air conditioner",
+    "Amount": 1
+  },
+  {
+    "DepartStation": "Nha Trang",
+    "ArriveStation": "Sài Gòn",
+    "Date": "7/15/2025",
+    "SeatType": "Soft bed with air conditioner",
+    "Amount": 1
+  },
+  {
+    "DepartStation": "Nha Trang",
+    "ArriveStation": "Phan Thiết",
+    "Date": "7/10/2025",
+    "SeatType": "Hard seat",
+    "Amount": 1
+  },
+  {
+    "DepartStation": "Nha Trang",
+    "ArriveStation": "Đà Nẵng",
+    "Date": "7/3/2025",
+    "SeatType": "Hard bed",
+    "Amount": 1
+  },
+  {
+    "DepartStation": "Nha Trang",
+    "ArriveStation": "Huế",
+    "Date": "7/8/2025",
+    "SeatType": "Hard seat",
+    "Amount": 1
+  },
+  {
+    "DepartStation": "Đà Nẵng",
+    "ArriveStation": "Sài Gòn",
+    "Date": "7/5/2025",
+    "SeatType": "Hard seat",
+    "Amount": 1
+  },
+  {
+    "DepartStation": "Đà Nẵng",
+    "ArriveStation": "Nha Trang",
+    "Date": "7/13/2025",
+    "SeatType": "Soft bed with air conditioner",
+    "Amount": 2
+  },
+  {
+    "DepartStation": "Đà Nẵng",
+    "ArriveStation": "Huế",
+    "Date": "7/18/2025",
+    "SeatType": "Soft seat",
+    "Amount": 2
+  },
+  {
+    "DepartStation": "Đà Nẵng",
+    "ArriveStation": "Quảng Ngãi",
+    "Date": "7/12/2025",
+    "SeatType": "Soft seat",
+    "Amount": 2
+  },
+  {
+    "DepartStation": "Huế",
+    "ArriveStation": "Nha Trang",
+    "Date": "7/4/2025",
+    "SeatType": "Hard bed",
+    "Amount": 2
+  },
+  {
+    "DepartStation": "Huế",
+    "ArriveStation": "Đà Nẵng",
+    "Date": "7/3/2025",
+    "SeatType": "Hard bed",
+    "Amount": 2
+  },
+  {
+    "DepartStation": "Huế",
+    "ArriveStation": "Quảng Ngãi",
+    "Date": "7/9/2025",
+    "SeatType": "Soft seat with air conditioner",
+    "Amount": 1
+  },
+  {
+    "DepartStation": "Quảng Ngãi",
+    "ArriveStation": "Sài Gòn",
+    "Date": "7/15/2025",
+    "SeatType": "Soft bed",
+    "Amount": 2
+  },
+  {
+    "DepartStation": "Quảng Ngãi",
+    "ArriveStation": "Nha Trang",
+    "Date": "7/5/2025",
+    "SeatType": "Soft seat",
+    "Amount": 2
+  },
+  {
+    "DepartStation": "Quảng Ngãi",
+    "ArriveStation": "Đà Nẵng",
+    "Date": "7/16/2025",
+    "SeatType": "Soft seat with air conditioner",
+    "Amount": 1
+  },
+  {
+    "DepartStation": "Quảng Ngãi",
+    "ArriveStation": "Huế",
+    "Date": "7/8/2025",
+    "SeatType": "Soft bed with air conditioner",
+    "Amount": 1
+  }
+]
