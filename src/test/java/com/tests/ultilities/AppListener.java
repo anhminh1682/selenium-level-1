@@ -18,7 +18,6 @@ public class AppListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        LogUtils.error(result.getMethod().getMethodName());
         ExtentTestManager.startTest(result.getMethod().getMethodName());
     }
 
@@ -32,7 +31,7 @@ public class AppListener implements ITestListener {
         LogUtils.error(result.getThrowable());
         String imagePath = HelpersListener.TakeScreenshot(result);
 
-        ExtentTestManager.getTest().addScreenCaptureFromBase64String(imagePath);
+        ExtentTestManager.getTest().addScreenCaptureFromBase64String("data:image/png;base64," + imagePath);
         ExtentTestManager.getTest().log(Status.FAIL, result.getThrowable());
     }
 

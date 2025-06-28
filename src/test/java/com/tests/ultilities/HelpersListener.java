@@ -1,6 +1,7 @@
 package com.tests.ultilities;
 
 import com.railway.driver.DriverManager;
+import com.railway.utilities.LogUtils;
 import org.apache.maven.surefire.shared.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -23,24 +24,22 @@ public class HelpersListener {
         String baseDir = System.getProperty("user.dir");
         String failedDir = "test-images" + File.separator + result.getTestClass().getName();
 
-        String relativeImagePath = baseDir + File.separator + failedDir + File.separator + fileName;
-        File destFile = new File(baseDir + File.separator + relativeImagePath);
+        String relativeImagePath = failedDir + File.separator + fileName;
+        String absolutePath = baseDir + File.separator + relativeImagePath;
+        File destFile = new File(absolutePath);
 
         try {
-            boolean dirExist = destFile.getParentFile().mkdirs();
+            destFile.getParentFile().mkdirs();
 
-            if(dirExist) {
-                FileHandler.copy(srcFile, destFile);
+            FileHandler.copy(srcFile, destFile);
+            LogUtils.info("Screenshot saved to: " + absolutePath);
 
-                byte[] fileContent = FileUtils.readFileToByteArray(srcFile);
-                String base64Image = java.util.Base64.getEncoder().encodeToString(fileContent);
+            byte[] fileContent = FileUtils.readFileToByteArray(destFile);
 
-                return base64Image;
-            }
+            return java.util.Base64.getEncoder().encodeToString(fileContent);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        return relativeImagePath;
+        return null;
     }
 }

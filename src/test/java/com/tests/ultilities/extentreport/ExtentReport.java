@@ -2,6 +2,9 @@ package com.tests.ultilities.extentreport;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.railway.constant.Constants;
+
+import java.time.LocalDateTime;
 
 public class ExtentReport {
     private static ExtentReports extent;
@@ -9,7 +12,7 @@ public class ExtentReport {
 
     public static void createExtentReport() {
         extent = new ExtentReports();
-        spark = new ExtentSparkReporter("target/ExtentReport.html");
+        spark = new ExtentSparkReporter("logs/reports/ExtentReport.html" + LocalDateTime.now().format(Constants.MyDateTimeFormat.M_d_yyyy_HH_mm_ss));
         extent.attachReporter(spark);
     }
 
