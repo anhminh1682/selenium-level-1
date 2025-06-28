@@ -20,7 +20,7 @@ public class TC06 extends TestBase {
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
 
         LogUtils.info("3. Login with valid account");
-        loginPage.login(Constants.Account.VALID_USERNAME, Constants.Account.VALID_PASSWORD);
+        loginPage.loginSuccess();
 
         Assert.assertTrue(homePage.isMyTicketTabDisplayed(), "Check my ticket tab is displayed");
         Assert.assertTrue(homePage.isChangePasswordTabDisplayed(), "Check change password tab is displayed");

@@ -35,12 +35,17 @@ public class Helpers {
     }
 
     public static void waitForDynamicElement(int duration, String elementXpath, List<WebElement> oldList) {
-        WebDriverWait wait = (WebDriverWait) new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(duration)).ignoring(Exception.class);
+        WebDriverWait wait = (WebDriverWait) new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(duration));
 
-        wait.until(d -> {
-            List<WebElement> newList = DriverManager.getDriver().findElements(By.xpath(elementXpath));
-            return !newList.equals(oldList);
-        });
+        try {
+            wait.until(d -> {
+                List<WebElement> newList = DriverManager.getDriver().findElements(By.xpath(elementXpath));
+                return !newList.equals(oldList);
+            });
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public static void waitAlert(int duration) {

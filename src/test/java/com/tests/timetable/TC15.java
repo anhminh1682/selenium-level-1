@@ -25,7 +25,7 @@ public class TC15 extends TestBase {
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
 
         LogUtils.info("2. Login with a valid account");
-        loginPage.login(Constants.Account.VALID_USERNAME, Constants.Account.VALID_PASSWORD);
+        loginPage.loginSuccess();
 
         // 3. Click on "Timetable" tab
         LogUtils.info("3. Click on 'Timetable' tab");

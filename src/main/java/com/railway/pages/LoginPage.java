@@ -3,6 +3,7 @@ package com.railway.pages;
 import com.railway.driver.DriverManager;
 import com.railway.utilities.Helpers;
 import com.railway.utilities.LogUtils;
+import com.railway.utilities.enums.Account;
 import org.openqa.selenium.By;
 
 public class LoginPage extends BasePage {
@@ -12,11 +13,11 @@ public class LoginPage extends BasePage {
     private final By errorMessage = By.xpath("//p[@class='message error LoginForm']");
     private final By forgotPasswordLink = By.linkText("Forgot Password page");
 
-    public void login(String username, String password) {
-        LogUtils.info("Enter username: " + username);
-        webElement(userNameTextBox).sendKeys(username);
-        LogUtils.info("Enter password: " + password);
-        webElement(passwordTextBox).sendKeys(password);
+    public void login(Account account) {
+        LogUtils.info("Enter username: " + account.getUsername());
+        webElement(userNameTextBox).sendKeys(account.getUsername());
+        LogUtils.info("Enter password: " + account.getPassword());
+        webElement(passwordTextBox).sendKeys(account.getPassword());
 
         Helpers.scrollToElement(webElement(loginButton));
 
@@ -24,9 +25,13 @@ public class LoginPage extends BasePage {
         webElement(loginButton).click();
     }
 
-    public void loginMultipleTimes(int num, String username, String password) {
+    public void loginSuccess() {
+        login(Account.VALID_ACCOUNT_LOGIN);
+    }
+
+    public void loginMultipleTimes(int num, Account account) {
         for (int i = 0; i < num; i++) {
-            this.login(username, password);
+            this.login(account);
         }
     }
 

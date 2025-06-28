@@ -2,6 +2,8 @@ package com.railway.pages;
 
 import com.railway.utilities.Helpers;
 import com.railway.utilities.LogUtils;
+import com.railway.utilities.MailSlurp;
+import com.railway.utilities.enums.Account;
 import org.openqa.selenium.By;
 
 public class RegisterPage extends BasePage {
@@ -14,25 +16,41 @@ public class RegisterPage extends BasePage {
     private final By errorMessageOfPasswordField = By.xpath("//label[@class='validation-error' and @for='password']");
     private final By errorMessageOfPIDField = By.xpath("//label[@class='validation-error' and @for='pid']");
 
-    public void registerUserAccount(String email, String password, String confirmPassword, String pid) {
-        LogUtils.info("Enter email: " + email);
+    public void registerUserAccount(Account account) {
+        LogUtils.info("Enter email: " + account.getUsername());
         webElement(emailTextBox).clear();
-        webElement(emailTextBox).sendKeys(email);
+        webElement(emailTextBox).sendKeys(account.getUsername());
 
-        LogUtils.info("Enter password: " + password);
+        LogUtils.info("Enter password: " + account.getPassword());
         webElement(passwordTextBox).clear();
-        webElement(passwordTextBox).sendKeys(password);
+        webElement(passwordTextBox).sendKeys(account.getPassword());
 
-        LogUtils.info("Enter confirm password: " + confirmPassword);
-        webElement(confirmPasswordTextBox).sendKeys(confirmPassword);
+        LogUtils.info("Enter confirm password: " + account.getConfirmPassword());
+        webElement(confirmPasswordTextBox).sendKeys(account.getConfirmPassword());
 
-        LogUtils.info("Enter PID: " + pid);
+        LogUtils.info("Enter PID: " + account.getPID());
         webElement(pidTextBox).clear();
-        webElement(pidTextBox).sendKeys(pid);
+        webElement(pidTextBox).sendKeys(account.getPID());
 
         LogUtils.info("Click button: " + webElement(registerButton).getText());
         Helpers.scrollToElement(webElement(registerButton));
         webElement(registerButton).click();
+    }
+
+    public void registerWithValidInfo() {
+        registerUserAccount(Account.VALID_ACCOUNT_REGISTER);
+    }
+
+    public String registerWithMailSlurp() {
+        try {
+            MailSlurp.createEmailInbox();
+            Account account = Account.VALID_ACCOUNT_REGISTER_MAIL_SLURP;
+            registerUserAccount(account);
+            return account.getUsername();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 
     public String getErrorRegisterMessage() {

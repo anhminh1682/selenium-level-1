@@ -23,7 +23,7 @@ public class TC07 extends TestBase {
 
         LogUtils.info("3. Enter valid information into all fields");
         LogUtils.info("4. Click on 'Register' button");
-        registerPage.registerUserAccount(Constants.Account.INACTIVE_USERNAME_REGISTER, Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PID);
+        registerPage.registerWithValidInfo();
 
         Assert.assertEquals(thankRegisterPage.getRegisterValidInforHeading(), Constants.RegisterMessage.REGISTER_VALID_INFOR_HEADING);
     }

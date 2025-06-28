@@ -2,6 +2,7 @@ package com.railway.pages;
 
 import com.railway.constant.Constants;
 import com.railway.driver.DriverManager;
+import com.railway.utilities.Helpers;
 import com.railway.utilities.LogUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -9,8 +10,8 @@ import org.openqa.selenium.WebElement;
 public class BasePage {
     private final String tabXpath = "//a//span[text()='%s']";
 
-    private WebElement getTab(String tab) {
-        return DriverManager.getDriver().findElement(By.xpath(String.format(tabXpath, tab)));
+    private WebElement getTab(String tabName) {
+        return DriverManager.getDriver().findElement(By.xpath(String.format(tabXpath, tabName)));
     }
 
     protected static WebElement webElement(By element) {
@@ -30,6 +31,8 @@ public class BasePage {
     }
 
     public void clickOnTab(String tabName) {
+        Helpers.waitForElement(3, By.xpath(String.format(tabXpath, tabName)));
+
         LogUtils.info("Click on tab " + tabName);
         getTab(tabName).click();
     }

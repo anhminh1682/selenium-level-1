@@ -3,6 +3,7 @@ package com.railway.pages;
 import com.railway.constant.Constants;
 import com.railway.driver.DriverManager;
 import com.railway.utilities.Helpers;
+import com.railway.utilities.enums.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
@@ -25,11 +26,11 @@ public class ResetPasswordPage extends BasePage {
         }
     }
 
-    public void resetPassword(String newPassword, String confirmPassword, boolean isResetToken) {
-        webElement(newPasswordTextBox).sendKeys(newPassword);
-        webElement(confirmPasswordTextBox).sendKeys(confirmPassword);
+    public void resetPassword(Account account) {
+        webElement(newPasswordTextBox).sendKeys(account.getPassword());
+        webElement(confirmPasswordTextBox).sendKeys(account.getConfirmPassword());
 
-        if(!isResetToken) {
+        if(!account.getToken()) {
             webElement(resetTokenTextBox).sendKeys(Keys.CONTROL + "a");
             webElement(resetTokenTextBox).sendKeys(Keys.DELETE);
         }

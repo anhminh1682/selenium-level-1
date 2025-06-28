@@ -7,6 +7,7 @@ import com.railway.pages.LoginPage;
 import com.railway.pages.ResetPasswordPage;
 import com.railway.utilities.LogUtils;
 import com.railway.utilities.MailBoxManager;
+import com.railway.utilities.enums.Account;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -28,7 +29,7 @@ public class TC13 extends TestBase {
         // Forgot password
         LogUtils.info("3. Enter the email address of the created account in Pre-condition");
         LogUtils.info("4. Click on 'Send Instructions' button");
-        forgotPasswordPage.sendInstructions(Constants.Account.VALID_USERNAME);
+        forgotPasswordPage.sendInstructions(Account.VALID_ACCOUNT_LOGIN.getUsername());
 
         LogUtils.info("5. Open mailbox and click on reset password link");
         forgotPasswordPage.goToMailBox();
@@ -42,7 +43,7 @@ public class TC13 extends TestBase {
 
         LogUtils.info("6. Enter different values for password fields");
         LogUtils.info("7. Click 'Reset Password' button");
-        resetPasswordPage.resetPassword(Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PASSWORD + "1", true);
+        resetPasswordPage.resetPassword(Account.INVALID_CONFIRM_PASSWORD_RESET_PASSWORD);
 
         Assert.assertTrue(resetPasswordPage.isErrorMessageAboveDisplayed(), "Error message element does not exist");
         Assert.assertEquals(resetPasswordPage.getErrorMessageAbove(), Constants.ResetPasswordMessage.ERROR_MESSAGE_COULD_NOT_RESET_PASSWORD);

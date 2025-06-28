@@ -4581,3 +4581,413 @@ Session ID: 7b39b773ed7e372d44b5287eb87946c8
 [INFO ] 28-06-2025 09:38:57 [TestNG-test-Railway-4] LogUtils - Click on tab My ticket
 [INFO ] 28-06-2025 09:38:58 [TestNG-test-Railway-4] LogUtils - 5. Click on 'Cancel' button of ticket which user want to cancel.
 [INFO ] 28-06-2025 09:38:58 [TestNG-test-Railway-4] LogUtils - 6. Click on 'OK' button on Confirmation message 'Are you sure?'
+[INFO ] 28-06-2025 10:15:18 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 28-06-2025 10:15:18 [main] LogUtils - 2. Click on 'Login' tab
+[INFO ] 28-06-2025 10:15:18 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 10:15:18 [main] LogUtils - 3. Enter valid Email and Password:
+[INFO ] 28-06-2025 10:15:18 [main] LogUtils - 4. Click on 'Login' button
+[INFO ] 28-06-2025 10:15:19 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 28-06-2025 10:15:19 [main] LogUtils - Enter password: minh12345
+[INFO ] 28-06-2025 10:15:19 [main] LogUtils - click button: 
+[ERROR] 28-06-2025 10:15:20 [main] LogUtils - java.lang.AssertionError: expected [Welcome vffaebxr@sharklasers.com] but found []
+[INFO ] 28-06-2025 10:15:20 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.login.TC01\userCanLogIntoRailwayWithValidUsernameAndPassword_28062025_101520.png
+[INFO ] 28-06-2025 10:24:25 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 28-06-2025 10:24:25 [main] LogUtils - 2. Click on 'Login' tab
+[INFO ] 28-06-2025 10:24:25 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 10:24:26 [main] LogUtils - 3. Enter valid Email and invalid Password
+[INFO ] 28-06-2025 10:24:26 [main] LogUtils - 4. Click on 'Login' button
+[INFO ] 28-06-2025 10:24:26 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 28-06-2025 10:24:26 [main] LogUtils - Enter password: abc1234
+[INFO ] 28-06-2025 10:24:26 [main] LogUtils - click button: 
+[INFO ] 28-06-2025 10:24:27 [main] LogUtils - Error messageInvalid username or password. Please try again.
+[ERROR] 28-06-2025 10:24:27 [main] LogUtils - java.lang.AssertionError: expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]
+[INFO ] 28-06-2025 10:24:27 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.login.TC03\UserCannotLogIntoRailwayWithInvalidPassword_28062025_102427.png
+[INFO ] 28-06-2025 10:25:01 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 28-06-2025 10:25:01 [main] LogUtils - 2. Click on 'Login' tab
+[INFO ] 28-06-2025 10:25:01 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 10:25:01 [main] LogUtils - 3. Enter valid information into 'Username' textbox except 'Password' textbox.
+[INFO ] 28-06-2025 10:25:01 [main] LogUtils - 4. Click on 'Login' button
+[INFO ] 28-06-2025 10:25:01 [main] LogUtils - 5. Repeat step 3 three more times.
+[INFO ] 28-06-2025 10:25:01 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 28-06-2025 10:25:01 [main] LogUtils - Enter password: abc1234
+[INFO ] 28-06-2025 10:25:02 [main] LogUtils - click button: 
+[INFO ] 28-06-2025 10:25:02 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 28-06-2025 10:25:02 [main] LogUtils - Enter password: abc1234
+[INFO ] 28-06-2025 10:25:03 [main] LogUtils - click button: 
+[INFO ] 28-06-2025 10:25:03 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 28-06-2025 10:25:03 [main] LogUtils - Enter password: abc1234
+[INFO ] 28-06-2025 10:25:04 [main] LogUtils - click button: 
+[INFO ] 28-06-2025 10:25:04 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 28-06-2025 10:25:05 [main] LogUtils - Enter password: abc1234
+[INFO ] 28-06-2025 10:25:05 [main] LogUtils - click button: 
+[INFO ] 28-06-2025 10:25:06 [main] LogUtils - Error messageInvalid username or password. Please try again.
+[ERROR] 28-06-2025 10:25:06 [main] LogUtils - java.lang.AssertionError: expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
+[INFO ] 28-06-2025 10:25:06 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.login.TC05\systemShowsMessageWhenUserEntersWrongPasswordSeveralTimes_28062025_102506.png
+[INFO ] 28-06-2025 10:25:24 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 28-06-2025 10:25:24 [main] LogUtils - 2. Click on 'Book ticket' tab
+[INFO ] 28-06-2025 10:25:24 [main] LogUtils - Click on tab Book ticket
+[INFO ] 28-06-2025 10:25:39 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 28-06-2025 10:25:39 [main] LogUtils - 2. Click on 'Login' tab
+[INFO ] 28-06-2025 10:25:39 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 10:25:40 [main] LogUtils - 3. Login with valid account
+[INFO ] 28-06-2025 10:25:40 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 28-06-2025 10:25:40 [main] LogUtils - Enter password: minh12345
+[INFO ] 28-06-2025 10:25:40 [main] LogUtils - click button: 
+[INFO ] 28-06-2025 10:25:42 [main] LogUtils - Click on tab My ticket
+[INFO ] 28-06-2025 10:25:42 [main] LogUtils - Click on tab Change password
+[INFO ] 28-06-2025 11:01:36 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:01:36 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 11:01:36 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:01:37 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 11:01:37 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 28-06-2025 11:01:37 [main] LogUtils - 4. Click on 'Send Instructions' button
+[INFO ] 28-06-2025 11:01:40 [main] LogUtils - 5. Open mailbox and click on reset password link
+[INFO ] 28-06-2025 11:01:58 [main] LogUtils - 6. Enter new passwords and remove the Password Reset Token
+[INFO ] 28-06-2025 11:01:58 [main] LogUtils - 7. Click 'Reset Password' button
+[ERROR] 28-06-2025 11:01:59 [main] LogUtils - java.lang.AssertionError: Error message element does not exist expected [true] but found [false]
+[INFO ] 28-06-2025 11:01:59 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC12\errorsDisplayWhenPasswordResetTokenIsBlankUseUI_28062025_110159.png
+[INFO ] 28-06-2025 11:02:43 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:02:43 [main] LogUtils - Click on tab Register
+[ERROR] 28-06-2025 11:02:44 [main] LogUtils - java.lang.ExceptionInInitializerError
+[INFO ] 28-06-2025 11:02:44 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC12\errorsDisplayWhenPasswordResetTokenIsBlankUseMailAPI_28062025_110244.png
+[INFO ] 28-06-2025 11:05:15 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:05:15 [main] LogUtils - Click on tab Register
+[INFO ] 28-06-2025 11:05:18 [main] LogUtils - Enter email: lhWVY4xUyk9p@mailslurp.biz
+[INFO ] 28-06-2025 11:05:18 [main] LogUtils - Enter password: minh12345
+[INFO ] 28-06-2025 11:05:18 [main] LogUtils - Enter confirm password: minh12345
+[INFO ] 28-06-2025 11:05:18 [main] LogUtils - Enter PID: 27183714777
+[INFO ] 28-06-2025 11:05:18 [main] LogUtils - Click button: 
+[INFO ] 28-06-2025 11:05:26 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 11:05:26 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 11:05:26 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:05:29 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 28-06-2025 11:05:29 [main] LogUtils - 4. Click on 'Send Instructions' button
+[INFO ] 28-06-2025 11:05:31 [main] LogUtils - 5. Open mailbox and click on reset password link
+[INFO ] 28-06-2025 11:05:36 [main] LogUtils - 6. Enter new passwords and remove the Password Reset Token
+[INFO ] 28-06-2025 11:05:36 [main] LogUtils - 7. Click 'Reset Password' button
+[ERROR] 28-06-2025 11:05:37 [main] LogUtils - java.lang.AssertionError: Error message element does not exist expected [true] but found [false]
+[INFO ] 28-06-2025 11:05:37 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC12\errorsDisplayWhenPasswordResetTokenIsBlankUseMailAPI_28062025_110537.png
+[INFO ] 28-06-2025 11:16:59 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:16:59 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 11:16:59 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 11:16:59 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:17:00 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 28-06-2025 11:17:00 [main] LogUtils - 4. Click on 'Send Instructions' button
+[ERROR] 28-06-2025 11:17:00 [main] LogUtils - java.lang.ExceptionInInitializerError
+[INFO ] 28-06-2025 11:17:00 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC13\errorsDisplayIfPasswordAndConfirmPasswordDontMatchWhenResettingPassword_28062025_111700.png
+[INFO ] 28-06-2025 11:17:35 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:17:35 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 11:17:35 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 11:17:35 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:17:36 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 28-06-2025 11:17:36 [main] LogUtils - 4. Click on 'Send Instructions' button
+[ERROR] 28-06-2025 11:17:36 [main] LogUtils - java.lang.ExceptionInInitializerError
+[INFO ] 28-06-2025 11:17:37 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC13\errorsDisplayIfPasswordAndConfirmPasswordDontMatchWhenResettingPassword_28062025_111737.png
+[INFO ] 28-06-2025 11:18:39 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:18:39 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 11:18:39 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 11:18:39 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:18:40 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 28-06-2025 11:18:40 [main] LogUtils - 4. Click on 'Send Instructions' button
+[ERROR] 28-06-2025 11:18:40 [main] LogUtils - java.lang.ExceptionInInitializerError
+[INFO ] 28-06-2025 11:18:40 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC13\errorsDisplayIfPasswordAndConfirmPasswordDontMatchWhenResettingPassword_28062025_111840.png
+[INFO ] 28-06-2025 11:19:36 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:19:36 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 11:19:36 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 11:19:36 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:19:37 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 28-06-2025 11:19:37 [main] LogUtils - 4. Click on 'Send Instructions' button
+[ERROR] 28-06-2025 11:19:37 [main] LogUtils - java.lang.ExceptionInInitializerError
+[INFO ] 28-06-2025 11:20:37 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:20:37 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 11:20:37 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 11:20:37 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:20:38 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 28-06-2025 11:20:38 [main] LogUtils - 4. Click on 'Send Instructions' button
+[ERROR] 28-06-2025 11:20:38 [main] LogUtils - java.lang.ExceptionInInitializerError
+[INFO ] 28-06-2025 11:20:38 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC13\errorsDisplayIfPasswordAndConfirmPasswordDontMatchWhenResettingPassword_28062025_112038.png
+[INFO ] 28-06-2025 11:20:55 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:20:55 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 11:20:55 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 11:20:55 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:20:56 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 28-06-2025 11:20:56 [main] LogUtils - 4. Click on 'Send Instructions' button
+[ERROR] 28-06-2025 11:21:29 [main] LogUtils - java.lang.NoClassDefFoundError: Could not initialize class com.railway.utilities.enums.Account
+[INFO ] 28-06-2025 11:21:49 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:21:49 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 11:21:49 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 11:21:49 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:21:51 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 28-06-2025 11:21:51 [main] LogUtils - 4. Click on 'Send Instructions' button
+[INFO ] 28-06-2025 11:22:34 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:22:34 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 11:22:34 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 11:22:34 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:22:36 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 28-06-2025 11:22:36 [main] LogUtils - 4. Click on 'Send Instructions' button
+[INFO ] 28-06-2025 11:24:57 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:24:57 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 11:24:57 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 11:24:57 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:24:58 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 28-06-2025 11:24:58 [main] LogUtils - 4. Click on 'Send Instructions' button
+[ERROR] 28-06-2025 11:24:58 [main] LogUtils - java.lang.ExceptionInInitializerError
+[INFO ] 28-06-2025 11:24:58 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC13\errorsDisplayIfPasswordAndConfirmPasswordDontMatchWhenResettingPassword_28062025_112458.png
+[INFO ] 28-06-2025 11:28:42 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:28:42 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 11:28:42 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 11:28:42 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:28:43 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 28-06-2025 11:28:43 [main] LogUtils - 4. Click on 'Send Instructions' button
+[INFO ] 28-06-2025 11:28:45 [main] LogUtils - 5. Open mailbox and click on reset password link
+[ERROR] 28-06-2025 11:29:01 [main] LogUtils - org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=138.0.7204.49)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b251d87dc0c09731cbb2d584361e5360, findElement {value=//tr[contains(@class, 'email_unread')]//td[contains(text(),'thanhletraining03@gmail.com')][1], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.49, chrome: {chromedriverVersion: 138.0.7204.49 (d2b48fd5f781..., userDataDir: C:\Users\ANHMIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54440}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54440/devtoo..., se:cdpVersion: 138.0.7204.49, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b251d87dc0c09731cbb2d584361e5360
+[ERROR] 28-06-2025 11:29:01 [main] LogUtils - org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b251d87dc0c09731cbb2d584361e5360, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.49, chrome: {chromedriverVersion: 138.0.7204.49 (d2b48fd5f781..., userDataDir: C:\Users\ANHMIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54440}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54440/devtoo..., se:cdpVersion: 138.0.7204.49, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b251d87dc0c09731cbb2d584361e5360
+[INFO ] 28-06-2025 11:29:48 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:29:48 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 11:29:48 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 11:29:48 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:29:49 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 28-06-2025 11:29:49 [main] LogUtils - 4. Click on 'Send Instructions' button
+[ERROR] 28-06-2025 11:29:49 [main] LogUtils - java.lang.ExceptionInInitializerError
+[INFO ] 28-06-2025 11:29:49 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC13\errorsDisplayIfPasswordAndConfirmPasswordDontMatchWhenResettingPassword_28062025_112949.png
+[INFO ] 28-06-2025 11:30:21 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:30:21 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 11:30:21 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 11:30:21 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:30:22 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 28-06-2025 11:30:22 [main] LogUtils - 4. Click on 'Send Instructions' button
+[ERROR] 28-06-2025 11:30:22 [main] LogUtils - java.lang.ExceptionInInitializerError
+[INFO ] 28-06-2025 11:30:44 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:30:44 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 11:30:44 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 11:30:44 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:30:45 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 28-06-2025 11:30:45 [main] LogUtils - 4. Click on 'Send Instructions' button
+[ERROR] 28-06-2025 11:30:46 [main] LogUtils - java.lang.ExceptionInInitializerError
+[INFO ] 28-06-2025 11:31:23 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:31:23 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 11:31:23 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 11:31:23 [main] LogUtils - Click on tab Login
+[ERROR] 28-06-2025 11:31:24 [main] LogUtils - java.lang.ExceptionInInitializerError
+[INFO ] 28-06-2025 11:31:25 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC13\errorsDisplayIfPasswordAndConfirmPasswordDontMatchWhenResettingPassword_28062025_113125.png
+[INFO ] 28-06-2025 11:31:40 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:31:40 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 11:31:40 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 11:31:40 [main] LogUtils - Click on tab Login
+[ERROR] 28-06-2025 11:31:41 [main] LogUtils - java.lang.ExceptionInInitializerError
+[INFO ] 28-06-2025 11:31:41 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC13\errorsDisplayIfPasswordAndConfirmPasswordDontMatchWhenResettingPassword_28062025_113141.png
+[INFO ] 28-06-2025 11:32:13 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:32:13 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 11:32:13 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 11:32:13 [main] LogUtils - Click on tab Login
+[ERROR] 28-06-2025 11:32:16 [main] LogUtils - java.lang.ExceptionInInitializerError
+[ERROR] 28-06-2025 11:34:46 [main] LogUtils - java.lang.ExceptionInInitializerError
+[INFO ] 28-06-2025 11:34:46 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC13\errorsDisplayIfPasswordAndConfirmPasswordDontMatchWhenResettingPassword_28062025_113446.png
+[ERROR] 28-06-2025 11:35:39 [main] LogUtils - java.lang.ExceptionInInitializerError
+[INFO ] 28-06-2025 11:35:39 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC13\errorsDisplayIfPasswordAndConfirmPasswordDontMatchWhenResettingPassword_28062025_113539.png
+[INFO ] 28-06-2025 11:41:08 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:41:08 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 11:41:08 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 11:41:08 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:41:09 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 28-06-2025 11:41:09 [main] LogUtils - 4. Click on 'Send Instructions' button
+[INFO ] 28-06-2025 11:41:11 [main] LogUtils - 5. Open mailbox and click on reset password link
+[INFO ] 28-06-2025 11:41:22 [main] LogUtils - 6. Enter different values for password fields
+[INFO ] 28-06-2025 11:41:22 [main] LogUtils - 7. Click 'Reset Password' button
+[INFO ] 28-06-2025 11:41:47 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:41:47 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 11:41:47 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 11:41:47 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:41:48 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 28-06-2025 11:41:48 [main] LogUtils - 4. Click on 'Send Instructions' button
+[INFO ] 28-06-2025 11:41:50 [main] LogUtils - 5. Open mailbox and click on reset password link
+[INFO ] 28-06-2025 11:41:59 [main] LogUtils - 6. Enter different values for password fields
+[INFO ] 28-06-2025 11:41:59 [main] LogUtils - 7. Click 'Reset Password' button
+[INFO ] 28-06-2025 11:42:59 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:42:59 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 28-06-2025 11:42:59 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:43:00 [main] LogUtils - 2. Login with a valid account
+[INFO ] 28-06-2025 11:43:00 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 28-06-2025 11:43:00 [main] LogUtils - Enter password: minh12345
+[INFO ] 28-06-2025 11:43:00 [main] LogUtils - click button: 
+[INFO ] 28-06-2025 11:43:01 [main] LogUtils - 3. Click on 'Book ticket' tab
+[INFO ] 28-06-2025 11:43:01 [main] LogUtils - Click on tab Book ticket
+[ERROR] 28-06-2025 11:43:02 [main] LogUtils - org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+  (Session info: chrome=138.0.7204.49)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e5f3a2f93501453bba5c52e86768c21e, clickElement {id=f.DFB34D11E8AE825A5D93F515A6B013EA.d.0AD32D561788A27E118FF55C595FB46D.e.203}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.49, chrome: {chromedriverVersion: 138.0.7204.49 (d2b48fd5f781..., userDataDir: C:\Users\ANHMIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55421}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55421/devtoo..., se:cdpVersion: 138.0.7204.49, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (e5f3a2f93501453bba5c52e86768c21e)] -> xpath: //a//span[text()='Book ticket']]
+Session ID: e5f3a2f93501453bba5c52e86768c21e
+[INFO ] 28-06-2025 11:43:02 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.bookticket.TC14\userCanBookOneTicketAtATime_28062025_114302.png
+[INFO ] 28-06-2025 11:44:23 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:44:23 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 28-06-2025 11:44:23 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:44:24 [main] LogUtils - 2. Login with a valid account
+[INFO ] 28-06-2025 11:44:24 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 28-06-2025 11:44:24 [main] LogUtils - Enter password: minh12345
+[INFO ] 28-06-2025 11:44:24 [main] LogUtils - click button: 
+[INFO ] 28-06-2025 11:44:25 [main] LogUtils - 3. Click on 'Book ticket' tab
+[INFO ] 28-06-2025 11:44:25 [main] LogUtils - Click on tab Book ticket
+[INFO ] 28-06-2025 11:44:26 [main] LogUtils - Select a 'Depart date' from the list
+[INFO ] 28-06-2025 11:44:26 [main] LogUtils - Select Nha Trang for 'Depart from' and Đà Nẵng for 'Arrive at'.
+[INFO ] 28-06-2025 11:44:27 [main] LogUtils - Select Hard bed for 'Seat type'
+[INFO ] 28-06-2025 11:44:27 [main] LogUtils - Select 1 for 'Ticket amount'
+[INFO ] 28-06-2025 11:44:27 [main] LogUtils - Click on 'Book ticket' button
+[INFO ] 28-06-2025 11:46:23 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:46:23 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 28-06-2025 11:46:23 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:46:24 [main] LogUtils - 2. Login with a valid account
+[INFO ] 28-06-2025 11:46:24 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 28-06-2025 11:46:24 [main] LogUtils - Enter password: minh12345
+[INFO ] 28-06-2025 11:46:24 [main] LogUtils - click button: 
+[INFO ] 28-06-2025 11:46:25 [main] LogUtils - 3. Click on 'Book ticket' tab
+[INFO ] 28-06-2025 11:46:25 [main] LogUtils - Click on tab Book ticket
+[INFO ] 28-06-2025 11:46:26 [main] LogUtils - Select a 'Depart date' from the list
+[INFO ] 28-06-2025 11:46:26 [main] LogUtils - Select Đà Nẵng for 'Depart from' and Nha Trang for 'Arrive at'.
+[INFO ] 28-06-2025 11:46:26 [main] LogUtils - Select Soft bed with air conditioner for 'Seat type'
+[INFO ] 28-06-2025 11:46:27 [main] LogUtils - Select 2 for 'Ticket amount'
+[INFO ] 28-06-2025 11:46:27 [main] LogUtils - Click on 'Book ticket' button
+[ERROR] 28-06-2025 11:46:27 [main] LogUtils - java.lang.AssertionError: expected [Safe Railway - Success] but found [Safe Railway - Book Ticket]
+[INFO ] 28-06-2025 11:46:28 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.bookticket.TC14\userCanBookOneTicketAtATime_28062025_114628.png
+[INFO ] 28-06-2025 11:47:10 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:47:10 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 28-06-2025 11:47:10 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:47:11 [main] LogUtils - 2. Login with a valid account
+[INFO ] 28-06-2025 11:47:11 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 28-06-2025 11:47:11 [main] LogUtils - Enter password: minh12345
+[INFO ] 28-06-2025 11:47:11 [main] LogUtils - click button: 
+[INFO ] 28-06-2025 11:47:12 [main] LogUtils - 3. Click on 'Book ticket' tab
+[INFO ] 28-06-2025 11:47:12 [main] LogUtils - Click on tab Book ticket
+[INFO ] 28-06-2025 11:47:13 [main] LogUtils - Select a 'Depart date' from the list
+[INFO ] 28-06-2025 11:47:13 [main] LogUtils - Select Sài Gòn for 'Depart from' and Huế for 'Arrive at'.
+[ERROR] 28-06-2025 11:47:23 [main] LogUtils - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.railway.utilities.Helpers$$Lambda$818/0x00000008404c8440@7f608e21 (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.49, chrome: {chromedriverVersion: 138.0.7204.49 (d2b48fd5f781..., userDataDir: C:\Users\ANHMIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55699}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55699/devtoo..., se:cdpVersion: 138.0.7204.49, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 784b92b34b193677b7eff04f95739851
+[INFO ] 28-06-2025 11:47:23 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.bookticket.TC14\userCanBookOneTicketAtATime_28062025_114723.png
+[INFO ] 28-06-2025 11:52:53 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:52:53 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 28-06-2025 11:52:53 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:52:54 [main] LogUtils - 2. Login with a valid account
+[INFO ] 28-06-2025 11:52:54 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 28-06-2025 11:52:54 [main] LogUtils - Enter password: minh12345
+[INFO ] 28-06-2025 11:52:54 [main] LogUtils - click button: 
+[INFO ] 28-06-2025 11:52:55 [main] LogUtils - 3. Click on 'Book ticket' tab
+[INFO ] 28-06-2025 11:52:55 [main] LogUtils - Click on tab Book ticket
+[INFO ] 28-06-2025 11:52:56 [main] LogUtils - Select a 'Depart date' from the list
+[INFO ] 28-06-2025 11:52:56 [main] LogUtils - Select Đà Nẵng for 'Depart from' and Sài Gòn for 'Arrive at'.
+[INFO ] 28-06-2025 11:52:57 [main] LogUtils - Select Hard seat for 'Seat type'
+[INFO ] 28-06-2025 11:52:57 [main] LogUtils - Select 1 for 'Ticket amount'
+[INFO ] 28-06-2025 11:52:57 [main] LogUtils - Click on 'Book ticket' button
+[INFO ] 28-06-2025 11:54:07 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:54:07 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 28-06-2025 11:54:07 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:54:08 [main] LogUtils - 2. Login with a valid account
+[INFO ] 28-06-2025 11:54:08 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 28-06-2025 11:54:08 [main] LogUtils - Enter password: minh12345
+[INFO ] 28-06-2025 11:54:08 [main] LogUtils - click button: 
+[INFO ] 28-06-2025 11:54:09 [main] LogUtils - 3. Click on 'Book ticket' tab
+[INFO ] 28-06-2025 11:54:09 [main] LogUtils - Click on tab Book ticket
+[ERROR] 28-06-2025 11:54:10 [main] LogUtils - com.fasterxml.jackson.core.JsonParseException: Unexpected character ('/' (code 47)): maybe a (non-standard) comment? (not recognized as one since Feature 'ALLOW_COMMENTS' not enabled for parser)
+ at [Source: (File); line: 37, column: 2]
+[INFO ] 28-06-2025 11:54:10 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.bookticket.TC14\userCanBookOneTicketAtATime_28062025_115410.png
+[INFO ] 28-06-2025 11:55:06 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:55:06 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 28-06-2025 11:55:06 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:55:06 [main] LogUtils - 2. Login with a valid account
+[INFO ] 28-06-2025 11:55:06 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 28-06-2025 11:55:06 [main] LogUtils - Enter password: minh12345
+[INFO ] 28-06-2025 11:55:07 [main] LogUtils - click button: 
+[INFO ] 28-06-2025 11:55:08 [main] LogUtils - 3. Click on 'Book ticket' tab
+[INFO ] 28-06-2025 11:55:08 [main] LogUtils - Click on tab Book ticket
+[INFO ] 28-06-2025 11:55:09 [main] LogUtils - Select a 'Depart date' from the list
+[INFO ] 28-06-2025 11:55:09 [main] LogUtils - Select Sài Gòn for 'Depart from' and Nha Trang for 'Arrive at'.
+[INFO ] 28-06-2025 11:55:19 [main] LogUtils - Select Soft bed for 'Seat type'
+[INFO ] 28-06-2025 11:55:19 [main] LogUtils - Select 2 for 'Ticket amount'
+[INFO ] 28-06-2025 11:55:19 [main] LogUtils - Click on 'Book ticket' button
+[INFO ] 28-06-2025 11:56:09 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:56:09 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 28-06-2025 11:56:09 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:56:09 [main] LogUtils - 2. Login with a valid account
+[INFO ] 28-06-2025 11:56:09 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 28-06-2025 11:56:10 [main] LogUtils - Enter password: minh12345
+[INFO ] 28-06-2025 11:56:10 [main] LogUtils - click button: 
+[INFO ] 28-06-2025 11:56:11 [main] LogUtils - 3. Click on 'Timetable' tab
+[INFO ] 28-06-2025 11:56:11 [main] LogUtils - Click on tab Timetable
+[INFO ] 28-06-2025 11:56:12 [main] LogUtils - 4. Click on 'book ticket' link of the route from 'Huế' to 'Sài Gòn'
+[INFO ] 28-06-2025 11:57:06 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 11:57:06 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 28-06-2025 11:57:06 [main] LogUtils - 2. Login with a valid account
+[INFO ] 28-06-2025 11:57:06 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 11:57:07 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 28-06-2025 11:57:07 [main] LogUtils - Enter password: minh12345
+[INFO ] 28-06-2025 11:57:07 [main] LogUtils - click button: 
+[INFO ] 28-06-2025 11:57:08 [main] LogUtils - 3. Book a ticket
+[INFO ] 28-06-2025 11:57:08 [main] LogUtils - Click on tab Book ticket
+[INFO ] 28-06-2025 11:57:09 [main] LogUtils - Select a 'Depart date' from the list
+[INFO ] 28-06-2025 11:57:09 [main] LogUtils - Select Đà Nẵng for 'Depart from' and Huế for 'Arrive at'.
+[INFO ] 28-06-2025 11:57:10 [main] LogUtils - Select Soft seat for 'Seat type'
+[INFO ] 28-06-2025 11:57:10 [main] LogUtils - Select 2 for 'Ticket amount'
+[INFO ] 28-06-2025 11:57:10 [main] LogUtils - Click on 'Book ticket' button
+[INFO ] 28-06-2025 11:57:11 [main] LogUtils - 4. Click on 'My ticket' tab
+[INFO ] 28-06-2025 11:57:11 [main] LogUtils - Click on tab My ticket
+[INFO ] 28-06-2025 11:57:12 [main] LogUtils - Click on 'Cancel' button of ticket which user want to cancel.
+[INFO ] 28-06-2025 11:57:12 [main] LogUtils - Click on 'OK' button on Confirmation message 'Are you sure?'
+[INFO ] 28-06-2025 12:00:20 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 28-06-2025 12:00:20 [main] LogUtils - 2. Click on 'Login' tab
+[INFO ] 28-06-2025 12:00:20 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 12:00:21 [main] LogUtils - 3. Enter valid Email and Password:
+[INFO ] 28-06-2025 12:00:21 [main] LogUtils - 4. Click on 'Login' button
+[INFO ] 28-06-2025 12:00:21 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 28-06-2025 12:00:21 [main] LogUtils - Enter password: minh12345
+[INFO ] 28-06-2025 12:00:21 [main] LogUtils - click button: 
+[ERROR] 28-06-2025 12:00:23 [main] LogUtils - java.lang.AssertionError: expected [Welcome vffaebxr@sharklasers.com] but found []
+[INFO ] 28-06-2025 12:00:23 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.login.TC01\userCanLogIntoRailwayWithValidUsernameAndPassword_28062025_120023.png
+[INFO ] 28-06-2025 12:01:32 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 12:01:32 [main] LogUtils - Click on tab Register
+[INFO ] 28-06-2025 12:01:34 [main] LogUtils - Enter email: 2fjVNKcYbdYj@mailslurp.biz
+[INFO ] 28-06-2025 12:01:34 [main] LogUtils - Enter password: minh12345
+[INFO ] 28-06-2025 12:01:34 [main] LogUtils - Enter confirm password: minh12345
+[INFO ] 28-06-2025 12:01:35 [main] LogUtils - Enter PID: 27183714777
+[INFO ] 28-06-2025 12:01:35 [main] LogUtils - Click button: 
+[INFO ] 28-06-2025 12:01:45 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 12:01:45 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 12:01:45 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 12:01:46 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 28-06-2025 12:01:46 [main] LogUtils - 4. Click on 'Send Instructions' button
+[INFO ] 28-06-2025 12:01:48 [main] LogUtils - 5. Open mailbox and click on reset password link
+[INFO ] 28-06-2025 12:01:53 [main] LogUtils - 6. Enter new passwords and remove the Password Reset Token
+[INFO ] 28-06-2025 12:01:53 [main] LogUtils - 7. Click 'Reset Password' button
+[ERROR] 28-06-2025 12:01:55 [main] LogUtils - java.lang.AssertionError: Error message element does not exist expected [true] but found [false]
+[INFO ] 28-06-2025 12:01:55 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC12\errorsDisplayWhenPasswordResetTokenIsBlankUseMailAPI_28062025_120155.png
+[INFO ] 28-06-2025 12:01:58 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 28-06-2025 12:01:58 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 28-06-2025 12:01:58 [main] LogUtils - Click on tab Login
+[INFO ] 28-06-2025 12:01:59 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 28-06-2025 12:01:59 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 28-06-2025 12:01:59 [main] LogUtils - 4. Click on 'Send Instructions' button
+[INFO ] 28-06-2025 12:02:01 [main] LogUtils - 5. Open mailbox and click on reset password link
+[INFO ] 28-06-2025 12:02:12 [main] LogUtils - 6. Enter new passwords and remove the Password Reset Token
+[INFO ] 28-06-2025 12:02:12 [main] LogUtils - 7. Click 'Reset Password' button
+[ERROR] 28-06-2025 12:02:13 [main] LogUtils - java.lang.AssertionError: Error message element does not exist expected [true] but found [false]
+[INFO ] 28-06-2025 12:02:13 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC12\errorsDisplayWhenPasswordResetTokenIsBlankUseUI_28062025_120213.png

@@ -25,7 +25,7 @@ public class TC16 extends TestBase {
         LogUtils.info("1. Navigate to QA Railway Website");
         LogUtils.info("2. Login with a valid account");
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
-        loginPage.login(Constants.Account.VALID_USERNAME, Constants.Account.VALID_PASSWORD);
+        loginPage.loginSuccess();
 
         // 3. Book a ticket
         LogUtils.info("3. Book a ticket");

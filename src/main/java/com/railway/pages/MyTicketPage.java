@@ -33,7 +33,7 @@ public class MyTicketPage extends BasePage {
     }
 
     public void cancelATicket(Ticket ticket) {
-        LogUtils.info("5. Click on 'Cancel' button of ticket which user want to cancel.");
+        LogUtils.info("Click on 'Cancel' button of ticket which user want to cancel.");
         WebElement element = webElement(By.xpath(String.format(
                 rowOfTicketXpath,
                 ticket.getDepartStation(),
@@ -46,7 +46,7 @@ public class MyTicketPage extends BasePage {
         element.click();
 
         // Click pop up
-        LogUtils.info("6. Click on 'OK' button on Confirmation message 'Are you sure?'");
+        LogUtils.info("Click on 'OK' button on Confirmation message 'Are you sure?'");
         Helpers.waitAlert(10);
         Alert alert = DriverManager.getDriver().switchTo().alert();
 
