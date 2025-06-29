@@ -22,7 +22,6 @@ public class ForgotPasswordPage extends BasePage {
         getEmailTextBox().sendKeys(email);
 
         Helpers.scrollToElement(getSubmitButton());
-
         getSubmitButton().click();
     }
 

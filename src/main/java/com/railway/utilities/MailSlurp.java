@@ -5,8 +5,7 @@ import com.mailslurp.apis.WaitForControllerApi;
 import com.mailslurp.clients.ApiClient;
 import com.mailslurp.clients.ApiException;
 import com.mailslurp.clients.Configuration;
-import com.mailslurp.models.Email;
-import com.mailslurp.models.InboxDto;
+import com.mailslurp.models.*;
 import com.railway.constant.Constants;
 
 import java.util.regex.Matcher;
@@ -32,14 +31,21 @@ public class MailSlurp {
         return inbox;
     }
 
-    public static String receiveEmail() throws ApiException {
+    public static String receiveEmail(String subjectContains) throws ApiException {
         WaitForControllerApi waitForControllerApi = new WaitForControllerApi();
 
-        Email email = waitForControllerApi.waitForLatestEmail().inboxId(getInboxDto().getId()).timeout(120000L).unreadOnly(true).execute();
+        MatchOption matchOptionItem = new MatchOption()
+                .field(MatchOption.FieldEnum.SUBJECT)
+                .should(MatchOption.ShouldEnum.CONTAIN)
+                .value(subjectContains);
+
+        MatchOptions matchOptions = new MatchOptions().addMatchesItem(matchOptionItem);
+
+        Email email = waitForControllerApi.waitForMatchingFirstEmail(getInboxDto().getId(), matchOptions).timeout(240000L).unreadOnly(true).execute();
         return email.getBody();
     }
 
-    public static String getResetPasswordLinkInEmail(String body) {
+    public static String getLinkInEmail(String body) {
         Pattern pattern = Pattern.compile(Constants.MailSlurp.REGEX_GET_LINK_FROM_EMAIL);
         Matcher matcher = pattern.matcher(body);
         if (matcher.find()) {
