@@ -5,7 +5,7 @@ import com.railway.utilities.MailSlurp;
 
 import java.time.LocalDateTime;
 
-public enum Account {
+public enum AccountEnum {
 
     VALID_ACCOUNT_LOGIN("vffaebxr@sharklasers.com", "minh12345"),
     BLANK_USERNAME_LOGIN("", "minh12345"),
@@ -19,26 +19,35 @@ public enum Account {
 
     BLANK_TOKEN_RESET_PASSWORD("minh12345", "minh12345", false),
     INVALID_CONFIRM_PASSWORD_RESET_PASSWORD("minh12345", "abc1234", true),
+
+    VALID_CHANGE_PASSWORD("minh12345", "minh12345", "minh12345")
     ;
 
     private String username;
     private String password;
     private String confirmPassword;
+    private String newPassword;
     private boolean hasToken;
     private String pid;
 
-    Account(String username, String password) {
+    AccountEnum(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
-    Account(String password, String confirmPassword, boolean token) {
+    AccountEnum(String password, String confirmPassword, boolean token) {
         this.password = password;
         this.confirmPassword = confirmPassword;
         this.hasToken = token;
     }
 
-    Account(String username, String password, String confirmPassword, String pid) {
+    AccountEnum(String currentPassword, String newPassword, String confirmPassword) {
+        this.password = currentPassword;
+        this.newPassword = newPassword;
+        this.confirmPassword = confirmPassword;
+    }
+
+    AccountEnum(String username, String password, String confirmPassword, String pid) {
         this.username = username;
         this.password = password;
         this.confirmPassword = confirmPassword;
@@ -55,6 +64,10 @@ public enum Account {
 
     public String getConfirmPassword() {
         return this.confirmPassword;
+    }
+
+    public String getNewPassword() {
+        return this.newPassword;
     }
 
     public String getPID() {

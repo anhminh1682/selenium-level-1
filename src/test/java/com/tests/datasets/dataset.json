@@ -1,0 +1,109 @@
+{
+  "TC01": {
+    "username": "vffaebxr@sharklasers.com",
+    "password": "minh12345"
+  },
+  "TC02": {
+    "username": "",
+    "password": "minh12345"
+  },
+  "TC03": {
+    "username": "vffaebxr@sharklasers.com",
+    "password": "abc123"
+  },
+  "TC05": {
+    "username": "vffaebxr@sharklasers.com",
+    "password": "abc123"
+  },
+  "TC06": {
+    "username": "vffaebxr@sharklasers.com",
+    "password": "minh12345"
+  },
+  "TC07": {
+    "username": "minh@gmail.com",
+    "password": "minh12345",
+    "confirmPassword": "minh12345",
+    "pid": "27183714777"
+  },
+  "TC08": {
+    "username": "minh@gmail.com",
+    "password": "minh12345"
+  },
+  "TC09": {
+    "password": "minh12345",
+    "newPassword": "minh12345",
+    "confirmPassword": "minh12345"
+  },
+  "TC10": {
+    "username": "minh@gmail.com",
+    "password": "minh12345",
+    "confirmPassword": "minh",
+    "pid": "27183714777"
+  },
+  "TC11": {
+    "username": "minh@gmail.com",
+    "password": "",
+    "confirmPassword": "",
+    "pid": ""
+  },
+  "TC12": {
+    "username": "vffaebxr@sharklasers.com",
+    "newPassword": "minh12345",
+    "confirmPassword": "minh12345"
+  },
+  "TC13": {
+    "username": "vffaebxr@sharklasers.com",
+    "newPassword": "minh12345",
+    "confirmPassword": "minh"
+  },
+  "TC14": [
+    {
+      "departStation": "Sài Gòn",
+      "arriveStation": "Phan Thiết",
+      "days": 2,
+      "seatType": "Soft bed with air conditioner",
+      "amount": 1
+    },
+    {
+      "departStation": "Huế",
+      "arriveStation": "Quảng Ngãi",
+      "days": 21,
+      "seatType": "Soft bed",
+      "amount": 1
+    },
+    {
+      "departStation": "Nha Trang",
+      "arriveStation": "Đà Nẵng",
+      "days": 15,
+      "seatType": "Hard bed",
+      "amount": 1
+    }
+  ],
+  "TC15": {
+    "departFrom": "Huế",
+    "arriveAt": "Sài Gòn"
+  },
+  "TC16": [
+    {
+      "departStation": "Đà Nẵng",
+      "arriveStation": "Huế",
+      "days": 4,
+      "seatType": "Soft bed with air conditioner",
+      "amount": 2
+    },
+    {
+      "departStation": "Quảng Ngãi",
+      "arriveStation": "Sài Gòn",
+      "days": 10,
+      "seatType": "Soft bed",
+      "amount": 1
+    },
+    {
+      "departStation": "Huế",
+      "arriveStation": "Đà Nẵng",
+      "days": 8,
+      "seatType": "Hard bed",
+      "amount": 1
+    }
+  ]
+}

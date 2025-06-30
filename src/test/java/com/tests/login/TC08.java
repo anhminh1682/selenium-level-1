@@ -3,15 +3,16 @@ package com.tests.login;
 import com.railway.constant.Constants;
 import com.railway.pages.HomePage;
 import com.railway.pages.LoginPage;
+import com.railway.utilities.Account;
 import com.railway.utilities.LogUtils;
-import com.railway.utilities.enums.Account;
+import com.railway.utilities.enums.AccountEnum;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC08 extends TestBase {
-    @Test
-    public void userCannotLoginWithAnAccountHasNotBeenActivated() {
+    @Test(dataProvider = "dataTestProvider", dataProviderClass = TestBase.class)
+    public void userCannotLoginWithAnAccountHasNotBeenActivated(String username, String password) {
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
 
@@ -22,7 +23,8 @@ public class TC08 extends TestBase {
 
         LogUtils.info("3. Enter username and password of account hasn't been activated.");
         LogUtils.info("4. Click on 'Login' button");
-        loginPage.login(Account.INACTIVE_USERNAME_LOGIN);
+        Account account = new Account(username, password);
+        loginPage.login(account);
 
         Assert.assertEquals(loginPage.getErrorMessage(), Constants.LoginMessage.ERROR_MESSAGE_LOGIN_WITH_INVALID_FIELDS);
     }

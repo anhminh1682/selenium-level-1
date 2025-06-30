@@ -3,15 +3,16 @@ package com.tests.login;
 import com.railway.constant.Constants;
 import com.railway.pages.HomePage;
 import com.railway.pages.LoginPage;
+import com.railway.utilities.Account;
 import com.railway.utilities.LogUtils;
-import com.railway.utilities.enums.Account;
+import com.railway.utilities.enums.AccountEnum;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC01 extends TestBase {
-    @Test
-    public void userCanLogIntoRailwayWithValidUsernameAndPassword() {
+    @Test(dataProvider = "dataTestProvider", dataProviderClass = TestBase.class)
+    public void userCanLogIntoRailwayWithValidUsernameAndPassword(String username, String password) {
         LoginPage loginPage = new LoginPage();
         HomePage homePage = new HomePage();
 
@@ -21,9 +22,10 @@ public class TC01 extends TestBase {
 
         LogUtils.info("3. Enter valid Email and Password:");
         LogUtils.info("4. Click on 'Login' button");
-        loginPage.loginSuccess();
+        Account account = new Account(username, password);
+        loginPage.login(account);
 
         Assert.assertEquals(homePage.getPageTitle(), Constants.PageTitles.HOME_PAGE_TITLE);
-        Assert.assertEquals(homePage.getWelComeText(), "Welcome " + Account.VALID_ACCOUNT_LOGIN.getUsername());
+        Assert.assertEquals(homePage.getWelComeText(), "Welcome " + AccountEnum.VALID_ACCOUNT_LOGIN.getUsername());
     }
 }

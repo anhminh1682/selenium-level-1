@@ -1,8 +1,7 @@
 package com.railway.utilities;
 
-import com.railway.constant.Constants;
 import com.railway.driver.DriverManager;
-import com.railway.utilities.enums.Account;
+import com.railway.utilities.enums.AccountEnum;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.*;
@@ -47,7 +46,7 @@ public class MailBoxManager {
     }
 
     public static void clickResetPasswordLink() {
-        String validEmail = Account.VALID_ACCOUNT_LOGIN.getUsername();
+        String validEmail = AccountEnum.VALID_ACCOUNT_LOGIN.getUsername();
         String[] emailSplit = validEmail.split("@");
 
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(20));

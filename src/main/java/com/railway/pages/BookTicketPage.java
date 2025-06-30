@@ -36,10 +36,13 @@ public class BookTicketPage extends BasePage {
 
     public void selectAnOption(String selectBoxName, String option) {
         Select selectBox = new Select(getSelectBoxByName(selectBoxName));
+//        System.out.println("Check first data of" + selectBoxName + selectBox.getFirstSelectedOption().getText());
         selectBox.selectByVisibleText(option);
     }
 
     public void bookATicket(Ticket ticket) {
+        Helpers.scrollToElement(getSelectBoxByName(Constants.BookTicket.DEPART_DATE_NAME_SELECT_BOX));
+
         LogUtils.info("Select a 'Depart date' from the list");
         selectAnOption(Constants.BookTicket.DEPART_DATE_NAME_SELECT_BOX, ticket.getDepartDate());
 
