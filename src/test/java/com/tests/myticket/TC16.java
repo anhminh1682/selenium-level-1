@@ -20,7 +20,7 @@ public class TC16 extends TestBase {
             Integer days,
             String seatTypes,
             Integer amount
-    ) throws IOException {
+    ) {
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
         BookTicketPage bookTicketPage = new BookTicketPage();

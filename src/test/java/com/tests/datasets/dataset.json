@@ -63,20 +63,6 @@
       "days": 2,
       "seatType": "Soft bed with air conditioner",
       "amount": 1
-    },
-    {
-      "departStation": "Huế",
-      "arriveStation": "Quảng Ngãi",
-      "days": 21,
-      "seatType": "Soft bed",
-      "amount": 1
-    },
-    {
-      "departStation": "Nha Trang",
-      "arriveStation": "Đà Nẵng",
-      "days": 15,
-      "seatType": "Hard bed",
-      "amount": 1
     }
   ],
   "TC15": {

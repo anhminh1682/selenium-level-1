@@ -27,22 +27,17 @@ public class MailBoxManager {
         String validEmail = AccountEnum.VALID_ACCOUNT_LOGIN.getUsername();
         String[] emailSplit = validEmail.split("@");
 
-//        clickOnElement(emailTextBox);
-        webElement(emailTextBox).click();
+        clickOnElement(emailTextBox);
         waitForElement(10, emailTextBoxEditable);
-        webElement(emailTextBoxEditable).sendKeys(emailSplit[0]);
-//        clickOnElement(setButton);
-        webElement(setButton).click();
+        sendKeyElement(emailTextBoxEditable, emailSplit[0]);
+        clickOnElement(setButton);
 
-        Select emailDomainSelect = new Select(webElement(emailDomainSelectBox));
-        emailDomainSelect.selectByVisibleText(emailSplit[1]);
+        selectElementByVisibleText(emailDomainSelectBox, emailSplit[1]);
 
         waitForElement(10, emailConfirmUnread);
-        webElement(emailConfirmUnread).click();
-//        clickOnElement(emailConfirmUnread);
+        clickOnElement(emailConfirmUnread);
 
         waitForElement(10, resetPasswordLink);
-        webElement(resetPasswordLink).click();
-//        clickOnElement(resetPasswordLink);
+        clickOnElement(resetPasswordLink);
     }
 }

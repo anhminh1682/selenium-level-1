@@ -42,6 +42,6 @@ public class ChangePasswordPage extends BasePage {
     }
 
     public String getChangePasswordSuccessMessage() {
-        return getElementText(webElement(changePasswordSuccessMessage));
+        return getElementText(changePasswordSuccessMessage);
     }
 }

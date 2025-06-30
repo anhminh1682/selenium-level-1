@@ -3,17 +3,16 @@ package com.railway.utilities;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.railway.driver.DriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Random;
 
 public class DriverUtils {
@@ -47,18 +46,51 @@ public class DriverUtils {
         wait.until(ExpectedConditions.alertIsPresent());
     }
 
-    public static WebElement webElement(By element) {
-        return DriverManager.getDriver().findElement(element);
+    public static void fluentWaitForElement(By elementBy) {
+        Wait<WebDriver> wait = new FluentWait<>(DriverManager.getDriver())
+                .withTimeout(Duration.ofSeconds(5000))
+                .pollingEvery(Duration.ofSeconds(200))
+                .ignoring(TimeoutException.class)
+                .ignoring(NoSuchElementException.class)
+                .ignoring(StaleElementReferenceException.class);
+
+        try {
+            wait.until(ExpectedConditions.visibilityOf(webElement(elementBy)));
+        } catch (TimeoutException e) {
+            System.out.println("Timed out waiting for element");
+        }
     }
 
-    public static String getElementText(WebElement element) {
-        return element.getText().trim();
+    public static WebElement webElement(By elementBy) {
+        return DriverManager.getDriver().findElement(elementBy);
+    }
+
+    public static String getElementText(By elementBy) {
+        fluentWaitForElement(elementBy);
+        return webElement(elementBy).getText().trim();
     }
 
     public static void clickOnElement(By elementBy) {
+        fluentWaitForElement(elementBy);
         WebElement element = DriverManager.getDriver().findElement(elementBy);
         scrollToElement(element);
         element.click();
+    }
+
+    public static void sendKeyElement(By elementBy, CharSequence charSequence) {
+        fluentWaitForElement(elementBy);
+        WebElement element = webElement(elementBy);
+        scrollToElement(element);
+        element.clear();
+        element.sendKeys(charSequence);
+    }
+
+    public static void selectElementByVisibleText(By elementBy, String text) {
+        fluentWaitForElement(elementBy);
+        WebElement element = webElement(elementBy);
+        Select select = new Select(element);
+        scrollToElement(element);
+        select.selectByVisibleText(text);
     }
 
     private static List<Ticket> saveDatasetIntoTicketList() throws IOException {

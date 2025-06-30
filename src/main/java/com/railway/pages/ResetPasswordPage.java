@@ -30,24 +30,24 @@ public class ResetPasswordPage extends BasePage {
     }
 
     public void resetPassword(AccountEnum accountEnum) {
-        webElement(newPasswordTextBox).sendKeys(accountEnum.getPassword());
-        webElement(confirmPasswordTextBox).sendKeys(accountEnum.getConfirmPassword());
+        sendKeyElement(newPasswordTextBox, accountEnum.getPassword());
+        sendKeyElement(confirmPasswordTextBox, accountEnum.getConfirmPassword());
 
         if(!accountEnum.getToken()) {
-            webElement(resetTokenTextBox).sendKeys(Keys.CONTROL + "a");
-            webElement(resetTokenTextBox).sendKeys(Keys.DELETE);
+            sendKeyElement(resetTokenTextBox, Keys.CONTROL + "a");
+            sendKeyElement(resetTokenTextBox, Keys.DELETE);
         }
 
         clickOnElement(submitButton);
     }
 
     public void resetPassword(Account account) {
-        webElement(newPasswordTextBox).sendKeys(account.getNewPassword());
-        webElement(confirmPasswordTextBox).sendKeys(account.getConfirmPassword());
+        sendKeyElement(newPasswordTextBox, account.getNewPassword());
+        sendKeyElement(confirmPasswordTextBox, account.getConfirmPassword());
 
         if(!account.isToken()) {
-            webElement(resetTokenTextBox).sendKeys(Keys.CONTROL + "a");
-            webElement(resetTokenTextBox).sendKeys(Keys.DELETE);
+            sendKeyElement(resetTokenTextBox, Keys.CONTROL + "a");
+            sendKeyElement(resetTokenTextBox, Keys.DELETE);
         }
 
         clickOnElement(submitButton);
@@ -58,14 +58,14 @@ public class ResetPasswordPage extends BasePage {
     }
 
     public String getErrorMessageAbove() {
-        return getElementText(webElement(errorMessage));
+        return getElementText(errorMessage);
     }
 
     public String getErrorMessageInvalidResetTokenNextToField() {
-        return getElementText(webElement(errorResetTokenMessage));
+        return getElementText(errorResetTokenMessage);
     }
 
     public String getErrorMessageConfirmPasswordNextToField() {
-        return getElementText(webElement(errorConfirmPasswordMessage));
+        return getElementText(errorConfirmPasswordMessage);
     }
 }

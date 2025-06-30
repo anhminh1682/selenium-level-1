@@ -6201,3 +6201,910 @@ Session ID: 181929ce7d5c91709f6c21d02441e084
 [INFO ] 30-06-2025 17:15:37 [main] LogUtils - 7. Click 'Reset Password' button
 [ERROR] 30-06-2025 17:15:38 [main] LogUtils - java.lang.AssertionError: Error message element does not exist expected [true] but found [false]
 [INFO ] 30-06-2025 17:15:38 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC12\errorsDisplayWhenPasswordResetTokenIsBlankUseUI_30062025_171538.png
+[INFO ] 30-06-2025 20:06:06 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 20:06:06 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 30-06-2025 20:06:06 [main] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 20:06:07 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 30-06-2025 20:06:08 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 30-06-2025 20:06:08 [main] LogUtils - 4. Click on 'Send Instructions' button
+[INFO ] 30-06-2025 20:06:09 [main] LogUtils - 5. Open mailbox and click on reset password link
+[INFO ] 30-06-2025 20:06:34 [main] LogUtils - 6. Enter new passwords and remove the Password Reset Token
+[INFO ] 30-06-2025 20:06:34 [main] LogUtils - 7. Click 'Reset Password' button
+[ERROR] 30-06-2025 20:06:35 [main] LogUtils - java.lang.AssertionError: Error message element does not exist expected [true] but found [false]
+[INFO ] 30-06-2025 20:06:35 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC12\errorsDisplayWhenPasswordResetTokenIsBlankUseUI_30062025_200635.png
+[INFO ] 30-06-2025 21:03:09 [TestNG-test-Railway-4] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:03:09 [TestNG-test-Railway-4] LogUtils - 2. Click on 'Book ticket' tab
+[INFO ] 30-06-2025 21:03:09 [TestNG-test-Railway-4] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:03:22 [TestNG-test-Railway-3] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:03:22 [TestNG-test-Railway-3] LogUtils - 2. Click on 'Login' tab
+[INFO ] 30-06-2025 21:03:22 [TestNG-test-Railway-3] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:03:24 [TestNG-test-Railway-3] LogUtils - 3. Enter valid Email and invalid Password
+[INFO ] 30-06-2025 21:03:24 [TestNG-test-Railway-3] LogUtils - 4. Click on 'Login' button
+[INFO ] 30-06-2025 21:03:24 [TestNG-test-Railway-3] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:03:24 [TestNG-test-Railway-3] LogUtils - Enter password: abc123
+[INFO ] 30-06-2025 21:03:24 [TestNG-test-Railway-3] LogUtils - click button: 
+[INFO ] 30-06-2025 21:03:26 [TestNG-test-Railway-3] LogUtils - Error messageInvalid username or password. Please try again.
+[ERROR] 30-06-2025 21:03:26 [TestNG-test-Railway-3] LogUtils - java.lang.AssertionError: expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]
+[INFO ] 30-06-2025 21:03:26 [TestNG-test-Railway-3] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.login.TC03\UserCannotLogIntoRailwayWithInvalidPassword_30062025_210326.png
+[INFO ] 30-06-2025 21:03:35 [TestNG-test-Railway-1] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:03:35 [TestNG-test-Railway-1] LogUtils - 2. Click on 'Login' tab
+[INFO ] 30-06-2025 21:03:35 [TestNG-test-Railway-1] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:03:38 [TestNG-test-Railway-1] LogUtils - 3. Enter valid Email and Password:
+[INFO ] 30-06-2025 21:03:38 [TestNG-test-Railway-1] LogUtils - 4. Click on 'Login' button
+[INFO ] 30-06-2025 21:03:38 [TestNG-test-Railway-1] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:03:38 [TestNG-test-Railway-1] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:03:38 [TestNG-test-Railway-1] LogUtils - click button: 
+[ERROR] 30-06-2025 21:03:41 [TestNG-test-Railway-1] LogUtils - java.lang.AssertionError: expected [Welcome vffaebxr@sharklasers.com] but found []
+[INFO ] 30-06-2025 21:03:41 [TestNG-test-Railway-1] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.login.TC01\userCanLogIntoRailwayWithValidUsernameAndPassword_30062025_210341.png
+[INFO ] 30-06-2025 21:04:02 [TestNG-test-Railway-4] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:04:02 [TestNG-test-Railway-4] LogUtils - 2. Click on 'Login' tab
+[INFO ] 30-06-2025 21:04:02 [TestNG-test-Railway-4] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:04:04 [TestNG-test-Railway-4] LogUtils - 3. Enter valid information into 'Username' textbox except 'Password' textbox.
+[INFO ] 30-06-2025 21:04:04 [TestNG-test-Railway-4] LogUtils - 4. Click on 'Login' button
+[INFO ] 30-06-2025 21:04:04 [TestNG-test-Railway-4] LogUtils - 5. Repeat step 3 three more times.
+[INFO ] 30-06-2025 21:04:04 [TestNG-test-Railway-4] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:04:04 [TestNG-test-Railway-4] LogUtils - Enter password: abc123
+[INFO ] 30-06-2025 21:04:04 [TestNG-test-Railway-4] LogUtils - click button: 
+[INFO ] 30-06-2025 21:04:06 [TestNG-test-Railway-4] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:04:06 [TestNG-test-Railway-4] LogUtils - Enter password: abc123
+[INFO ] 30-06-2025 21:04:06 [TestNG-test-Railway-4] LogUtils - click button: 
+[INFO ] 30-06-2025 21:04:06 [TestNG-test-Railway-4] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:04:07 [TestNG-test-Railway-4] LogUtils - Enter password: abc123
+[INFO ] 30-06-2025 21:04:07 [TestNG-test-Railway-4] LogUtils - click button: 
+[INFO ] 30-06-2025 21:04:08 [TestNG-test-Railway-4] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:04:08 [TestNG-test-Railway-4] LogUtils - Enter password: abc123
+[INFO ] 30-06-2025 21:04:08 [TestNG-test-Railway-4] LogUtils - click button: 
+[INFO ] 30-06-2025 21:04:10 [TestNG-test-Railway-4] LogUtils - Error messageInvalid username or password. Please try again.
+[ERROR] 30-06-2025 21:04:10 [TestNG-test-Railway-4] LogUtils - java.lang.AssertionError: expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
+[INFO ] 30-06-2025 21:04:10 [TestNG-test-Railway-4] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.login.TC05\systemShowsMessageWhenUserEntersWrongPasswordSeveralTimes_30062025_210410.png
+[INFO ] 30-06-2025 21:04:13 [TestNG-test-Railway-3] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:04:13 [TestNG-test-Railway-3] LogUtils - 2. Click on 'Login' tab
+[INFO ] 30-06-2025 21:04:13 [TestNG-test-Railway-3] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:04:15 [TestNG-test-Railway-3] LogUtils - 3. Login with valid account
+[INFO ] 30-06-2025 21:04:15 [TestNG-test-Railway-3] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:04:15 [TestNG-test-Railway-3] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:04:15 [TestNG-test-Railway-3] LogUtils - click button: 
+[INFO ] 30-06-2025 21:04:17 [TestNG-test-Railway-3] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:04:18 [TestNG-test-Railway-3] LogUtils - Click on tab Change password
+[INFO ] 30-06-2025 21:04:20 [TestNG-test-Railway-1] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:04:20 [TestNG-test-Railway-1] LogUtils - 2. Click on 'Register' tab
+[INFO ] 30-06-2025 21:04:20 [TestNG-test-Railway-1] LogUtils - Click on tab Register
+[INFO ] 30-06-2025 21:04:23 [TestNG-test-Railway-1] LogUtils - 3. Enter valid information into all fields
+[INFO ] 30-06-2025 21:04:23 [TestNG-test-Railway-1] LogUtils - 4. Click on 'Register' button
+[INFO ] 30-06-2025 21:04:23 [TestNG-test-Railway-1] LogUtils - Enter email: 21_04_23minh@gmail.com
+[INFO ] 30-06-2025 21:04:24 [TestNG-test-Railway-1] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:04:24 [TestNG-test-Railway-1] LogUtils - Enter confirm password: minh12345
+[INFO ] 30-06-2025 21:04:24 [TestNG-test-Railway-1] LogUtils - Enter PID: 27183714777
+[INFO ] 30-06-2025 21:04:25 [TestNG-test-Railway-1] LogUtils - Click button: 
+[INFO ] 30-06-2025 21:04:33 [TestNG-test-Railway-4] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:04:33 [TestNG-test-Railway-4] LogUtils - 2. Click on 'Login' tab
+[INFO ] 30-06-2025 21:04:33 [TestNG-test-Railway-4] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:04:34 [TestNG-test-Railway-4] LogUtils - 3. Enter username and password of account hasn't been activated.
+[INFO ] 30-06-2025 21:04:34 [TestNG-test-Railway-4] LogUtils - 4. Click on 'Login' button
+[INFO ] 30-06-2025 21:04:34 [TestNG-test-Railway-4] LogUtils - Enter username: minh@gmail.com
+[INFO ] 30-06-2025 21:04:34 [TestNG-test-Railway-4] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:04:34 [TestNG-test-Railway-4] LogUtils - click button: 
+[INFO ] 30-06-2025 21:04:35 [TestNG-test-Railway-4] LogUtils - Error messageInvalid username or password. Please try again.
+[INFO ] 30-06-2025 21:04:40 [TestNG-test-Railway-3] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:04:40 [TestNG-test-Railway-3] LogUtils - 2. Login with valid account
+[INFO ] 30-06-2025 21:04:40 [TestNG-test-Railway-3] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:04:41 [TestNG-test-Railway-3] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:04:42 [TestNG-test-Railway-3] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:04:42 [TestNG-test-Railway-3] LogUtils - click button: 
+[INFO ] 30-06-2025 21:04:44 [TestNG-test-Railway-4] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:04:44 [TestNG-test-Railway-4] LogUtils - 2. Click on 'Register' tab
+[INFO ] 30-06-2025 21:04:44 [TestNG-test-Railway-4] LogUtils - Click on tab Register
+[INFO ] 30-06-2025 21:04:48 [TestNG-test-Railway-3] LogUtils - 3. Click on 'Change Password' tab
+[INFO ] 30-06-2025 21:04:48 [TestNG-test-Railway-3] LogUtils - 4. Enter valid value into all fields.
+[INFO ] 30-06-2025 21:04:48 [TestNG-test-Railway-3] LogUtils - 5. Click on 'Change Password' button
+[INFO ] 30-06-2025 21:04:48 [TestNG-test-Railway-3] LogUtils - Click on tab Change password
+[INFO ] 30-06-2025 21:04:48 [TestNG-test-Railway-4] LogUtils - 3. Enter valid email address and leave other fields empty
+[INFO ] 30-06-2025 21:04:48 [TestNG-test-Railway-4] LogUtils - 4. Click on 'Register' button
+[INFO ] 30-06-2025 21:04:48 [TestNG-test-Railway-4] LogUtils - Enter email: minh@gmail.com
+[INFO ] 30-06-2025 21:04:48 [TestNG-test-Railway-4] LogUtils - Enter password: 
+[INFO ] 30-06-2025 21:04:48 [TestNG-test-Railway-3] LogUtils - Passwordminh12345
+[INFO ] 30-06-2025 21:04:48 [TestNG-test-Railway-4] LogUtils - Enter confirm password: 
+[INFO ] 30-06-2025 21:04:48 [TestNG-test-Railway-3] LogUtils - New Passwordminh12345
+[INFO ] 30-06-2025 21:04:48 [TestNG-test-Railway-3] LogUtils - Confirm Passwordminh12345
+[INFO ] 30-06-2025 21:04:49 [TestNG-test-Railway-3] LogUtils - Click button 
+[INFO ] 30-06-2025 21:04:49 [TestNG-test-Railway-4] LogUtils - Enter PID: 
+[INFO ] 30-06-2025 21:04:49 [TestNG-test-Railway-4] LogUtils - Click button: 
+[ERROR] 30-06-2025 21:04:50 [TestNG-test-Railway-3] LogUtils - java.lang.AssertionError: expected [Your password has been updated] but found [Your password has been updated!]
+[INFO ] 30-06-2025 21:04:50 [TestNG-test-Railway-3] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.login.TC09\userCanChangePassword_30062025_210450.png
+[ERROR] 30-06-2025 21:04:51 [TestNG-test-Railway-4] LogUtils - java.lang.AssertionError: The following asserts failed:
+	expected [Invalid password length.] but found [Invalid password length],
+	expected [Invalid ID length.] but found [Invalid ID length]
+[INFO ] 30-06-2025 21:04:52 [TestNG-test-Railway-4] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.register.TC11\userCannotCreateAccountWhilePasswordAndPIDFieldsAreEmpty_30062025_210452.png
+[INFO ] 30-06-2025 21:04:56 [TestNG-test-Railway-1] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:04:56 [TestNG-test-Railway-1] LogUtils - 2. Click on 'Register' tab
+[INFO ] 30-06-2025 21:04:56 [TestNG-test-Railway-1] LogUtils - Click on tab Register
+[INFO ] 30-06-2025 21:04:57 [TestNG-test-Railway-3] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:04:57 [TestNG-test-Railway-3] LogUtils - Click on tab Register
+[INFO ] 30-06-2025 21:05:01 [TestNG-test-Railway-1] LogUtils - 3. Enter valid information into all fields except 'Confirm password' is not the same with 'Password'
+[INFO ] 30-06-2025 21:05:01 [TestNG-test-Railway-1] LogUtils - 4. Click on 'Register' button
+[INFO ] 30-06-2025 21:05:01 [TestNG-test-Railway-1] LogUtils - Enter email: minh@gmail.com
+[INFO ] 30-06-2025 21:05:01 [TestNG-test-Railway-1] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:05:02 [TestNG-test-Railway-1] LogUtils - Enter confirm password: minh
+[INFO ] 30-06-2025 21:05:02 [TestNG-test-Railway-1] LogUtils - Enter PID: 27183714777
+[INFO ] 30-06-2025 21:05:02 [TestNG-test-Railway-1] LogUtils - Click button: 
+[INFO ] 30-06-2025 21:05:12 [TestNG-test-Railway-1] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:05:12 [TestNG-test-Railway-1] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 30-06-2025 21:05:12 [TestNG-test-Railway-1] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 30-06-2025 21:05:12 [TestNG-test-Railway-1] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:05:12 [TestNG-test-Railway-4] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:05:12 [TestNG-test-Railway-4] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 30-06-2025 21:05:12 [TestNG-test-Railway-4] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:05:13 [TestNG-test-Railway-3] LogUtils - Enter email: null
+[INFO ] 30-06-2025 21:05:14 [TestNG-test-Railway-4] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 30-06-2025 21:05:14 [TestNG-test-Railway-1] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 30-06-2025 21:05:14 [TestNG-test-Railway-1] LogUtils - 4. Click on 'Send Instructions' button
+[INFO ] 30-06-2025 21:05:15 [TestNG-test-Railway-4] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 30-06-2025 21:05:15 [TestNG-test-Railway-4] LogUtils - 4. Click on 'Send Instructions' button
+[INFO ] 30-06-2025 21:05:17 [TestNG-test-Railway-4] LogUtils - 5. Open mailbox and click on reset password link
+[INFO ] 30-06-2025 21:05:21 [TestNG-test-Railway-1] LogUtils - 5. Open mailbox and click on reset password link
+[ERROR] 30-06-2025 21:05:23 [TestNG-test-Railway-3] LogUtils - com.mailslurp.clients.ApiException: Message: java.net.SocketTimeoutException: timeout
+HTTP response code: 0
+HTTP response body: null
+HTTP response headers: null
+[INFO ] 30-06-2025 21:05:23 [TestNG-test-Railway-3] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC12\errorsDisplayWhenPasswordResetTokenIsBlankUseMailAPI_30062025_210523.png
+[INFO ] 30-06-2025 21:05:51 [TestNG-test-Railway-3] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:05:51 [TestNG-test-Railway-3] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:05:51 [TestNG-test-Railway-3] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:05:53 [TestNG-test-Railway-3] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:05:53 [TestNG-test-Railway-3] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:05:53 [TestNG-test-Railway-3] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:05:53 [TestNG-test-Railway-3] LogUtils - click button: 
+[INFO ] 30-06-2025 21:05:55 [TestNG-test-Railway-3] LogUtils - Click on tab My ticket
+[ERROR] 30-06-2025 21:06:07 [TestNG-test-Railway-1] LogUtils - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //tr[contains(@class, 'email_unread')]//td[contains(text(),'thanhletraining03@gmail.com')][1] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.49, chrome: {chromedriverVersion: 138.0.7204.49 (d2b48fd5f781..., userDataDir: C:\Users\ANHMIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63594}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63594/devtoo..., se:cdpVersion: 138.0.7204.49, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 96701eb270515b8d5222fd264ce96a65
+[INFO ] 30-06-2025 21:06:07 [TestNG-test-Railway-1] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC13\errorsDisplayIfPasswordAndConfirmPasswordDontMatchWhenResettingPassword_30062025_210607.png
+[INFO ] 30-06-2025 21:06:12 [TestNG-test-Railway-3] LogUtils - 3. Click on 'Book ticket' tab
+[INFO ] 30-06-2025 21:06:12 [TestNG-test-Railway-3] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:06:16 [TestNG-test-Railway-3] LogUtils - Select a 'Depart date' from the list
+[INFO ] 30-06-2025 21:06:17 [TestNG-test-Railway-3] LogUtils - Select Sài Gòn for 'Depart from' and Phan Thiết for 'Arrive at'.
+[INFO ] 30-06-2025 21:06:28 [TestNG-test-Railway-3] LogUtils - Select Soft bed with air conditioner for 'Seat type'
+[INFO ] 30-06-2025 21:06:28 [TestNG-test-Railway-3] LogUtils - Select 1 for 'Ticket amount'
+[INFO ] 30-06-2025 21:06:28 [TestNG-test-Railway-3] LogUtils - Click on 'Book ticket' button
+[INFO ] 30-06-2025 21:06:42 [TestNG-test-Railway-3] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:07:22 [TestNG-test-Railway-4] LogUtils - 6. Enter new passwords and remove the Password Reset Token
+[INFO ] 30-06-2025 21:07:22 [TestNG-test-Railway-4] LogUtils - 7. Click 'Reset Password' button
+[ERROR] 30-06-2025 21:07:25 [TestNG-test-Railway-4] LogUtils - java.lang.AssertionError: Error message element does not exist expected [true] but found [false]
+[INFO ] 30-06-2025 21:07:25 [TestNG-test-Railway-4] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC12\errorsDisplayWhenPasswordResetTokenIsBlankUseUI_30062025_210725.png
+[INFO ] 30-06-2025 21:08:01 [TestNG-test-Railway-2] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:08:01 [TestNG-test-Railway-2] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:08:01 [TestNG-test-Railway-2] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:08:02 [TestNG-test-Railway-2] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:08:02 [TestNG-test-Railway-2] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:08:02 [TestNG-test-Railway-2] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:08:02 [TestNG-test-Railway-2] LogUtils - click button: 
+[INFO ] 30-06-2025 21:08:05 [TestNG-test-Railway-2] LogUtils - 3. Click on 'Timetable' tab
+[INFO ] 30-06-2025 21:08:05 [TestNG-test-Railway-2] LogUtils - Click on tab Timetable
+[INFO ] 30-06-2025 21:08:10 [TestNG-test-Railway-2] LogUtils - 4. Click on 'book ticket' link of the route from 'Huế' to 'Sài Gòn'
+[INFO ] 30-06-2025 21:08:21 [TestNG-test-Railway-3] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:08:21 [TestNG-test-Railway-3] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:08:21 [TestNG-test-Railway-3] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:08:23 [TestNG-test-Railway-3] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:08:23 [TestNG-test-Railway-3] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:08:23 [TestNG-test-Railway-3] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:08:23 [TestNG-test-Railway-3] LogUtils - click button: 
+[INFO ] 30-06-2025 21:08:25 [TestNG-test-Railway-3] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:08:27 [TestNG-test-Railway-3] LogUtils - 3. Click on 'Book ticket' tab
+[INFO ] 30-06-2025 21:08:27 [TestNG-test-Railway-3] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:08:29 [TestNG-test-Railway-3] LogUtils - Select a 'Depart date' from the list
+[INFO ] 30-06-2025 21:08:29 [TestNG-test-Railway-3] LogUtils - Select Huế for 'Depart from' and Quảng Ngãi for 'Arrive at'.
+[INFO ] 30-06-2025 21:08:31 [TestNG-test-Railway-3] LogUtils - Select Soft bed for 'Seat type'
+[INFO ] 30-06-2025 21:08:31 [TestNG-test-Railway-3] LogUtils - Select 1 for 'Ticket amount'
+[INFO ] 30-06-2025 21:08:31 [TestNG-test-Railway-3] LogUtils - Click on 'Book ticket' button
+[INFO ] 30-06-2025 21:08:36 [TestNG-test-Railway-3] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:08:48 [TestNG-test-Railway-3] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:08:48 [TestNG-test-Railway-3] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:08:48 [TestNG-test-Railway-3] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:08:49 [TestNG-test-Railway-3] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:08:49 [TestNG-test-Railway-3] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:08:49 [TestNG-test-Railway-3] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:08:49 [TestNG-test-Railway-3] LogUtils - click button: 
+[INFO ] 30-06-2025 21:08:54 [TestNG-test-Railway-3] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:09:10 [TestNG-test-Railway-3] LogUtils - 3. Click on 'Book ticket' tab
+[INFO ] 30-06-2025 21:09:10 [TestNG-test-Railway-3] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:09:11 [TestNG-test-Railway-3] LogUtils - Select a 'Depart date' from the list
+[INFO ] 30-06-2025 21:09:12 [TestNG-test-Railway-3] LogUtils - Select Nha Trang for 'Depart from' and Đà Nẵng for 'Arrive at'.
+[INFO ] 30-06-2025 21:09:14 [TestNG-test-Railway-3] LogUtils - Select Hard bed for 'Seat type'
+[INFO ] 30-06-2025 21:09:14 [TestNG-test-Railway-3] LogUtils - Select 1 for 'Ticket amount'
+[INFO ] 30-06-2025 21:09:14 [TestNG-test-Railway-3] LogUtils - Click on 'Book ticket' button
+[INFO ] 30-06-2025 21:09:17 [TestNG-test-Railway-3] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:19:05 [TestNG-test-Railway-2] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:19:05 [TestNG-test-Railway-2] LogUtils - 2. Click on 'Login' tab
+[INFO ] 30-06-2025 21:19:05 [TestNG-test-Railway-2] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:19:09 [TestNG-test-Railway-1] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:19:09 [TestNG-test-Railway-1] LogUtils - 2. Click on 'Login' tab
+[INFO ] 30-06-2025 21:19:09 [TestNG-test-Railway-1] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:19:11 [TestNG-test-Railway-4] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:19:11 [TestNG-test-Railway-4] LogUtils - 2. Click on 'Book ticket' tab
+[INFO ] 30-06-2025 21:19:11 [TestNG-test-Railway-4] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:19:11 [TestNG-test-Railway-1] LogUtils - 3. Enter valid Email and Password:
+[INFO ] 30-06-2025 21:19:11 [TestNG-test-Railway-1] LogUtils - 4. Click on 'Login' button
+[INFO ] 30-06-2025 21:19:11 [TestNG-test-Railway-1] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:19:11 [TestNG-test-Railway-1] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:19:11 [TestNG-test-Railway-1] LogUtils - click button: 
+[INFO ] 30-06-2025 21:19:13 [TestNG-test-Railway-3] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:19:13 [TestNG-test-Railway-3] LogUtils - 2. Click on 'Login' tab
+[INFO ] 30-06-2025 21:19:13 [TestNG-test-Railway-3] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:19:15 [TestNG-test-Railway-3] LogUtils - 3. Enter valid Email and invalid Password
+[INFO ] 30-06-2025 21:19:15 [TestNG-test-Railway-3] LogUtils - 4. Click on 'Login' button
+[INFO ] 30-06-2025 21:19:15 [TestNG-test-Railway-3] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:19:15 [TestNG-test-Railway-3] LogUtils - Enter password: abc123
+[INFO ] 30-06-2025 21:19:15 [TestNG-test-Railway-2] LogUtils - 3. User doesn't type any words into 'Username' textbox but enter valid information into 'Password' textbox
+[INFO ] 30-06-2025 21:19:15 [TestNG-test-Railway-2] LogUtils - 4. Click on 'Login' button
+[INFO ] 30-06-2025 21:19:15 [TestNG-test-Railway-2] LogUtils - Enter username: 
+[INFO ] 30-06-2025 21:19:15 [TestNG-test-Railway-3] LogUtils - click button: 
+[INFO ] 30-06-2025 21:19:15 [TestNG-test-Railway-2] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:19:15 [TestNG-test-Railway-2] LogUtils - click button: 
+[ERROR] 30-06-2025 21:19:16 [TestNG-test-Railway-1] LogUtils - java.lang.AssertionError: expected [Welcome vffaebxr@sharklasers.com] but found []
+[INFO ] 30-06-2025 21:19:16 [TestNG-test-Railway-3] LogUtils - Error messageInvalid username or password. Please try again.
+[INFO ] 30-06-2025 21:19:16 [TestNG-test-Railway-1] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.login.TC01\userCanLogIntoRailwayWithValidUsernameAndPassword_30062025_211916.png
+[ERROR] 30-06-2025 21:19:16 [TestNG-test-Railway-3] LogUtils - java.lang.AssertionError: expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]
+[INFO ] 30-06-2025 21:19:17 [TestNG-test-Railway-3] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.login.TC03\UserCannotLogIntoRailwayWithInvalidPassword_30062025_211917.png
+[INFO ] 30-06-2025 21:19:17 [TestNG-test-Railway-2] LogUtils - Error messageThere was a problem with your login and/or errors exist in your form.
+[INFO ] 30-06-2025 21:19:19 [TestNG-test-Railway-4] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:19:19 [TestNG-test-Railway-4] LogUtils - 2. Click on 'Login' tab
+[INFO ] 30-06-2025 21:19:19 [TestNG-test-Railway-4] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:19:19 [TestNG-test-Railway-4] LogUtils - 3. Enter valid information into 'Username' textbox except 'Password' textbox.
+[INFO ] 30-06-2025 21:19:19 [TestNG-test-Railway-4] LogUtils - 4. Click on 'Login' button
+[INFO ] 30-06-2025 21:19:19 [TestNG-test-Railway-4] LogUtils - 5. Repeat step 3 three more times.
+[INFO ] 30-06-2025 21:19:19 [TestNG-test-Railway-4] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:19:19 [TestNG-test-Railway-4] LogUtils - Enter password: abc123
+[INFO ] 30-06-2025 21:19:20 [TestNG-test-Railway-4] LogUtils - click button: 
+[INFO ] 30-06-2025 21:19:20 [TestNG-test-Railway-1] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:19:20 [TestNG-test-Railway-1] LogUtils - 2. Click on 'Login' tab
+[INFO ] 30-06-2025 21:19:20 [TestNG-test-Railway-1] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:19:20 [TestNG-test-Railway-3] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:19:20 [TestNG-test-Railway-3] LogUtils - 2. Click on 'Register' tab
+[INFO ] 30-06-2025 21:19:20 [TestNG-test-Railway-3] LogUtils - Click on tab Register
+[INFO ] 30-06-2025 21:19:20 [TestNG-test-Railway-4] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:19:20 [TestNG-test-Railway-4] LogUtils - Enter password: abc123
+[INFO ] 30-06-2025 21:19:21 [TestNG-test-Railway-4] LogUtils - click button: 
+[INFO ] 30-06-2025 21:19:21 [TestNG-test-Railway-2] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:19:21 [TestNG-test-Railway-2] LogUtils - 2. Click on 'Login' tab
+[INFO ] 30-06-2025 21:19:21 [TestNG-test-Railway-2] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:19:21 [TestNG-test-Railway-3] LogUtils - 3. Enter valid information into all fields
+[INFO ] 30-06-2025 21:19:21 [TestNG-test-Railway-3] LogUtils - 4. Click on 'Register' button
+[INFO ] 30-06-2025 21:19:21 [TestNG-test-Railway-3] LogUtils - Enter email: 21_19_21minh@gmail.com
+[INFO ] 30-06-2025 21:19:21 [TestNG-test-Railway-1] LogUtils - 3. Login with valid account
+[INFO ] 30-06-2025 21:19:21 [TestNG-test-Railway-1] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:19:21 [TestNG-test-Railway-1] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:19:21 [TestNG-test-Railway-1] LogUtils - click button: 
+[INFO ] 30-06-2025 21:19:21 [TestNG-test-Railway-4] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:19:21 [TestNG-test-Railway-2] LogUtils - 3. Enter username and password of account hasn't been activated.
+[INFO ] 30-06-2025 21:19:21 [TestNG-test-Railway-2] LogUtils - 4. Click on 'Login' button
+[INFO ] 30-06-2025 21:19:21 [TestNG-test-Railway-2] LogUtils - Enter username: minh@gmail.com
+[INFO ] 30-06-2025 21:19:21 [TestNG-test-Railway-3] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:19:21 [TestNG-test-Railway-2] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:19:21 [TestNG-test-Railway-2] LogUtils - click button: 
+[INFO ] 30-06-2025 21:19:21 [TestNG-test-Railway-4] LogUtils - Enter password: abc123
+[INFO ] 30-06-2025 21:19:21 [TestNG-test-Railway-4] LogUtils - click button: 
+[INFO ] 30-06-2025 21:19:22 [TestNG-test-Railway-3] LogUtils - Enter confirm password: minh12345
+[INFO ] 30-06-2025 21:19:22 [TestNG-test-Railway-3] LogUtils - Enter PID: 27183714777
+[INFO ] 30-06-2025 21:19:22 [TestNG-test-Railway-4] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:19:22 [TestNG-test-Railway-2] LogUtils - Error messageInvalid username or password. Please try again.
+[INFO ] 30-06-2025 21:19:22 [TestNG-test-Railway-4] LogUtils - Enter password: abc123
+[INFO ] 30-06-2025 21:19:22 [TestNG-test-Railway-3] LogUtils - Click button: 
+[INFO ] 30-06-2025 21:19:22 [TestNG-test-Railway-4] LogUtils - click button: 
+[INFO ] 30-06-2025 21:19:23 [TestNG-test-Railway-1] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:19:23 [TestNG-test-Railway-1] LogUtils - Click on tab Change password
+[INFO ] 30-06-2025 21:19:23 [TestNG-test-Railway-4] LogUtils - Error messageInvalid username or password. Please try again.
+[ERROR] 30-06-2025 21:19:23 [TestNG-test-Railway-4] LogUtils - java.lang.AssertionError: expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
+[INFO ] 30-06-2025 21:19:24 [TestNG-test-Railway-4] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.login.TC05\systemShowsMessageWhenUserEntersWrongPasswordSeveralTimes_30062025_211924.png
+[INFO ] 30-06-2025 21:19:26 [TestNG-test-Railway-2] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:19:26 [TestNG-test-Railway-2] LogUtils - 2. Login with valid account
+[INFO ] 30-06-2025 21:19:26 [TestNG-test-Railway-2] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:19:26 [TestNG-test-Railway-2] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:19:26 [TestNG-test-Railway-2] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:19:26 [TestNG-test-Railway-2] LogUtils - click button: 
+[INFO ] 30-06-2025 21:19:27 [TestNG-test-Railway-4] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:19:27 [TestNG-test-Railway-4] LogUtils - 2. Click on 'Register' tab
+[INFO ] 30-06-2025 21:19:27 [TestNG-test-Railway-4] LogUtils - Click on tab Register
+[INFO ] 30-06-2025 21:19:27 [TestNG-test-Railway-1] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:19:27 [TestNG-test-Railway-1] LogUtils - 2. Click on 'Register' tab
+[INFO ] 30-06-2025 21:19:27 [TestNG-test-Railway-1] LogUtils - Click on tab Register
+[INFO ] 30-06-2025 21:19:27 [TestNG-test-Railway-4] LogUtils - 3. Enter valid information into all fields except 'Confirm password' is not the same with 'Password'
+[INFO ] 30-06-2025 21:19:27 [TestNG-test-Railway-4] LogUtils - 4. Click on 'Register' button
+[INFO ] 30-06-2025 21:19:27 [TestNG-test-Railway-4] LogUtils - Enter email: minh@gmail.com
+[INFO ] 30-06-2025 21:19:28 [TestNG-test-Railway-2] LogUtils - 3. Click on 'Change Password' tab
+[INFO ] 30-06-2025 21:19:28 [TestNG-test-Railway-2] LogUtils - 4. Enter valid value into all fields.
+[INFO ] 30-06-2025 21:19:28 [TestNG-test-Railway-2] LogUtils - 5. Click on 'Change Password' button
+[INFO ] 30-06-2025 21:19:28 [TestNG-test-Railway-2] LogUtils - Click on tab Change password
+[INFO ] 30-06-2025 21:19:28 [TestNG-test-Railway-4] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:19:28 [TestNG-test-Railway-3] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:19:28 [TestNG-test-Railway-1] LogUtils - 3. Enter valid email address and leave other fields empty
+[INFO ] 30-06-2025 21:19:28 [TestNG-test-Railway-1] LogUtils - 4. Click on 'Register' button
+[INFO ] 30-06-2025 21:19:28 [TestNG-test-Railway-1] LogUtils - Enter email: minh@gmail.com
+[INFO ] 30-06-2025 21:19:28 [TestNG-test-Railway-3] LogUtils - Click on tab Register
+[INFO ] 30-06-2025 21:19:28 [TestNG-test-Railway-4] LogUtils - Enter confirm password: minh
+[INFO ] 30-06-2025 21:19:28 [TestNG-test-Railway-1] LogUtils - Enter password: 
+[INFO ] 30-06-2025 21:19:28 [TestNG-test-Railway-2] LogUtils - Passwordminh12345
+[INFO ] 30-06-2025 21:19:28 [TestNG-test-Railway-2] LogUtils - New Passwordminh12345
+[INFO ] 30-06-2025 21:19:28 [TestNG-test-Railway-2] LogUtils - Confirm Passwordminh12345
+[INFO ] 30-06-2025 21:19:28 [TestNG-test-Railway-2] LogUtils - Click button 
+[INFO ] 30-06-2025 21:19:28 [TestNG-test-Railway-4] LogUtils - Enter PID: 27183714777
+[INFO ] 30-06-2025 21:19:29 [TestNG-test-Railway-1] LogUtils - Enter confirm password: 
+[INFO ] 30-06-2025 21:19:29 [TestNG-test-Railway-4] LogUtils - Click button: 
+[INFO ] 30-06-2025 21:19:29 [TestNG-test-Railway-1] LogUtils - Enter PID: 
+[INFO ] 30-06-2025 21:19:29 [TestNG-test-Railway-1] LogUtils - Click button: 
+[ERROR] 30-06-2025 21:19:29 [TestNG-test-Railway-2] LogUtils - java.lang.AssertionError: expected [Your password has been updated] but found [Your password has been updated!]
+[INFO ] 30-06-2025 21:19:30 [TestNG-test-Railway-2] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.login.TC09\userCanChangePassword_30062025_211930.png
+[ERROR] 30-06-2025 21:19:30 [TestNG-test-Railway-1] LogUtils - java.lang.AssertionError: The following asserts failed:
+	expected [Invalid password length.] but found [Invalid password length],
+	expected [Invalid ID length.] but found [Invalid ID length]
+[INFO ] 30-06-2025 21:19:31 [TestNG-test-Railway-1] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.register.TC11\userCannotCreateAccountWhilePasswordAndPIDFieldsAreEmpty_30062025_211931.png
+[INFO ] 30-06-2025 21:19:31 [TestNG-test-Railway-3] LogUtils - Enter email: null
+[INFO ] 30-06-2025 21:19:33 [TestNG-test-Railway-2] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:19:33 [TestNG-test-Railway-2] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 30-06-2025 21:19:33 [TestNG-test-Railway-2] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:19:33 [TestNG-test-Railway-4] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:19:33 [TestNG-test-Railway-4] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 30-06-2025 21:19:33 [TestNG-test-Railway-4] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 30-06-2025 21:19:33 [TestNG-test-Railway-4] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:19:33 [TestNG-test-Railway-2] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 30-06-2025 21:19:34 [TestNG-test-Railway-1] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:19:34 [TestNG-test-Railway-1] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:19:34 [TestNG-test-Railway-1] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:19:34 [TestNG-test-Railway-2] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 30-06-2025 21:19:34 [TestNG-test-Railway-2] LogUtils - 4. Click on 'Send Instructions' button
+[INFO ] 30-06-2025 21:19:35 [TestNG-test-Railway-4] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 30-06-2025 21:19:35 [TestNG-test-Railway-4] LogUtils - 4. Click on 'Send Instructions' button
+[INFO ] 30-06-2025 21:19:35 [TestNG-test-Railway-1] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:19:35 [TestNG-test-Railway-1] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:19:35 [TestNG-test-Railway-1] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:19:35 [TestNG-test-Railway-1] LogUtils - click button: 
+[INFO ] 30-06-2025 21:19:36 [TestNG-test-Railway-2] LogUtils - 5. Open mailbox and click on reset password link
+[INFO ] 30-06-2025 21:19:36 [TestNG-test-Railway-1] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:19:37 [TestNG-test-Railway-4] LogUtils - 5. Open mailbox and click on reset password link
+[INFO ] 30-06-2025 21:19:37 [TestNG-test-Railway-1] LogUtils - 3. Click on 'Book ticket' tab
+[INFO ] 30-06-2025 21:19:37 [TestNG-test-Railway-1] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:19:38 [TestNG-test-Railway-1] LogUtils - Select a 'Depart date' from the list
+[INFO ] 30-06-2025 21:19:39 [TestNG-test-Railway-1] LogUtils - Select Sài Gòn for 'Depart from' and Phan Thiết for 'Arrive at'.
+[ERROR] 30-06-2025 21:19:41 [TestNG-test-Railway-3] LogUtils - com.mailslurp.clients.ApiException: Message: java.net.SocketTimeoutException: timeout
+HTTP response code: 0
+HTTP response body: null
+HTTP response headers: null
+[INFO ] 30-06-2025 21:19:42 [TestNG-test-Railway-3] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC12\errorsDisplayWhenPasswordResetTokenIsBlankUseMailAPI_30062025_211942.png
+[INFO ] 30-06-2025 21:19:47 [TestNG-test-Railway-3] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:19:47 [TestNG-test-Railway-3] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:19:47 [TestNG-test-Railway-3] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:19:48 [TestNG-test-Railway-3] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:19:48 [TestNG-test-Railway-3] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:19:48 [TestNG-test-Railway-3] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:19:48 [TestNG-test-Railway-3] LogUtils - click button: 
+[ERROR] 30-06-2025 21:19:49 [TestNG-test-Railway-2] LogUtils - org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a href="http://www.saferailway.somee.com/Account/PasswordReset?resetToken=%2BkAvRj%2BdZxjyZvfMaka0LQ%3D%3D" target="_blank">...</a> is not clickable at point (816, 9). Other element would receive the click: <div style="top: 0px !important" id="status_alert_0" class="status_alert shadow">...</div>
+  (Session info: chrome=138.0.7204.49)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2cd9ff4fc7389d5f393b20921cb3a5f5, clickElement {id=f.D3AC946BFA3B40069B7B095ADC1DC0D6.d.EBC7D795082047FE9EAFEAFF5EE38DB1.e.55}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.49, chrome: {chromedriverVersion: 138.0.7204.49 (d2b48fd5f781..., userDataDir: C:\Users\ANHMIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64819}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64819/devtoo..., se:cdpVersion: 138.0.7204.49, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (2cd9ff4fc7389d5f393b20921cb3a5f5)] -> partial link text: http://www.saferailway.somee.com/Account/PasswordReset]
+Session ID: 2cd9ff4fc7389d5f393b20921cb3a5f5
+[INFO ] 30-06-2025 21:19:49 [TestNG-test-Railway-2] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC12\errorsDisplayWhenPasswordResetTokenIsBlankUseUI_30062025_211949.png
+[INFO ] 30-06-2025 21:19:49 [TestNG-test-Railway-1] LogUtils - Select Soft bed with air conditioner for 'Seat type'
+[INFO ] 30-06-2025 21:19:50 [TestNG-test-Railway-3] LogUtils - 3. Click on 'Timetable' tab
+[INFO ] 30-06-2025 21:19:50 [TestNG-test-Railway-3] LogUtils - Click on tab Timetable
+[INFO ] 30-06-2025 21:19:50 [TestNG-test-Railway-1] LogUtils - Select 1 for 'Ticket amount'
+[INFO ] 30-06-2025 21:19:50 [TestNG-test-Railway-1] LogUtils - Click on 'Book ticket' button
+[INFO ] 30-06-2025 21:19:50 [TestNG-test-Railway-3] LogUtils - 4. Click on 'book ticket' link of the route from 'Huế' to 'Sài Gòn'
+[ERROR] 30-06-2025 21:19:51 [TestNG-test-Railway-1] LogUtils - java.lang.AssertionError: expected [Safe Railway - Success] but found [Safe Railway - Book Ticket]
+[INFO ] 30-06-2025 21:19:52 [TestNG-test-Railway-1] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.bookticket.TC14\userCanBookOneTicketAtATime_30062025_211952.png
+[INFO ] 30-06-2025 21:19:52 [TestNG-test-Railway-4] LogUtils - 6. Enter different values for password fields
+[INFO ] 30-06-2025 21:19:52 [TestNG-test-Railway-4] LogUtils - 7. Click 'Reset Password' button
+[INFO ] 30-06-2025 21:19:55 [TestNG-test-Railway-2] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:19:55 [TestNG-test-Railway-2] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:19:55 [TestNG-test-Railway-2] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:19:55 [TestNG-test-Railway-2] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:19:55 [TestNG-test-Railway-2] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:19:56 [TestNG-test-Railway-2] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:19:56 [TestNG-test-Railway-2] LogUtils - click button: 
+[INFO ] 30-06-2025 21:19:56 [TestNG-test-Railway-1] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:19:56 [TestNG-test-Railway-1] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:19:56 [TestNG-test-Railway-1] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:19:56 [TestNG-test-Railway-1] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:19:56 [TestNG-test-Railway-1] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:19:56 [TestNG-test-Railway-1] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:19:56 [TestNG-test-Railway-1] LogUtils - click button: 
+[INFO ] 30-06-2025 21:19:57 [TestNG-test-Railway-2] LogUtils - 3. Book a ticket
+[INFO ] 30-06-2025 21:19:57 [TestNG-test-Railway-2] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:19:58 [TestNG-test-Railway-2] LogUtils - Select a 'Depart date' from the list
+[INFO ] 30-06-2025 21:19:58 [TestNG-test-Railway-1] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:19:58 [TestNG-test-Railway-2] LogUtils - Select Đà Nẵng for 'Depart from' and Huế for 'Arrive at'.
+[INFO ] 30-06-2025 21:19:58 [TestNG-test-Railway-1] LogUtils - 3. Click on 'Book ticket' tab
+[INFO ] 30-06-2025 21:19:58 [TestNG-test-Railway-1] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:19:59 [TestNG-test-Railway-1] LogUtils - Select a 'Depart date' from the list
+[INFO ] 30-06-2025 21:19:59 [TestNG-test-Railway-2] LogUtils - Select Soft bed with air conditioner for 'Seat type'
+[INFO ] 30-06-2025 21:19:59 [TestNG-test-Railway-1] LogUtils - Select Huế for 'Depart from' and Quảng Ngãi for 'Arrive at'.
+[INFO ] 30-06-2025 21:19:59 [TestNG-test-Railway-2] LogUtils - Select 2 for 'Ticket amount'
+[INFO ] 30-06-2025 21:20:00 [TestNG-test-Railway-2] LogUtils - Click on 'Book ticket' button
+[INFO ] 30-06-2025 21:20:00 [TestNG-test-Railway-2] LogUtils - 4. Click on 'My ticket' tab
+[INFO ] 30-06-2025 21:20:01 [TestNG-test-Railway-1] LogUtils - Select Soft bed for 'Seat type'
+[INFO ] 30-06-2025 21:20:01 [TestNG-test-Railway-2] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:20:01 [TestNG-test-Railway-1] LogUtils - Select 1 for 'Ticket amount'
+[INFO ] 30-06-2025 21:20:01 [TestNG-test-Railway-1] LogUtils - Click on 'Book ticket' button
+[INFO ] 30-06-2025 21:20:01 [TestNG-test-Railway-2] LogUtils - Click on 'Cancel' button of ticket which user want to cancel.
+[ERROR] 30-06-2025 21:20:01 [TestNG-test-Railway-2] LogUtils - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//table[contains(@class, 'MyTable')]//tr[td[text()='Đà Nẵng'] and td[text()='Huế'] and td[text()='Soft bed with air conditioner'] and td[text()='7/7/2025'] and td[text()='2']]//input[@value='Cancel']"}
+  (Session info: chrome=138.0.7204.49)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ef4d99cd246c8d2b2ed6a4f4d0e834f0, findElement {using=xpath, value=//table[contains(@class, 'MyTable')]//tr[td[text()='Đà Nẵng'] and td[text()='Huế'] and td[text()='Soft bed with air conditioner'] and td[text()='7/7/2025'] and td[text()='2']]//input[@value='Cancel']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.49, chrome: {chromedriverVersion: 138.0.7204.49 (d2b48fd5f781..., userDataDir: C:\Users\ANHMIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64999}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64999/devtoo..., se:cdpVersion: 138.0.7204.49, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ef4d99cd246c8d2b2ed6a4f4d0e834f0
+[INFO ] 30-06-2025 21:20:02 [TestNG-test-Railway-2] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.myticket.TC16\userCanCancelATicket_30062025_212002.png
+[ERROR] 30-06-2025 21:20:02 [TestNG-test-Railway-1] LogUtils - java.lang.AssertionError: expected [Safe Railway - Success] but found [Safe Railway - Book Ticket]
+[INFO ] 30-06-2025 21:20:02 [TestNG-test-Railway-1] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.bookticket.TC14\userCanBookOneTicketAtATime_30062025_212002.png
+[INFO ] 30-06-2025 21:20:05 [TestNG-test-Railway-2] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:20:05 [TestNG-test-Railway-2] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:20:05 [TestNG-test-Railway-2] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:20:05 [TestNG-test-Railway-2] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:20:06 [TestNG-test-Railway-2] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:20:06 [TestNG-test-Railway-2] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:20:06 [TestNG-test-Railway-2] LogUtils - click button: 
+[INFO ] 30-06-2025 21:20:06 [TestNG-test-Railway-1] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:20:06 [TestNG-test-Railway-1] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:20:06 [TestNG-test-Railway-1] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:20:06 [TestNG-test-Railway-1] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:20:06 [TestNG-test-Railway-1] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:20:06 [TestNG-test-Railway-1] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:20:06 [TestNG-test-Railway-1] LogUtils - click button: 
+[INFO ] 30-06-2025 21:20:07 [TestNG-test-Railway-2] LogUtils - 3. Book a ticket
+[INFO ] 30-06-2025 21:20:07 [TestNG-test-Railway-2] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:20:08 [TestNG-test-Railway-2] LogUtils - Select a 'Depart date' from the list
+[INFO ] 30-06-2025 21:20:08 [TestNG-test-Railway-1] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:20:08 [TestNG-test-Railway-2] LogUtils - Select Quảng Ngãi for 'Depart from' and Sài Gòn for 'Arrive at'.
+[INFO ] 30-06-2025 21:20:09 [TestNG-test-Railway-1] LogUtils - 3. Click on 'Book ticket' tab
+[INFO ] 30-06-2025 21:20:09 [TestNG-test-Railway-1] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:20:09 [TestNG-test-Railway-1] LogUtils - Select a 'Depart date' from the list
+[INFO ] 30-06-2025 21:20:09 [TestNG-test-Railway-2] LogUtils - Select Soft bed for 'Seat type'
+[INFO ] 30-06-2025 21:20:09 [TestNG-test-Railway-1] LogUtils - Select Nha Trang for 'Depart from' and Đà Nẵng for 'Arrive at'.
+[INFO ] 30-06-2025 21:20:10 [TestNG-test-Railway-2] LogUtils - Select 1 for 'Ticket amount'
+[INFO ] 30-06-2025 21:20:10 [TestNG-test-Railway-2] LogUtils - Click on 'Book ticket' button
+[INFO ] 30-06-2025 21:20:11 [TestNG-test-Railway-2] LogUtils - 4. Click on 'My ticket' tab
+[INFO ] 30-06-2025 21:20:11 [TestNG-test-Railway-1] LogUtils - Select Hard bed for 'Seat type'
+[INFO ] 30-06-2025 21:20:11 [TestNG-test-Railway-2] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:20:11 [TestNG-test-Railway-1] LogUtils - Select 1 for 'Ticket amount'
+[INFO ] 30-06-2025 21:20:11 [TestNG-test-Railway-1] LogUtils - Click on 'Book ticket' button
+[INFO ] 30-06-2025 21:20:12 [TestNG-test-Railway-2] LogUtils - Click on 'Cancel' button of ticket which user want to cancel.
+[ERROR] 30-06-2025 21:20:12 [TestNG-test-Railway-2] LogUtils - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//table[contains(@class, 'MyTable')]//tr[td[text()='Quảng Ngãi'] and td[text()='Sài Gòn'] and td[text()='Soft bed'] and td[text()='7/13/2025'] and td[text()='1']]//input[@value='Cancel']"}
+  (Session info: chrome=138.0.7204.49)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3e6137f79943615c0531b3dcabb42bec, findElement {using=xpath, value=//table[contains(@class, 'MyTable')]//tr[td[text()='Quảng Ngãi'] and td[text()='Sài Gòn'] and td[text()='Soft bed'] and td[text()='7/13/2025'] and td[text()='1']]//input[@value='Cancel']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.49, chrome: {chromedriverVersion: 138.0.7204.49 (d2b48fd5f781..., userDataDir: C:\Users\ANHMIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65085}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65085/devtoo..., se:cdpVersion: 138.0.7204.49, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3e6137f79943615c0531b3dcabb42bec
+[INFO ] 30-06-2025 21:20:12 [TestNG-test-Railway-2] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.myticket.TC16\userCanCancelATicket_30062025_212012.png
+[ERROR] 30-06-2025 21:20:12 [TestNG-test-Railway-1] LogUtils - java.lang.AssertionError: expected [Safe Railway - Success] but found [Safe Railway - Book Ticket]
+[INFO ] 30-06-2025 21:20:13 [TestNG-test-Railway-1] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.bookticket.TC14\userCanBookOneTicketAtATime_30062025_212013.png
+[INFO ] 30-06-2025 21:20:16 [TestNG-test-Railway-2] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:20:16 [TestNG-test-Railway-2] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:20:16 [TestNG-test-Railway-2] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:20:16 [TestNG-test-Railway-2] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:20:16 [TestNG-test-Railway-2] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:20:16 [TestNG-test-Railway-2] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:20:16 [TestNG-test-Railway-2] LogUtils - click button: 
+[INFO ] 30-06-2025 21:20:18 [TestNG-test-Railway-2] LogUtils - 3. Book a ticket
+[INFO ] 30-06-2025 21:20:18 [TestNG-test-Railway-2] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:20:18 [TestNG-test-Railway-2] LogUtils - Select a 'Depart date' from the list
+[INFO ] 30-06-2025 21:20:19 [TestNG-test-Railway-2] LogUtils - Select Huế for 'Depart from' and Đà Nẵng for 'Arrive at'.
+[INFO ] 30-06-2025 21:20:20 [TestNG-test-Railway-2] LogUtils - Select Hard bed for 'Seat type'
+[INFO ] 30-06-2025 21:20:20 [TestNG-test-Railway-2] LogUtils - Select 1 for 'Ticket amount'
+[INFO ] 30-06-2025 21:20:20 [TestNG-test-Railway-2] LogUtils - Click on 'Book ticket' button
+[INFO ] 30-06-2025 21:20:21 [TestNG-test-Railway-2] LogUtils - 4. Click on 'My ticket' tab
+[INFO ] 30-06-2025 21:20:21 [TestNG-test-Railway-2] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:20:22 [TestNG-test-Railway-2] LogUtils - Click on 'Cancel' button of ticket which user want to cancel.
+[ERROR] 30-06-2025 21:20:22 [TestNG-test-Railway-2] LogUtils - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//table[contains(@class, 'MyTable')]//tr[td[text()='Huế'] and td[text()='Đà Nẵng'] and td[text()='Hard bed'] and td[text()='7/11/2025'] and td[text()='1']]//input[@value='Cancel']"}
+  (Session info: chrome=138.0.7204.49)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c34c0b60f7788c372b7be336d4ccae6d, findElement {using=xpath, value=//table[contains(@class, 'MyTable')]//tr[td[text()='Huế'] and td[text()='Đà Nẵng'] and td[text()='Hard bed'] and td[text()='7/11/2025'] and td[text()='1']]//input[@value='Cancel']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.49, chrome: {chromedriverVersion: 138.0.7204.49 (d2b48fd5f781..., userDataDir: C:\Users\ANHMIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65154}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65154/devtoo..., se:cdpVersion: 138.0.7204.49, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c34c0b60f7788c372b7be336d4ccae6d
+[INFO ] 30-06-2025 21:20:22 [TestNG-test-Railway-2] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.myticket.TC16\userCanCancelATicket_30062025_212022.png
+[INFO ] 30-06-2025 21:28:23 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:28:23 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 30-06-2025 21:28:23 [main] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:28:24 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 30-06-2025 21:28:25 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 30-06-2025 21:28:25 [main] LogUtils - 4. Click on 'Send Instructions' button
+[INFO ] 30-06-2025 21:28:27 [main] LogUtils - 5. Open mailbox and click on reset password link
+[INFO ] 30-06-2025 21:28:38 [main] LogUtils - 6. Enter new passwords and remove the Password Reset Token
+[INFO ] 30-06-2025 21:28:38 [main] LogUtils - 7. Click 'Reset Password' button
+[ERROR] 30-06-2025 21:28:41 [main] LogUtils - java.lang.AssertionError: Error message element does not exist expected [true] but found [false]
+[INFO ] 30-06-2025 21:28:41 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC12\errorsDisplayWhenPasswordResetTokenIsBlankUseUI_30062025_212841.png
+[INFO ] 30-06-2025 21:29:33 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:29:33 [main] LogUtils - Click on tab Register
+[INFO ] 30-06-2025 21:29:36 [main] LogUtils - Enter email: cOp5SmWFqSDU@mailslurp.biz
+[INFO ] 30-06-2025 21:29:36 [main] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:29:37 [main] LogUtils - Enter confirm password: minh12345
+[INFO ] 30-06-2025 21:29:37 [main] LogUtils - Enter PID: 27183714777
+[INFO ] 30-06-2025 21:29:38 [main] LogUtils - Click button: 
+[INFO ] 30-06-2025 21:29:46 [main] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 30-06-2025 21:29:46 [main] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 30-06-2025 21:29:46 [main] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:29:48 [main] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 30-06-2025 21:29:48 [main] LogUtils - 4. Click on 'Send Instructions' button
+[INFO ] 30-06-2025 21:29:50 [main] LogUtils - 5. Open mailbox and click on reset password link
+[INFO ] 30-06-2025 21:29:55 [main] LogUtils - 6. Enter new passwords and remove the Password Reset Token
+[INFO ] 30-06-2025 21:29:55 [main] LogUtils - 7. Click 'Reset Password' button
+[ERROR] 30-06-2025 21:29:57 [main] LogUtils - java.lang.AssertionError: Error message element does not exist expected [true] but found [false]
+[INFO ] 30-06-2025 21:29:58 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC12\errorsDisplayWhenPasswordResetTokenIsBlankUseMailAPI_30062025_212958.png
+[INFO ] 30-06-2025 21:30:16 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:30:16 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:30:16 [main] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:30:16 [main] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:30:17 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:30:17 [main] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:30:17 [main] LogUtils - click button: 
+[INFO ] 30-06-2025 21:30:18 [main] LogUtils - 3. Book a ticket
+[INFO ] 30-06-2025 21:30:18 [main] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:30:19 [main] LogUtils - Select a 'Depart date' from the list
+[INFO ] 30-06-2025 21:30:19 [main] LogUtils - Select Đà Nẵng for 'Depart from' and Huế for 'Arrive at'.
+[INFO ] 30-06-2025 21:30:20 [main] LogUtils - Select Soft bed with air conditioner for 'Seat type'
+[INFO ] 30-06-2025 21:30:21 [main] LogUtils - Select 2 for 'Ticket amount'
+[INFO ] 30-06-2025 21:30:21 [main] LogUtils - Click on 'Book ticket' button
+[INFO ] 30-06-2025 21:30:22 [main] LogUtils - 4. Click on 'My ticket' tab
+[INFO ] 30-06-2025 21:30:22 [main] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:30:23 [main] LogUtils - Click on 'Cancel' button of ticket which user want to cancel.
+[ERROR] 30-06-2025 21:30:23 [main] LogUtils - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//table[contains(@class, 'MyTable')]//tr[td[text()='Đà Nẵng'] and td[text()='Huế'] and td[text()='Soft bed with air conditioner'] and td[text()='7/7/2025'] and td[text()='2']]//input[@value='Cancel']"}
+  (Session info: chrome=138.0.7204.49)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9ee7a9a5bb584bc5e2a7df2fa5b80d2a, findElement {value=//table[contains(@class, 'MyTable')]//tr[td[text()='Đà Nẵng'] and td[text()='Huế'] and td[text()='Soft bed with air conditioner'] and td[text()='7/7/2025'] and td[text()='2']]//input[@value='Cancel'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.49, chrome: {chromedriverVersion: 138.0.7204.49 (d2b48fd5f781..., userDataDir: C:\Users\ANHMIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65533}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65533/devtoo..., se:cdpVersion: 138.0.7204.49, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9ee7a9a5bb584bc5e2a7df2fa5b80d2a
+[INFO ] 30-06-2025 21:30:23 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.myticket.TC16\userCanCancelATicket_30062025_213023.png
+[INFO ] 30-06-2025 21:30:26 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:30:26 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:30:26 [main] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:30:26 [main] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:30:27 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:30:27 [main] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:30:27 [main] LogUtils - click button: 
+[INFO ] 30-06-2025 21:30:29 [main] LogUtils - 3. Book a ticket
+[INFO ] 30-06-2025 21:30:29 [main] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:30:29 [main] LogUtils - Select a 'Depart date' from the list
+[INFO ] 30-06-2025 21:30:29 [main] LogUtils - Select Quảng Ngãi for 'Depart from' and Sài Gòn for 'Arrive at'.
+[INFO ] 30-06-2025 21:30:31 [main] LogUtils - Select Soft bed for 'Seat type'
+[INFO ] 30-06-2025 21:30:31 [main] LogUtils - Select 1 for 'Ticket amount'
+[INFO ] 30-06-2025 21:30:31 [main] LogUtils - Click on 'Book ticket' button
+[INFO ] 30-06-2025 21:30:32 [main] LogUtils - 4. Click on 'My ticket' tab
+[INFO ] 30-06-2025 21:30:32 [main] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:30:33 [main] LogUtils - Click on 'Cancel' button of ticket which user want to cancel.
+[ERROR] 30-06-2025 21:30:33 [main] LogUtils - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//table[contains(@class, 'MyTable')]//tr[td[text()='Quảng Ngãi'] and td[text()='Sài Gòn'] and td[text()='Soft bed'] and td[text()='7/13/2025'] and td[text()='1']]//input[@value='Cancel']"}
+  (Session info: chrome=138.0.7204.49)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [56bc3d89e137609bb8f7ba8c6a577466, findElement {value=//table[contains(@class, 'MyTable')]//tr[td[text()='Quảng Ngãi'] and td[text()='Sài Gòn'] and td[text()='Soft bed'] and td[text()='7/13/2025'] and td[text()='1']]//input[@value='Cancel'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.49, chrome: {chromedriverVersion: 138.0.7204.49 (d2b48fd5f781..., userDataDir: C:\Users\ANHMIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49204}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49204/devtoo..., se:cdpVersion: 138.0.7204.49, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 56bc3d89e137609bb8f7ba8c6a577466
+[INFO ] 30-06-2025 21:30:33 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.myticket.TC16\userCanCancelATicket_30062025_213033.png
+[INFO ] 30-06-2025 21:30:36 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:30:36 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:30:36 [main] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:30:36 [main] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:30:37 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:30:37 [main] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:30:37 [main] LogUtils - click button: 
+[INFO ] 30-06-2025 21:30:38 [main] LogUtils - 3. Book a ticket
+[INFO ] 30-06-2025 21:30:38 [main] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:30:39 [main] LogUtils - Select a 'Depart date' from the list
+[INFO ] 30-06-2025 21:30:39 [main] LogUtils - Select Huế for 'Depart from' and Đà Nẵng for 'Arrive at'.
+[INFO ] 30-06-2025 21:30:41 [main] LogUtils - Select Hard bed for 'Seat type'
+[INFO ] 30-06-2025 21:30:41 [main] LogUtils - Select 1 for 'Ticket amount'
+[INFO ] 30-06-2025 21:30:41 [main] LogUtils - Click on 'Book ticket' button
+[INFO ] 30-06-2025 21:30:42 [main] LogUtils - 4. Click on 'My ticket' tab
+[INFO ] 30-06-2025 21:30:42 [main] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:30:43 [main] LogUtils - Click on 'Cancel' button of ticket which user want to cancel.
+[ERROR] 30-06-2025 21:30:43 [main] LogUtils - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//table[contains(@class, 'MyTable')]//tr[td[text()='Huế'] and td[text()='Đà Nẵng'] and td[text()='Hard bed'] and td[text()='7/11/2025'] and td[text()='1']]//input[@value='Cancel']"}
+  (Session info: chrome=138.0.7204.49)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.27'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2a0b01b858dd0fa3e33b0b4699b065e4, findElement {value=//table[contains(@class, 'MyTable')]//tr[td[text()='Huế'] and td[text()='Đà Nẵng'] and td[text()='Hard bed'] and td[text()='7/11/2025'] and td[text()='1']]//input[@value='Cancel'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.49, chrome: {chromedriverVersion: 138.0.7204.49 (d2b48fd5f781..., userDataDir: C:\Users\ANHMIN~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49240}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49240/devtoo..., se:cdpVersion: 138.0.7204.49, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2a0b01b858dd0fa3e33b0b4699b065e4
+[INFO ] 30-06-2025 21:30:43 [main] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.myticket.TC16\userCanCancelATicket_30062025_213043.png
+[INFO ] 30-06-2025 21:32:56 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:32:56 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:32:56 [main] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:32:56 [main] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:32:56 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:32:56 [main] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:32:57 [main] LogUtils - click button: 
+[INFO ] 30-06-2025 21:32:58 [main] LogUtils - 3. Book a ticket
+[INFO ] 30-06-2025 21:32:58 [main] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:32:59 [main] LogUtils - Select a 'Depart date' from the list
+[INFO ] 30-06-2025 21:32:59 [main] LogUtils - Select Đà Nẵng for 'Depart from' and Huế for 'Arrive at'.
+[INFO ] 30-06-2025 21:33:00 [main] LogUtils - Select Soft bed with air conditioner for 'Seat type'
+[INFO ] 30-06-2025 21:33:01 [main] LogUtils - Select 2 for 'Ticket amount'
+[INFO ] 30-06-2025 21:33:01 [main] LogUtils - Click on 'Book ticket' button
+[INFO ] 30-06-2025 21:33:02 [main] LogUtils - 4. Click on 'My ticket' tab
+[INFO ] 30-06-2025 21:33:02 [main] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:33:03 [main] LogUtils - Click on 'Cancel' button of ticket which user want to cancel.
+[INFO ] 30-06-2025 21:33:03 [main] LogUtils - Click on 'OK' button on Confirmation message 'Are you sure?'
+[INFO ] 30-06-2025 21:33:08 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:33:08 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:33:08 [main] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:33:08 [main] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:33:08 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:33:08 [main] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:33:08 [main] LogUtils - click button: 
+[INFO ] 30-06-2025 21:33:10 [main] LogUtils - 3. Book a ticket
+[INFO ] 30-06-2025 21:33:10 [main] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:33:10 [main] LogUtils - Select a 'Depart date' from the list
+[INFO ] 30-06-2025 21:33:11 [main] LogUtils - Select Quảng Ngãi for 'Depart from' and Sài Gòn for 'Arrive at'.
+[INFO ] 30-06-2025 21:33:12 [main] LogUtils - Select Soft bed for 'Seat type'
+[INFO ] 30-06-2025 21:33:12 [main] LogUtils - Select 1 for 'Ticket amount'
+[INFO ] 30-06-2025 21:33:13 [main] LogUtils - Click on 'Book ticket' button
+[INFO ] 30-06-2025 21:33:14 [main] LogUtils - 4. Click on 'My ticket' tab
+[INFO ] 30-06-2025 21:33:14 [main] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:33:15 [main] LogUtils - Click on 'Cancel' button of ticket which user want to cancel.
+[INFO ] 30-06-2025 21:33:15 [main] LogUtils - Click on 'OK' button on Confirmation message 'Are you sure?'
+[INFO ] 30-06-2025 21:33:19 [main] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:33:19 [main] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:33:19 [main] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:33:19 [main] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:33:20 [main] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:33:20 [main] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:33:20 [main] LogUtils - click button: 
+[INFO ] 30-06-2025 21:33:21 [main] LogUtils - 3. Book a ticket
+[INFO ] 30-06-2025 21:33:21 [main] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:33:22 [main] LogUtils - Select a 'Depart date' from the list
+[INFO ] 30-06-2025 21:33:22 [main] LogUtils - Select Huế for 'Depart from' and Đà Nẵng for 'Arrive at'.
+[INFO ] 30-06-2025 21:33:23 [main] LogUtils - Select Hard bed for 'Seat type'
+[INFO ] 30-06-2025 21:33:24 [main] LogUtils - Select 1 for 'Ticket amount'
+[INFO ] 30-06-2025 21:33:24 [main] LogUtils - Click on 'Book ticket' button
+[INFO ] 30-06-2025 21:33:25 [main] LogUtils - 4. Click on 'My ticket' tab
+[INFO ] 30-06-2025 21:33:25 [main] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:33:26 [main] LogUtils - Click on 'Cancel' button of ticket which user want to cancel.
+[INFO ] 30-06-2025 21:33:26 [main] LogUtils - Click on 'OK' button on Confirmation message 'Are you sure?'
+[INFO ] 30-06-2025 21:34:26 [TestNG-test-Railway-2] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:34:26 [TestNG-test-Railway-3] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:34:26 [TestNG-test-Railway-2] LogUtils - 2. Click on 'Login' tab
+[INFO ] 30-06-2025 21:34:26 [TestNG-test-Railway-3] LogUtils - 2. Click on 'Login' tab
+[INFO ] 30-06-2025 21:34:27 [TestNG-test-Railway-2] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:34:27 [TestNG-test-Railway-3] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:34:27 [TestNG-test-Railway-1] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:34:27 [TestNG-test-Railway-1] LogUtils - 2. Click on 'Login' tab
+[INFO ] 30-06-2025 21:34:27 [TestNG-test-Railway-1] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:34:27 [TestNG-test-Railway-3] LogUtils - 3. Enter valid Email and invalid Password
+[INFO ] 30-06-2025 21:34:27 [TestNG-test-Railway-3] LogUtils - 4. Click on 'Login' button
+[INFO ] 30-06-2025 21:34:27 [TestNG-test-Railway-3] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:34:27 [TestNG-test-Railway-2] LogUtils - 3. User doesn't type any words into 'Username' textbox but enter valid information into 'Password' textbox
+[INFO ] 30-06-2025 21:34:27 [TestNG-test-Railway-2] LogUtils - 4. Click on 'Login' button
+[INFO ] 30-06-2025 21:34:27 [TestNG-test-Railway-2] LogUtils - Enter username: 
+[INFO ] 30-06-2025 21:34:27 [TestNG-test-Railway-3] LogUtils - Enter password: abc123
+[INFO ] 30-06-2025 21:34:27 [TestNG-test-Railway-2] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:34:27 [TestNG-test-Railway-1] LogUtils - 3. Enter valid Email and Password:
+[INFO ] 30-06-2025 21:34:27 [TestNG-test-Railway-1] LogUtils - 4. Click on 'Login' button
+[INFO ] 30-06-2025 21:34:27 [TestNG-test-Railway-1] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:34:27 [TestNG-test-Railway-3] LogUtils - click button: 
+[INFO ] 30-06-2025 21:34:27 [TestNG-test-Railway-2] LogUtils - click button: 
+[INFO ] 30-06-2025 21:34:27 [TestNG-test-Railway-1] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:34:27 [TestNG-test-Railway-1] LogUtils - click button: 
+[ERROR] 30-06-2025 21:34:28 [TestNG-test-Railway-1] LogUtils - java.lang.AssertionError: expected [Safe Railway] but found [Safe Railway - Login]
+[INFO ] 30-06-2025 21:34:28 [TestNG-test-Railway-4] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:34:28 [TestNG-test-Railway-4] LogUtils - 2. Click on 'Book ticket' tab
+[INFO ] 30-06-2025 21:34:28 [TestNG-test-Railway-4] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:34:28 [TestNG-test-Railway-3] LogUtils - Error messageInvalid username or password. Please try again.
+[INFO ] 30-06-2025 21:34:28 [TestNG-test-Railway-2] LogUtils - Error messageThere was a problem with your login and/or errors exist in your form.
+[ERROR] 30-06-2025 21:34:28 [TestNG-test-Railway-3] LogUtils - java.lang.AssertionError: expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]
+[INFO ] 30-06-2025 21:34:28 [TestNG-test-Railway-3] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.login.TC03\UserCannotLogIntoRailwayWithInvalidPassword_30062025_213428.png
+[INFO ] 30-06-2025 21:34:29 [TestNG-test-Railway-1] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.login.TC01\userCanLogIntoRailwayWithValidUsernameAndPassword_30062025_213429.png
+[INFO ] 30-06-2025 21:34:32 [TestNG-test-Railway-2] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:34:32 [TestNG-test-Railway-2] LogUtils - 2. Click on 'Login' tab
+[INFO ] 30-06-2025 21:34:32 [TestNG-test-Railway-2] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:34:32 [TestNG-test-Railway-3] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:34:32 [TestNG-test-Railway-3] LogUtils - 2. Click on 'Login' tab
+[INFO ] 30-06-2025 21:34:32 [TestNG-test-Railway-3] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:34:32 [TestNG-test-Railway-2] LogUtils - 3. Enter valid information into 'Username' textbox except 'Password' textbox.
+[INFO ] 30-06-2025 21:34:32 [TestNG-test-Railway-2] LogUtils - 4. Click on 'Login' button
+[INFO ] 30-06-2025 21:34:32 [TestNG-test-Railway-2] LogUtils - 5. Repeat step 3 three more times.
+[INFO ] 30-06-2025 21:34:32 [TestNG-test-Railway-2] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:34:32 [TestNG-test-Railway-4] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:34:32 [TestNG-test-Railway-4] LogUtils - 2. Click on 'Register' tab
+[INFO ] 30-06-2025 21:34:32 [TestNG-test-Railway-2] LogUtils - Enter password: abc123
+[INFO ] 30-06-2025 21:34:32 [TestNG-test-Railway-4] LogUtils - Click on tab Register
+[INFO ] 30-06-2025 21:34:32 [TestNG-test-Railway-2] LogUtils - click button: 
+[INFO ] 30-06-2025 21:34:33 [TestNG-test-Railway-3] LogUtils - 3. Login with valid account
+[INFO ] 30-06-2025 21:34:33 [TestNG-test-Railway-3] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:34:33 [TestNG-test-Railway-3] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:34:33 [TestNG-test-Railway-3] LogUtils - click button: 
+[INFO ] 30-06-2025 21:34:33 [TestNG-test-Railway-4] LogUtils - 3. Enter valid information into all fields
+[INFO ] 30-06-2025 21:34:33 [TestNG-test-Railway-4] LogUtils - 4. Click on 'Register' button
+[INFO ] 30-06-2025 21:34:33 [TestNG-test-Railway-4] LogUtils - Enter email: 21_34_33minh@gmail.com
+[INFO ] 30-06-2025 21:34:33 [TestNG-test-Railway-2] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:34:33 [TestNG-test-Railway-4] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:34:33 [TestNG-test-Railway-2] LogUtils - Enter password: abc123
+[INFO ] 30-06-2025 21:34:33 [TestNG-test-Railway-2] LogUtils - click button: 
+[INFO ] 30-06-2025 21:34:34 [TestNG-test-Railway-4] LogUtils - Enter confirm password: minh12345
+[INFO ] 30-06-2025 21:34:34 [TestNG-test-Railway-2] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:34:34 [TestNG-test-Railway-4] LogUtils - Enter PID: 27183714777
+[INFO ] 30-06-2025 21:34:34 [TestNG-test-Railway-1] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:34:34 [TestNG-test-Railway-1] LogUtils - 2. Click on 'Login' tab
+[INFO ] 30-06-2025 21:34:34 [TestNG-test-Railway-1] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:34:34 [TestNG-test-Railway-3] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:34:34 [TestNG-test-Railway-2] LogUtils - Enter password: abc123
+[INFO ] 30-06-2025 21:34:34 [TestNG-test-Railway-2] LogUtils - click button: 
+[INFO ] 30-06-2025 21:34:34 [TestNG-test-Railway-4] LogUtils - Click button: 
+[INFO ] 30-06-2025 21:34:35 [TestNG-test-Railway-1] LogUtils - 3. Enter username and password of account hasn't been activated.
+[INFO ] 30-06-2025 21:34:35 [TestNG-test-Railway-1] LogUtils - 4. Click on 'Login' button
+[INFO ] 30-06-2025 21:34:35 [TestNG-test-Railway-1] LogUtils - Enter username: minh@gmail.com
+[INFO ] 30-06-2025 21:34:35 [TestNG-test-Railway-1] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:34:35 [TestNG-test-Railway-3] LogUtils - Click on tab Change password
+[INFO ] 30-06-2025 21:34:35 [TestNG-test-Railway-2] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:34:35 [TestNG-test-Railway-1] LogUtils - click button: 
+[INFO ] 30-06-2025 21:34:35 [TestNG-test-Railway-2] LogUtils - Enter password: abc123
+[INFO ] 30-06-2025 21:34:35 [TestNG-test-Railway-2] LogUtils - click button: 
+[INFO ] 30-06-2025 21:34:36 [TestNG-test-Railway-1] LogUtils - Error messageInvalid username or password. Please try again.
+[INFO ] 30-06-2025 21:34:36 [TestNG-test-Railway-2] LogUtils - Error messageInvalid username or password. Please try again.
+[ERROR] 30-06-2025 21:34:36 [TestNG-test-Railway-2] LogUtils - java.lang.AssertionError: expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
+[INFO ] 30-06-2025 21:34:36 [TestNG-test-Railway-2] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.login.TC05\systemShowsMessageWhenUserEntersWrongPasswordSeveralTimes_30062025_213436.png
+[INFO ] 30-06-2025 21:34:39 [TestNG-test-Railway-3] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:34:39 [TestNG-test-Railway-3] LogUtils - 2. Login with valid account
+[INFO ] 30-06-2025 21:34:39 [TestNG-test-Railway-3] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:34:39 [TestNG-test-Railway-1] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:34:39 [TestNG-test-Railway-1] LogUtils - 2. Click on 'Register' tab
+[INFO ] 30-06-2025 21:34:39 [TestNG-test-Railway-1] LogUtils - Click on tab Register
+[INFO ] 30-06-2025 21:34:39 [TestNG-test-Railway-3] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:34:39 [TestNG-test-Railway-3] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:34:39 [TestNG-test-Railway-3] LogUtils - click button: 
+[INFO ] 30-06-2025 21:34:40 [TestNG-test-Railway-2] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:34:40 [TestNG-test-Railway-2] LogUtils - 2. Click on 'Register' tab
+[INFO ] 30-06-2025 21:34:40 [TestNG-test-Railway-4] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:34:40 [TestNG-test-Railway-2] LogUtils - Click on tab Register
+[INFO ] 30-06-2025 21:34:40 [TestNG-test-Railway-4] LogUtils - Click on tab Register
+[INFO ] 30-06-2025 21:34:40 [TestNG-test-Railway-1] LogUtils - 3. Enter valid information into all fields except 'Confirm password' is not the same with 'Password'
+[INFO ] 30-06-2025 21:34:40 [TestNG-test-Railway-1] LogUtils - 4. Click on 'Register' button
+[INFO ] 30-06-2025 21:34:40 [TestNG-test-Railway-1] LogUtils - Enter email: minh@gmail.com
+[INFO ] 30-06-2025 21:34:40 [TestNG-test-Railway-1] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:34:40 [TestNG-test-Railway-2] LogUtils - 3. Enter valid email address and leave other fields empty
+[INFO ] 30-06-2025 21:34:40 [TestNG-test-Railway-2] LogUtils - 4. Click on 'Register' button
+[INFO ] 30-06-2025 21:34:40 [TestNG-test-Railway-2] LogUtils - Enter email: minh@gmail.com
+[INFO ] 30-06-2025 21:34:40 [TestNG-test-Railway-1] LogUtils - Enter confirm password: minh
+[INFO ] 30-06-2025 21:34:41 [TestNG-test-Railway-3] LogUtils - 3. Click on 'Change Password' tab
+[INFO ] 30-06-2025 21:34:41 [TestNG-test-Railway-3] LogUtils - 4. Enter valid value into all fields.
+[INFO ] 30-06-2025 21:34:41 [TestNG-test-Railway-3] LogUtils - 5. Click on 'Change Password' button
+[INFO ] 30-06-2025 21:34:41 [TestNG-test-Railway-2] LogUtils - Enter password: 
+[INFO ] 30-06-2025 21:34:41 [TestNG-test-Railway-3] LogUtils - Click on tab Change password
+[INFO ] 30-06-2025 21:34:41 [TestNG-test-Railway-1] LogUtils - Enter PID: 27183714777
+[INFO ] 30-06-2025 21:34:41 [TestNG-test-Railway-2] LogUtils - Enter confirm password: 
+[INFO ] 30-06-2025 21:34:41 [TestNG-test-Railway-1] LogUtils - Click button: 
+[INFO ] 30-06-2025 21:34:41 [TestNG-test-Railway-2] LogUtils - Enter PID: 
+[INFO ] 30-06-2025 21:34:42 [TestNG-test-Railway-3] LogUtils - Passwordminh12345
+[INFO ] 30-06-2025 21:34:42 [TestNG-test-Railway-3] LogUtils - New Passwordminh12345
+[INFO ] 30-06-2025 21:34:42 [TestNG-test-Railway-3] LogUtils - Confirm Passwordminh12345
+[INFO ] 30-06-2025 21:34:42 [TestNG-test-Railway-3] LogUtils - Click button 
+[INFO ] 30-06-2025 21:34:42 [TestNG-test-Railway-2] LogUtils - Click button: 
+[INFO ] 30-06-2025 21:34:43 [TestNG-test-Railway-4] LogUtils - Enter email: null
+[ERROR] 30-06-2025 21:34:43 [TestNG-test-Railway-3] LogUtils - java.lang.AssertionError: expected [Your password has been updated] but found [Your password has been updated!]
+[INFO ] 30-06-2025 21:34:43 [TestNG-test-Railway-3] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.login.TC09\userCanChangePassword_30062025_213443.png
+[ERROR] 30-06-2025 21:34:43 [TestNG-test-Railway-2] LogUtils - java.lang.AssertionError: The following asserts failed:
+	expected [Invalid password length.] but found [Invalid password length],
+	expected [Invalid ID length.] but found [Invalid ID length]
+[INFO ] 30-06-2025 21:34:44 [TestNG-test-Railway-2] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.register.TC11\userCannotCreateAccountWhilePasswordAndPIDFieldsAreEmpty_30062025_213444.png
+[INFO ] 30-06-2025 21:34:46 [TestNG-test-Railway-1] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:34:46 [TestNG-test-Railway-1] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 30-06-2025 21:34:46 [TestNG-test-Railway-1] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:34:46 [TestNG-test-Railway-3] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:34:46 [TestNG-test-Railway-3] LogUtils - 1. Navigate to QA Railway Login page
+[INFO ] 30-06-2025 21:34:46 [TestNG-test-Railway-3] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 30-06-2025 21:34:46 [TestNG-test-Railway-3] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:34:46 [TestNG-test-Railway-1] LogUtils - 2. Click on 'Forgot Password page' link
+[INFO ] 30-06-2025 21:34:47 [TestNG-test-Railway-2] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:34:47 [TestNG-test-Railway-2] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:34:47 [TestNG-test-Railway-2] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:34:47 [TestNG-test-Railway-1] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 30-06-2025 21:34:47 [TestNG-test-Railway-1] LogUtils - 4. Click on 'Send Instructions' button
+[INFO ] 30-06-2025 21:34:48 [TestNG-test-Railway-2] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:34:48 [TestNG-test-Railway-2] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:34:48 [TestNG-test-Railway-2] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:34:48 [TestNG-test-Railway-3] LogUtils - 3. Enter the email address of the created account in Pre-condition
+[INFO ] 30-06-2025 21:34:48 [TestNG-test-Railway-3] LogUtils - 4. Click on 'Send Instructions' button
+[INFO ] 30-06-2025 21:34:48 [TestNG-test-Railway-2] LogUtils - click button: 
+[INFO ] 30-06-2025 21:34:50 [TestNG-test-Railway-2] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:34:50 [TestNG-test-Railway-1] LogUtils - 5. Open mailbox and click on reset password link
+[INFO ] 30-06-2025 21:34:51 [TestNG-test-Railway-2] LogUtils - 3. Click on 'Book ticket' tab
+[INFO ] 30-06-2025 21:34:51 [TestNG-test-Railway-2] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:34:52 [TestNG-test-Railway-2] LogUtils - Select a 'Depart date' from the list
+[INFO ] 30-06-2025 21:34:52 [TestNG-test-Railway-3] LogUtils - 5. Open mailbox and click on reset password link
+[INFO ] 30-06-2025 21:34:52 [TestNG-test-Railway-2] LogUtils - Select Sài Gòn for 'Depart from' and Phan Thiết for 'Arrive at'.
+[ERROR] 30-06-2025 21:34:53 [TestNG-test-Railway-4] LogUtils - com.mailslurp.clients.ApiException: Message: java.net.SocketTimeoutException: timeout
+HTTP response code: 0
+HTTP response body: null
+HTTP response headers: null
+[INFO ] 30-06-2025 21:34:53 [TestNG-test-Railway-4] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC12\errorsDisplayWhenPasswordResetTokenIsBlankUseMailAPI_30062025_213453.png
+[INFO ] 30-06-2025 21:35:03 [TestNG-test-Railway-2] LogUtils - Select Soft bed with air conditioner for 'Seat type'
+[INFO ] 30-06-2025 21:35:03 [TestNG-test-Railway-2] LogUtils - Select 1 for 'Ticket amount'
+[INFO ] 30-06-2025 21:35:03 [TestNG-test-Railway-4] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:35:03 [TestNG-test-Railway-4] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:35:03 [TestNG-test-Railway-4] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:35:04 [TestNG-test-Railway-2] LogUtils - Click on 'Book ticket' button
+[ERROR] 30-06-2025 21:35:04 [TestNG-test-Railway-2] LogUtils - java.lang.AssertionError: expected [Safe Railway - Success] but found [Safe Railway - Book Ticket]
+[INFO ] 30-06-2025 21:35:05 [TestNG-test-Railway-4] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:35:05 [TestNG-test-Railway-4] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:35:05 [TestNG-test-Railway-4] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:35:05 [TestNG-test-Railway-4] LogUtils - click button: 
+[INFO ] 30-06-2025 21:35:06 [TestNG-test-Railway-2] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.bookticket.TC14\userCanBookOneTicketAtATime_30062025_213506.png
+[INFO ] 30-06-2025 21:35:07 [TestNG-test-Railway-3] LogUtils - 6. Enter different values for password fields
+[INFO ] 30-06-2025 21:35:07 [TestNG-test-Railway-3] LogUtils - 7. Click 'Reset Password' button
+[INFO ] 30-06-2025 21:35:07 [TestNG-test-Railway-4] LogUtils - 3. Click on 'Timetable' tab
+[INFO ] 30-06-2025 21:35:07 [TestNG-test-Railway-4] LogUtils - Click on tab Timetable
+[INFO ] 30-06-2025 21:35:08 [TestNG-test-Railway-4] LogUtils - 4. Click on 'book ticket' link of the route from 'Huế' to 'Sài Gòn'
+[INFO ] 30-06-2025 21:35:10 [TestNG-test-Railway-2] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:35:10 [TestNG-test-Railway-2] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:35:10 [TestNG-test-Railway-2] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:35:10 [TestNG-test-Railway-2] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:35:11 [TestNG-test-Railway-2] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:35:11 [TestNG-test-Railway-2] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:35:11 [TestNG-test-Railway-2] LogUtils - click button: 
+[INFO ] 30-06-2025 21:35:13 [TestNG-test-Railway-2] LogUtils - 3. Book a ticket
+[INFO ] 30-06-2025 21:35:13 [TestNG-test-Railway-2] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:35:14 [TestNG-test-Railway-2] LogUtils - Select a 'Depart date' from the list
+[INFO ] 30-06-2025 21:35:14 [TestNG-test-Railway-2] LogUtils - Select Đà Nẵng for 'Depart from' and Huế for 'Arrive at'.
+[INFO ] 30-06-2025 21:35:15 [TestNG-test-Railway-1] LogUtils - 6. Enter new passwords and remove the Password Reset Token
+[INFO ] 30-06-2025 21:35:15 [TestNG-test-Railway-1] LogUtils - 7. Click 'Reset Password' button
+[INFO ] 30-06-2025 21:35:15 [TestNG-test-Railway-2] LogUtils - Select Soft bed with air conditioner for 'Seat type'
+[INFO ] 30-06-2025 21:35:15 [TestNG-test-Railway-2] LogUtils - Select 2 for 'Ticket amount'
+[INFO ] 30-06-2025 21:35:16 [TestNG-test-Railway-2] LogUtils - Click on 'Book ticket' button
+[ERROR] 30-06-2025 21:35:17 [TestNG-test-Railway-1] LogUtils - java.lang.AssertionError: Error message element does not exist expected [true] but found [false]
+[INFO ] 30-06-2025 21:35:17 [TestNG-test-Railway-1] LogUtils - Screenshot saved to: D:\AGEST\SeleniumExercise\SeleniumLevel1\test-images\com.tests.forgotpassword.TC12\errorsDisplayWhenPasswordResetTokenIsBlankUseUI_30062025_213517.png
+[INFO ] 30-06-2025 21:35:17 [TestNG-test-Railway-2] LogUtils - 4. Click on 'My ticket' tab
+[INFO ] 30-06-2025 21:35:18 [TestNG-test-Railway-2] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:35:18 [TestNG-test-Railway-2] LogUtils - Click on 'Cancel' button of ticket which user want to cancel.
+[INFO ] 30-06-2025 21:35:19 [TestNG-test-Railway-2] LogUtils - Click on 'OK' button on Confirmation message 'Are you sure?'
+[INFO ] 30-06-2025 21:35:23 [TestNG-test-Railway-2] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:35:23 [TestNG-test-Railway-2] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:35:23 [TestNG-test-Railway-2] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:35:23 [TestNG-test-Railway-2] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:35:23 [TestNG-test-Railway-2] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:35:23 [TestNG-test-Railway-2] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:35:24 [TestNG-test-Railway-2] LogUtils - click button: 
+[INFO ] 30-06-2025 21:35:25 [TestNG-test-Railway-2] LogUtils - 3. Book a ticket
+[INFO ] 30-06-2025 21:35:25 [TestNG-test-Railway-2] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:35:26 [TestNG-test-Railway-2] LogUtils - Select a 'Depart date' from the list
+[INFO ] 30-06-2025 21:35:26 [TestNG-test-Railway-2] LogUtils - Select Quảng Ngãi for 'Depart from' and Sài Gòn for 'Arrive at'.
+[INFO ] 30-06-2025 21:35:27 [TestNG-test-Railway-2] LogUtils - Select Soft bed for 'Seat type'
+[INFO ] 30-06-2025 21:35:27 [TestNG-test-Railway-2] LogUtils - Select 1 for 'Ticket amount'
+[INFO ] 30-06-2025 21:35:28 [TestNG-test-Railway-2] LogUtils - Click on 'Book ticket' button
+[INFO ] 30-06-2025 21:35:29 [TestNG-test-Railway-2] LogUtils - 4. Click on 'My ticket' tab
+[INFO ] 30-06-2025 21:35:29 [TestNG-test-Railway-2] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:35:30 [TestNG-test-Railway-2] LogUtils - Click on 'Cancel' button of ticket which user want to cancel.
+[INFO ] 30-06-2025 21:35:30 [TestNG-test-Railway-2] LogUtils - Click on 'OK' button on Confirmation message 'Are you sure?'
+[INFO ] 30-06-2025 21:35:34 [TestNG-test-Railway-2] LogUtils - Pre-condition: Create and activate a new account
+[INFO ] 30-06-2025 21:35:34 [TestNG-test-Railway-2] LogUtils - 1. Navigate to QA Railway Website
+[INFO ] 30-06-2025 21:35:34 [TestNG-test-Railway-2] LogUtils - 2. Login with a valid account
+[INFO ] 30-06-2025 21:35:34 [TestNG-test-Railway-2] LogUtils - Click on tab Login
+[INFO ] 30-06-2025 21:35:34 [TestNG-test-Railway-2] LogUtils - Enter username: vffaebxr@sharklasers.com
+[INFO ] 30-06-2025 21:35:34 [TestNG-test-Railway-2] LogUtils - Enter password: minh12345
+[INFO ] 30-06-2025 21:35:34 [TestNG-test-Railway-2] LogUtils - click button: 
+[INFO ] 30-06-2025 21:35:36 [TestNG-test-Railway-2] LogUtils - 3. Book a ticket
+[INFO ] 30-06-2025 21:35:36 [TestNG-test-Railway-2] LogUtils - Click on tab Book ticket
+[INFO ] 30-06-2025 21:35:36 [TestNG-test-Railway-2] LogUtils - Select a 'Depart date' from the list
+[INFO ] 30-06-2025 21:35:37 [TestNG-test-Railway-2] LogUtils - Select Huế for 'Depart from' and Đà Nẵng for 'Arrive at'.
+[INFO ] 30-06-2025 21:35:38 [TestNG-test-Railway-2] LogUtils - Select Hard bed for 'Seat type'
+[INFO ] 30-06-2025 21:35:38 [TestNG-test-Railway-2] LogUtils - Select 1 for 'Ticket amount'
+[INFO ] 30-06-2025 21:35:39 [TestNG-test-Railway-2] LogUtils - Click on 'Book ticket' button
+[INFO ] 30-06-2025 21:35:40 [TestNG-test-Railway-2] LogUtils - 4. Click on 'My ticket' tab
+[INFO ] 30-06-2025 21:35:40 [TestNG-test-Railway-2] LogUtils - Click on tab My ticket
+[INFO ] 30-06-2025 21:35:40 [TestNG-test-Railway-2] LogUtils - Click on 'Cancel' button of ticket which user want to cancel.
+[INFO ] 30-06-2025 21:35:41 [TestNG-test-Railway-2] LogUtils - Click on 'OK' button on Confirmation message 'Are you sure?'

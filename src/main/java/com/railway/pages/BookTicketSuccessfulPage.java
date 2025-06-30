@@ -10,10 +10,10 @@ public class BookTicketSuccessfulPage extends BasePage{
     private final String ticketValueInAColumn = "//table[contains(@class, 'MyTable')]//td[count(//table[contains(@class, 'MyTable')]//th[text()='%s']/preceding-sibling::th) + 1]";
 
     public String getBookSuccessHeadingMessage() {
-        return getElementText(webElement(bookSuccessHeadingMessage));
+        return getElementText(bookSuccessHeadingMessage);
     }
 
     public String getTicketValueInAColumn(String headingColumn) {
-        return getElementText(webElement(By.xpath(String.format(ticketValueInAColumn, headingColumn))));
+        return getElementText(By.xpath(String.format(ticketValueInAColumn, headingColumn)));
     }
 }
