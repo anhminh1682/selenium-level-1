@@ -12,16 +12,7 @@ public class Constants {
     public static class MyDateTimeFormat {
         public static final DateTimeFormatter HH_mm_ss = DateTimeFormatter.ofPattern("HH_mm_ss");
         public static final DateTimeFormatter M_d_yyyy = DateTimeFormatter.ofPattern("M/d/yyyy");
-    }
-
-    public static class Account {
-        public static final String VALID_USERNAME = "vffaebxr@sharklasers.com";
-        public static final String VALID_PASSWORD = "minh12345";
-        public static final String VALID_PID = "27183714777";
-
-        public static final String INVALID_PASSWORD = "abc1234";
-        public static final String INACTIVE_USERNAME_REGISTER = "minh" + LocalDateTime.now().format(MyDateTimeFormat.HH_mm_ss) + "@gmail.com";
-        public static final String INACTIVE_USERNAME_LOGIN = "minh@gmail.com";
+        public static final DateTimeFormatter M_d_yyyy_HH_mm_ss = DateTimeFormatter.ofPattern("M_d_yyyy_HH_mm_ss");
     }
 
     public static class RegisterMessage {
@@ -98,5 +89,7 @@ public class Constants {
     public static class MailSlurp {
         public static final String API_KEY = "03cb16e7a290b8f1606c32e65039b57d0038f6b1d88f48ea6808bce4070baaeb";
         public static final String REGEX_GET_LINK_FROM_EMAIL = "https?://[^\"\\s]*(confirmationCode|resetToken)=[^\"\\s]+";
+        public static final String SUBJECT_EMAIL_CONFIRM = "Please confirm your account";
+        public static final String SUBJECT_EMAIL_RESET_PASSWORD = "Please reset your password";
     }
 }

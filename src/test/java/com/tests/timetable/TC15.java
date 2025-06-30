@@ -5,6 +5,7 @@ import com.railway.pages.BookTicketPage;
 import com.railway.pages.HomePage;
 import com.railway.pages.LoginPage;
 import com.railway.pages.TimetablePage;
+import com.railway.utilities.LogUtils;
 import com.railway.utilities.enums.ProvincesEnums;
 import com.tests.base.TestBase;
 import org.testng.Assert;
@@ -19,13 +20,19 @@ public class TC15 extends TestBase {
         BookTicketPage bookTicketPage = new BookTicketPage();
 
         // 2. Login with a valid account
+        LogUtils.info("Pre-condition: Create and activate a new account");
+        LogUtils.info("1. Navigate to QA Railway Website");
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
-        loginPage.login(Constants.Account.VALID_USERNAME, Constants.Account.VALID_PASSWORD);
+
+        LogUtils.info("2. Login with a valid account");
+        loginPage.loginSuccess();
 
         // 3. Click on "Timetable" tab
+        LogUtils.info("3. Click on 'Timetable' tab");
         homePage.clickOnTab(Constants.TabMenu.TIMETABLE_TAB);
 
         // 4. Click on "book ticket" link of the route from "Huế" to "Sài Gòn"
+        LogUtils.info("4. Click on 'book ticket' link of the route from 'Huế' to 'Sài Gòn'");
         timetablePage.clickOnBookTicketButton(ProvincesEnums.HUE.getDisplayName(), ProvincesEnums.SAI_GON.getDisplayName());
 
         // "Book ticket" page is loaded with correct "Depart from" and "Arrive at" values.
