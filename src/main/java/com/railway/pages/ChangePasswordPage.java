@@ -1,10 +1,12 @@
 package com.railway.pages;
 
 import com.railway.utilities.Account;
-import com.railway.utilities.Helpers;
+import com.railway.utilities.DriverUtils;
 import com.railway.utilities.LogUtils;
 import com.railway.utilities.enums.AccountEnum;
 import org.openqa.selenium.By;
+
+import static com.railway.utilities.DriverUtils.*;
 
 public class ChangePasswordPage extends BasePage {
     private final By currentPasswordTextBox = By.id("currentPassword");
@@ -23,8 +25,7 @@ public class ChangePasswordPage extends BasePage {
         webElement(confirmPasswordTextBox).sendKeys(accountEnum.getConfirmPassword());
 
         LogUtils.info("Click button " + webElement(changePasswordButton).getText());
-        Helpers.scrollToElement(webElement(changePasswordButton));
-        webElement(changePasswordButton).click();
+        clickOnElement(changePasswordButton);
     }
 
     public void changePassword(Account account) {
@@ -37,8 +38,7 @@ public class ChangePasswordPage extends BasePage {
         webElement(confirmPasswordTextBox).sendKeys(account.getConfirmPassword());
 
         LogUtils.info("Click button " + webElement(changePasswordButton).getText());
-        Helpers.scrollToElement(webElement(changePasswordButton));
-        webElement(changePasswordButton).click();
+        clickOnElement(changePasswordButton);
     }
 
     public String getChangePasswordSuccessMessage() {

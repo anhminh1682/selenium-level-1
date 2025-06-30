@@ -1,11 +1,13 @@
 package com.railway.pages;
 
 import com.railway.utilities.Account;
-import com.railway.utilities.Helpers;
+import com.railway.utilities.DriverUtils;
 import com.railway.utilities.LogUtils;
 import com.railway.utilities.MailSlurp;
 import com.railway.utilities.enums.AccountEnum;
 import org.openqa.selenium.By;
+
+import static com.railway.utilities.DriverUtils.*;
 
 public class RegisterPage extends BasePage {
     private final By emailTextBox = By.id("email");
@@ -34,8 +36,7 @@ public class RegisterPage extends BasePage {
         webElement(pidTextBox).sendKeys(accountEnum.getPID());
 
         LogUtils.info("Click button: " + webElement(registerButton).getText());
-        Helpers.scrollToElement(webElement(registerButton));
-        webElement(registerButton).click();
+        clickOnElement(registerButton);
     }
 
     public void registerUserAccount(Account account) {
@@ -55,8 +56,7 @@ public class RegisterPage extends BasePage {
         webElement(pidTextBox).sendKeys(account.getPid());
 
         LogUtils.info("Click button: " + webElement(registerButton).getText());
-        Helpers.scrollToElement(webElement(registerButton));
-        webElement(registerButton).click();
+        clickOnElement(registerButton);
     }
 
     public void registerWithValidInfo() {

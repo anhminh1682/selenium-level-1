@@ -43,7 +43,7 @@ public class TestBase {
     private Object[][] getDataFromDataset(Method method) throws IOException {
         String testClass = method.getDeclaringClass().getSimpleName();
 
-        File file = new File("src/test/java/com/tests/datasets/dataset.json");
+        File file = new File(Constants.URL.DATA_PATH);
 
         ObjectMapper mapper = new ObjectMapper();
         JsonNode rootNode = mapper.readTree(file);

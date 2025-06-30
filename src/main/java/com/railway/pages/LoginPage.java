@@ -2,10 +2,12 @@ package com.railway.pages;
 
 import com.railway.driver.DriverManager;
 import com.railway.utilities.Account;
-import com.railway.utilities.Helpers;
+import com.railway.utilities.DriverUtils;
 import com.railway.utilities.LogUtils;
 import com.railway.utilities.enums.AccountEnum;
 import org.openqa.selenium.By;
+
+import static com.railway.utilities.DriverUtils.*;
 
 public class LoginPage extends BasePage {
     private final By userNameTextBox = By.id("username");
@@ -20,10 +22,8 @@ public class LoginPage extends BasePage {
         LogUtils.info("Enter password: " + accountEnum.getPassword());
         webElement(passwordTextBox).sendKeys(accountEnum.getPassword());
 
-        Helpers.scrollToElement(webElement(loginButton));
-
         LogUtils.info("click button: " + webElement(loginButton).getText());
-        webElement(loginButton).click();
+        clickOnElement(loginButton);
     }
 
     public void login(Account account) {
@@ -32,10 +32,8 @@ public class LoginPage extends BasePage {
         LogUtils.info("Enter password: " + account.getPassword());
         webElement(passwordTextBox).sendKeys(account.getPassword());
 
-        Helpers.scrollToElement(webElement(loginButton));
-
         LogUtils.info("click button: " + webElement(loginButton).getText());
-        webElement(loginButton).click();
+        clickOnElement(loginButton);
     }
 
     public void loginSuccess() {
@@ -64,6 +62,6 @@ public class LoginPage extends BasePage {
     }
 
     public void goToForgotPasswordLink() {
-        webElement(forgotPasswordLink).click();
+        clickOnElement(forgotPasswordLink);
     }
 }

@@ -3,12 +3,14 @@ package com.railway.pages;
 import com.railway.constant.Constants;
 import com.railway.driver.DriverManager;
 import com.railway.utilities.Account;
-import com.railway.utilities.Helpers;
+import com.railway.utilities.DriverUtils;
 import com.railway.utilities.enums.AccountEnum;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
 import java.util.Objects;
+
+import static com.railway.utilities.DriverUtils.*;
 
 public class ResetPasswordPage extends BasePage {
     private final By newPasswordTextBox = By.id("newPassword");
@@ -36,9 +38,7 @@ public class ResetPasswordPage extends BasePage {
             webElement(resetTokenTextBox).sendKeys(Keys.DELETE);
         }
 
-        Helpers.scrollToElement(webElement(submitButton));
-
-        webElement(submitButton).click();
+        clickOnElement(submitButton);
     }
 
     public void resetPassword(Account account) {
@@ -50,9 +50,7 @@ public class ResetPasswordPage extends BasePage {
             webElement(resetTokenTextBox).sendKeys(Keys.DELETE);
         }
 
-        Helpers.scrollToElement(webElement(submitButton));
-
-        webElement(submitButton).click();
+        clickOnElement(submitButton);
     }
 
     public boolean isErrorMessageAboveDisplayed() {
