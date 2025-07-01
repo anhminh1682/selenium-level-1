@@ -2,7 +2,6 @@ package com.railway.pages;
 
 import com.railway.driver.DriverManager;
 import com.railway.utilities.Account;
-import com.railway.utilities.DriverUtils;
 import com.railway.utilities.LogUtils;
 import com.railway.utilities.enums.AccountEnum;
 import org.openqa.selenium.By;
@@ -32,7 +31,7 @@ public class LoginPage extends BasePage {
         LogUtils.info("Enter password: " + account.getPassword());
         sendKeyElement(passwordTextBox, account.getPassword());
 
-        LogUtils.info("click button: " + webElement(loginButton).getAttribute("value"));
+        LogUtils.info("click button: " + getValueOfButton(loginButton));
         clickOnElement(loginButton);
     }
 

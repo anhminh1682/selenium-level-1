@@ -1,21 +1,14 @@
 package com.railway.utilities;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.railway.driver.DriverManager;
 import org.openqa.selenium.*;
-import org.openqa.selenium.devtools.v135.runtime.model.RemoteObjectId;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.*;
 
-import java.io.File;
-import java.io.IOException;
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Random;
 
 public class DriverUtils {
     public static void scrollToElement(WebElement element) {
@@ -25,7 +18,7 @@ public class DriverUtils {
     }
 
     public static void waitForElement(int duration, By elementBy) {
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(duration));
         wait.until(ExpectedConditions.elementToBeClickable(elementBy));
     }
 
@@ -93,6 +86,12 @@ public class DriverUtils {
         return webElement(elementBy).getText().trim();
     }
 
+    public static String getValueOfButton(By elementBy) {
+        fluentWaitForElement(elementBy);
+        scrollToElement(webElement(elementBy));
+        return webElement(elementBy).getAttribute("value");
+    }
+
     public static void clickOnElement(By elementBy) {
         fluentWaitForElement(elementBy);
         WebElement element = DriverManager.getDriver().findElement(elementBy);
@@ -114,29 +113,5 @@ public class DriverUtils {
         Select select = new Select(element);
         scrollToElement(element);
         select.selectByVisibleText(text);
-    }
-
-    private static List<Ticket> saveDatasetIntoTicketList() throws IOException {
-        File file = new File("src/main/resources/dataset/tickets.json");
-
-        ObjectMapper mapper = new ObjectMapper();
-        JsonNode rootNode = mapper.readTree(file);
-        List<Ticket> tickets = new ArrayList<>();
-
-        for (JsonNode node : rootNode) {
-            Ticket ticket = new Ticket();
-            ticket.setDepartStation(node.get("DepartStation").asText());
-            ticket.setArriveStation(node.get("ArriveStation").asText());
-            ticket.setDepartDate(node.get("Date").asText());
-            ticket.setSeatType(node.get("SeatType").asText());
-            ticket.setTicketAmount(node.get("Amount").asText());
-            tickets.add(ticket);
-        }
-
-        return tickets;
-    }
-
-    public static Ticket getRandomTicket() throws IOException {
-        return saveDatasetIntoTicketList().get(new Random().nextInt(saveDatasetIntoTicketList().size()));
     }
 }

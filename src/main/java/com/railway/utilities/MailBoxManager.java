@@ -1,12 +1,7 @@
 package com.railway.utilities;
 
-import com.railway.driver.DriverManager;
 import com.railway.utilities.enums.AccountEnum;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.*;
-
-import java.time.Duration;
 
 import static com.railway.utilities.DriverUtils.*;
 

@@ -5,7 +5,6 @@ import com.railway.pages.HomePage;
 import com.railway.pages.LoginPage;
 import com.railway.utilities.Account;
 import com.railway.utilities.LogUtils;
-import com.railway.utilities.enums.AccountEnum;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;

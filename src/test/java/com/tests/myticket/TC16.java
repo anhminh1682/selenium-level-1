@@ -10,7 +10,6 @@ import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
 import java.util.Map;
 
 public class TC16 extends TestBase {
@@ -42,6 +41,10 @@ public class TC16 extends TestBase {
         );
 
         bookTicketPage.bookATicket(ticket);
+
+        // Check Message "Ticket booked successfully!" displays
+        Assert.assertEquals(bookTicketSuccessfulPage.getPageTitle(), Constants.PageTitles.BOOK_TICKET_SUCCESS_PAGE_TITLE, "Book ticket failed!");
+        Assert.assertEquals(bookTicketSuccessfulPage.getBookSuccessHeadingMessage(), Constants.BookTicketMessage.SUCCESSFUL_MESSAGE, "Book ticket failed!");
 
         // 4. Click on "My ticket" tab
         LogUtils.startStep("4. Click on 'My ticket' tab");

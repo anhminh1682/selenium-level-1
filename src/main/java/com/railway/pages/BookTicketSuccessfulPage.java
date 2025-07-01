@@ -3,7 +3,6 @@ package com.railway.pages;
 import org.openqa.selenium.By;
 
 import static com.railway.utilities.DriverUtils.getElementText;
-import static com.railway.utilities.DriverUtils.webElement;
 
 public class BookTicketSuccessfulPage extends BasePage{
     private final By bookSuccessHeadingMessage = By.xpath("//h1[@align='center']");

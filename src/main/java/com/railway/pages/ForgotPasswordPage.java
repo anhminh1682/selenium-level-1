@@ -1,12 +1,11 @@
 package com.railway.pages;
 
 import com.railway.driver.DriverManager;
-import com.railway.utilities.DriverUtils;
 import com.railway.utilities.MailBoxManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
-import static com.railway.utilities.DriverUtils.*;
+import static com.railway.utilities.DriverUtils.clickOnElement;
+import static com.railway.utilities.DriverUtils.sendKeyElement;
 
 public class ForgotPasswordPage extends BasePage {
     private final By emailTextBox = By.id("email");

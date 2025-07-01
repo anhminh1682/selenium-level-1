@@ -7,8 +7,11 @@ import com.railway.utilities.LogUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import static com.railway.utilities.DriverUtils.webElement;
+
 public class BasePage {
     private final String tabXpath = "//a//span[text()='%s']";
+    private final By welcomeText = By.xpath("//div[@class='account']/strong");
 
     private WebElement getTab(String tabName) {
         return DriverManager.getDriver().findElement(By.xpath(String.format(tabXpath, tabName)));
@@ -35,5 +38,9 @@ public class BasePage {
 
     public String getPageTitle() {
         return DriverManager.getDriver().getTitle();
+    }
+
+    public String getWelComeText() {
+        return webElement(welcomeText).getText();
     }
 }

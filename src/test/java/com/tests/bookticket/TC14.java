@@ -29,7 +29,6 @@ public class TC14 extends TestBase {
         loginPage.loginSuccess();
 
         // Check the number of ticket rows before booking a ticket
-//        Ticket ticket = Helpers.getRandomTicket();
         Ticket ticket = new Ticket(
                 Integer.parseInt(data.get(Constants.DataKeys.DAYS).toString()),
                 StationEnum.fromStationName(data.get(Constants.DataKeys.DEPART_STATION).toString()).getStationName(),
@@ -48,8 +47,8 @@ public class TC14 extends TestBase {
         bookTicketPage.bookATicket(ticket);
 
         // Check Message "Ticket booked successfully!" displays
-        Assert.assertEquals(bookTicketSuccessfulPage.getPageTitle(), Constants.PageTitles.BOOK_TICKET_SUCCESS_PAGE_TITLE);
-        Assert.assertEquals(bookTicketSuccessfulPage.getBookSuccessHeadingMessage(), Constants.BookTicketMessage.SUCCESSFUL_MESSAGE);
+        Assert.assertEquals(bookTicketSuccessfulPage.getPageTitle(), Constants.PageTitles.BOOK_TICKET_SUCCESS_PAGE_TITLE, "Book ticket failed!");
+        Assert.assertEquals(bookTicketSuccessfulPage.getBookSuccessHeadingMessage(), Constants.BookTicketMessage.SUCCESSFUL_MESSAGE, "Book ticket failed!");
 
         // Check information display correctly (Depart Date, Depart Station, Arrive Station, Seat Type, Amount)
         Assert.assertEquals(

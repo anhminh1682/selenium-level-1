@@ -1,7 +1,6 @@
 package com.railway.pages;
 
 import com.railway.utilities.Account;
-import com.railway.utilities.DriverUtils;
 import com.railway.utilities.LogUtils;
 import com.railway.utilities.MailSlurp;
 import com.railway.utilities.enums.AccountEnum;
@@ -32,7 +31,7 @@ public class RegisterPage extends BasePage {
         LogUtils.info("Enter PID: " + accountEnum.getPID());
         sendKeyElement(pidTextBox, accountEnum.getPID());
 
-        LogUtils.info("Click button: " + webElement(registerButton).getAttribute("value"));
+        LogUtils.info("Click button: " + getValueOfButton(registerButton));
         clickOnElement(registerButton);
     }
 
@@ -49,24 +48,12 @@ public class RegisterPage extends BasePage {
         LogUtils.info("Enter PID: " + account.getPid());
         sendKeyElement(pidTextBox, account.getPid());
 
-        LogUtils.info("Click button: " + webElement(registerButton).getAttribute("value"));
+        LogUtils.info("Click button: " + getValueOfButton(registerButton));
         clickOnElement(registerButton);
     }
 
     public void registerWithValidInfo() {
         registerUserAccount(AccountEnum.VALID_ACCOUNT_REGISTER);
-    }
-
-    public String registerWithMailSlurp() {
-        try {
-            MailSlurp.createEmailInbox();
-            AccountEnum accountEnum = AccountEnum.VALID_ACCOUNT_REGISTER_MAIL_SLURP;
-            registerUserAccount(accountEnum);
-            return accountEnum.getUsername();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return null;
     }
 
     public String getErrorRegisterMessage() {

@@ -8,8 +8,6 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import java.io.IOException;
-
 public class AppListener implements ITestListener {
     @Override
     public void onStart(ITestContext context) {

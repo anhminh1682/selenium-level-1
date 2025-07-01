@@ -3,7 +3,6 @@ package com.railway.pages;
 import com.railway.constant.Constants;
 import com.railway.driver.DriverManager;
 import com.railway.utilities.Account;
-import com.railway.utilities.DriverUtils;
 import com.railway.utilities.LogUtils;
 import com.railway.utilities.enums.AccountEnum;
 import org.openqa.selenium.By;
@@ -42,7 +41,7 @@ public class ResetPasswordPage extends BasePage {
             sendKeyElement(resetTokenTextBox, Keys.DELETE);
         }
 
-        LogUtils.info("Click button: " + webElement(submitButton).getAttribute("value"));
+        LogUtils.info("Click button: " + getValueOfButton(submitButton));
         clickOnElement(submitButton);
     }
 
@@ -58,7 +57,7 @@ public class ResetPasswordPage extends BasePage {
             sendKeyElement(resetTokenTextBox, Keys.DELETE);
         }
 
-        LogUtils.info("Click button: " + webElement(submitButton).getAttribute("value"));
+        LogUtils.info("Click button: " + getValueOfButton(submitButton));
         clickOnElement(submitButton);
     }
 

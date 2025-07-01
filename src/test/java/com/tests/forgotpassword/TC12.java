@@ -58,7 +58,7 @@ public class TC12 extends TestBase {
         Assert.assertEquals(resetPasswordPage.getErrorMessageInvalidResetTokenNextToField(), Constants.ResetPasswordMessage.ERROR_MESSAGE_INVALID_RESET_TOKEN_NEXT_TO_FIELD);
     }
 
-//    @Test(dataProvider = "dataTestProvider", dataProviderClass = TestBase.class)
+    @Test(dataProvider = "dataTestProvider", dataProviderClass = TestBase.class)
     public void errorsDisplayWhenPasswordResetTokenIsBlankUseMailAPI(Map<String, Object> data) throws ApiException {
         HomePage homePage = new HomePage();
         RegisterPage registerPage = new RegisterPage();
@@ -66,12 +66,21 @@ public class TC12 extends TestBase {
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
         ResetPasswordPage resetPasswordPage = new ResetPasswordPage();
 
+        MailSlurp mailSlurp = new MailSlurp();
+        mailSlurp.createEmailInbox();
+
         // Created Email
         LogUtils.startStep("Pre-condition: Create and activate a new account");
         homePage.clickOnTab(Constants.TabMenu.REGISTER_TAB);
-        String emailSlurp = registerPage.registerWithMailSlurp();
-
-        DriverManager.getDriver().get(Objects.requireNonNull(MailSlurp.getLinkInEmail(MailSlurp.receiveEmail(Constants.MailSlurp.SUBJECT_EMAIL_CONFIRM))));
+        Account accountRegister = new Account(
+                mailSlurp.getEmailAddressCreated(),
+                AccountEnum.VALID_ACCOUNT_REGISTER.getPassword(),
+                AccountEnum.VALID_ACCOUNT_REGISTER.getPassword(),
+                AccountEnum.VALID_ACCOUNT_REGISTER.getPID()
+        );
+        String emailSlurp = mailSlurp.getEmailAddressCreated();
+        registerPage.registerUserAccount(accountRegister);
+        DriverManager.getDriver().get(Objects.requireNonNull(mailSlurp.getLinkInEmail(mailSlurp.receiveEmail(Constants.MailSlurp.SUBJECT_EMAIL_CONFIRM))));
 
         LogUtils.startStep("1. Navigate to QA Railway Login page");
         LogUtils.startStep("2. Click on 'Forgot Password page' link");
@@ -83,7 +92,7 @@ public class TC12 extends TestBase {
         forgotPasswordPage.sendInstructions(emailSlurp);
 
         LogUtils.startStep("4. Open mailbox and click on reset password link");
-        DriverManager.getDriver().get(Objects.requireNonNull(MailSlurp.getLinkInEmail(MailSlurp.receiveEmail(Constants.MailSlurp.SUBJECT_EMAIL_RESET_PASSWORD))));
+        DriverManager.getDriver().get(Objects.requireNonNull(mailSlurp.getLinkInEmail(mailSlurp.receiveEmail(Constants.MailSlurp.SUBJECT_EMAIL_RESET_PASSWORD))));
 
         // Reset password
         Assert.assertEquals(resetPasswordPage.getPageTitle(), Constants.PageTitles.RESET_PASSWORD_PAGE_TITLE);
