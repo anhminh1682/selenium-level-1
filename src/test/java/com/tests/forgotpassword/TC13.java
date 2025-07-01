@@ -13,9 +13,11 @@ import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Map;
+
 public class TC13 extends TestBase {
     @Test(dataProvider = "dataTestProvider", dataProviderClass = TestBase.class)
-    public void errorsDisplayIfPasswordAndConfirmPasswordDontMatchWhenResettingPassword(String username, String newPassword, String confirmPassword) {
+    public void errorsDisplayIfPasswordAndConfirmPasswordDontMatchWhenResettingPassword(Map<String, Object> data) {
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
@@ -30,7 +32,7 @@ public class TC13 extends TestBase {
         // Forgot password
         LogUtils.info("3. Enter the email address of the created account in Pre-condition");
         LogUtils.info("4. Click on 'Send Instructions' button");
-        forgotPasswordPage.sendInstructions(username);
+        forgotPasswordPage.sendInstructions(data.get(Constants.DataKeys.USERNAME).toString());
 
         LogUtils.info("5. Open mailbox and click on reset password link");
         forgotPasswordPage.goToMailBox();
@@ -44,7 +46,11 @@ public class TC13 extends TestBase {
 
         LogUtils.info("6. Enter different values for password fields");
         LogUtils.info("7. Click 'Reset Password' button");
-        Account account = new Account(newPassword, confirmPassword, true);
+        Account account = new Account(
+                data.get(Constants.DataKeys.NEW_PASSWORD).toString(),
+                data.get(Constants.DataKeys.CONFIRM_PASSWORD).toString(),
+                true
+        );
         resetPasswordPage.resetPassword(account);
 
         Assert.assertTrue(resetPasswordPage.isErrorMessageAboveDisplayed(), "Error message element does not exist");

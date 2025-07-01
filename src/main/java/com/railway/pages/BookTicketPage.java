@@ -2,12 +2,11 @@ package com.railway.pages;
 
 import com.railway.constant.Constants;
 import com.railway.driver.DriverManager;
-import com.railway.utilities.DriverUtils;
 import com.railway.utilities.LogUtils;
 import com.railway.utilities.Ticket;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.remote.RemoteWebElement;
 
 import java.util.List;
 
@@ -37,11 +36,11 @@ public class BookTicketPage extends BasePage {
         selectElementByVisibleText(getSelectBoxByName(Constants.BookTicket.DEPART_DATE_NAME_SELECT_BOX), ticket.getDepartDate());
 
         LogUtils.info("Select " + ticket.getDepartStation() + " for 'Depart from' and " + ticket.getArriveStation() + " for 'Arrive at'.");
-        List<WebElement> oldArriveAtOptionList = getListOptionsOfSelectBox(Constants.BookTicket.ARRIVE_AT_NAME_SELECT_BOX);
+        RemoteWebElement oldOptionArriveAtElement = (RemoteWebElement) webElement(By.xpath(String.format(selectBoxXpath, Constants.BookTicket.ARRIVE_AT_NAME_SELECT_BOX)));
         selectElementByVisibleText(getSelectBoxByName(Constants.BookTicket.DEPART_FROM_NAME_SELECT_BOX), ticket.getDepartStation());
 
         // Wait for arrive at select box update DOM
-        waitForDynamicElement(10, String.format(listOptionsOfSelectBoxXpath, Constants.BookTicket.ARRIVE_AT_NAME_SELECT_BOX), oldArriveAtOptionList);
+        fluentWaitForDynamicElement(By.xpath(String.format(selectBoxXpath, Constants.BookTicket.ARRIVE_AT_NAME_SELECT_BOX)), oldOptionArriveAtElement.getId());
         selectElementByVisibleText(getSelectBoxByName(Constants.BookTicket.ARRIVE_AT_NAME_SELECT_BOX), ticket.getArriveStation());
 
         LogUtils.info("Select " + ticket.getSeatType() + " for 'Seat type'");

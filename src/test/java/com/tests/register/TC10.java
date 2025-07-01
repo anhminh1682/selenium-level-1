@@ -10,9 +10,11 @@ import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Map;
+
 public class TC10 extends TestBase {
     @Test(dataProvider = "dataTestProvider", dataProviderClass = TestBase.class)
-    public void userCannotCreateAccountWithConfirmPasswordIsNotTheSameWithPassword(String username, String password, String confirmPassword, String pid) {
+    public void userCannotCreateAccountWithConfirmPasswordIsNotTheSameWithPassword(Map<String, Object> data) {
         HomePage homePage = new HomePage();
         RegisterPage registerPage = new RegisterPage();
 
@@ -23,7 +25,12 @@ public class TC10 extends TestBase {
 
         LogUtils.info("3. Enter valid information into all fields except 'Confirm password' is not the same with 'Password'");
         LogUtils.info("4. Click on 'Register' button");
-        Account account = new Account(username, password, confirmPassword, pid);
+        Account account = new Account(
+                data.get(Constants.DataKeys.USERNAME).toString(),
+                data.get(Constants.DataKeys.PASSWORD).toString(),
+                data.get(Constants.DataKeys.CONFIRM_PASSWORD).toString(),
+                data.get(Constants.DataKeys.PID).toString()
+        );
         registerPage.registerUserAccount(account);
         Assert.assertEquals(registerPage.getErrorRegisterMessage(), Constants.RegisterMessage.ERROR_REGISTER_WITH_INVALID_INFO);
     }

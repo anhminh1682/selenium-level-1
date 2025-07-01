@@ -18,9 +18,9 @@ public class LoginPage extends BasePage {
 
     public void login(AccountEnum accountEnum) {
         LogUtils.info("Enter username: " + accountEnum.getUsername());
-        webElement(userNameTextBox).sendKeys(accountEnum.getUsername());
+        sendKeyElement(userNameTextBox, accountEnum.getUsername());
         LogUtils.info("Enter password: " + accountEnum.getPassword());
-        webElement(passwordTextBox).sendKeys(accountEnum.getPassword());
+        sendKeyElement(passwordTextBox, accountEnum.getPassword());
 
         LogUtils.info("click button: " + webElement(loginButton).getText());
         clickOnElement(loginButton);

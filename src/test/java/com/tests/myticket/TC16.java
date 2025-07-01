@@ -11,16 +11,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class TC16 extends TestBase {
     @Test(dataProvider = "dataTestProvider", dataProviderClass = TestBase.class)
-    public void userCanCancelATicket (
-            String departStation,
-            String arriveStation,
-            Integer days,
-            String seatTypes,
-            Integer amount
-    ) {
+    public void userCanCancelATicket (Map<String, Object> data) {
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
         BookTicketPage bookTicketPage = new BookTicketPage();
@@ -38,13 +33,12 @@ public class TC16 extends TestBase {
         LogUtils.info("3. Book a ticket");
         homePage.clickOnTab(Constants.TabMenu.BOOK_TICKET_TAB);
 
-//        Ticket ticket = Helpers.getRandomTicket();
         Ticket ticket = new Ticket(
-                days,
-                StationEnum.fromStationName(departStation).getStationName(),
-                StationEnum.fromStationName(arriveStation).getStationName(),
-                SeatTypeEnum.fromSeatType(seatTypes).getSeatTypeName(),
-                amount.toString()
+                Integer.parseInt(data.get(Constants.DataKeys.DAYS).toString()),
+                StationEnum.fromStationName(data.get(Constants.DataKeys.DEPART_STATION).toString()).getStationName(),
+                StationEnum.fromStationName(data.get(Constants.DataKeys.ARRIVE_STATION).toString()).getStationName(),
+                SeatTypeEnum.fromSeatType(data.get(Constants.DataKeys.SEAT_TYPES).toString()).getSeatTypeName(),
+                data.get(Constants.DataKeys.AMOUNT).toString()
         );
 
         bookTicketPage.bookATicket(ticket);

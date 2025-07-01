@@ -11,9 +11,11 @@ import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Map;
+
 public class TC15 extends TestBase {
     @Test(dataProvider = "dataTestProvider", dataProviderClass = TestBase.class)
-    public void userCanOpenBookTicketPageByClickingOnBookTicketLinkInTrainTimetablePage(String departFrom, String arriveAt) {
+    public void userCanOpenBookTicketPageByClickingOnBookTicketLinkInTrainTimetablePage(Map<String, Object> data) {
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
         TimetablePage timetablePage = new TimetablePage();
@@ -34,18 +36,18 @@ public class TC15 extends TestBase {
         // 4. Click on "book ticket" link of the route from "Huế" to "Sài Gòn"
         LogUtils.info("4. Click on 'book ticket' link of the route from 'Huế' to 'Sài Gòn'");
         timetablePage.clickOnBookTicketButton(
-                StationEnum.fromStationName(departFrom).getStationName(),
-                StationEnum.fromStationName(arriveAt).getStationName()
+                StationEnum.fromStationName(data.get(Constants.DataKeys.DEPART_STATION).toString()).getStationName(),
+                StationEnum.fromStationName(data.get(Constants.DataKeys.ARRIVE_STATION).toString()).getStationName()
         );
 
         // "Book ticket" page is loaded with correct "Depart from" and "Arrive at" values.
         Assert.assertEquals(
                 bookTicketPage.getCurrentValueOfASelectBox(Constants.BookTicket.DEPART_FROM_NAME_SELECT_BOX),
-                StationEnum.HUE.getStationName()
+                StationEnum.fromStationName(data.get(Constants.DataKeys.DEPART_STATION).toString()).getStationName()
         );
         Assert.assertEquals(
                 bookTicketPage.getCurrentValueOfASelectBox(Constants.BookTicket.ARRIVE_AT_NAME_SELECT_BOX),
-                StationEnum.SAI_GON.getStationName()
+                StationEnum.fromStationName(data.get(Constants.DataKeys.ARRIVE_STATION).toString()).getStationName()
         );
     }
 }

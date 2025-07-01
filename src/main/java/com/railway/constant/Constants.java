@@ -93,4 +93,18 @@ public class Constants {
         public static final String SUBJECT_EMAIL_CONFIRM = "Please confirm your account";
         public static final String SUBJECT_EMAIL_RESET_PASSWORD = "Please reset your password";
     }
+
+    public static class DataKeys {
+        public static final String DEPART_STATION = "departStation";
+        public static final String ARRIVE_STATION = "arriveStation";
+        public static final String SEAT_TYPES = "seatType";
+        public static final String AMOUNT = "amount";
+        public static final String DAYS = "days";
+
+        public static final String USERNAME = "username";
+        public static final String PASSWORD = "password";
+        public static final String NEW_PASSWORD = "newPassword";
+        public static final String CONFIRM_PASSWORD = "confirmPassword";
+        public static final String PID = "pid";
+    }
 }

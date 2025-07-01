@@ -16,9 +16,9 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.lang.Object;
+import java.util.Map;
 
 @Listeners(AppListener.class)
 public class TestBase {
@@ -39,51 +39,37 @@ public class TestBase {
         DriverManager.quitDriver();
     }
 
-    @DataProvider(name="dataTestProvider")
+    @DataProvider(name = "dataTestProvider")
     private Object[][] getDataFromDataset(Method method) throws IOException {
         String testClass = method.getDeclaringClass().getSimpleName();
-
         File file = new File(Constants.URL.DATA_PATH);
 
         ObjectMapper mapper = new ObjectMapper();
-        JsonNode rootNode = mapper.readTree(file);
+        JsonNode testCaseNodes = mapper.readTree(file).get(testClass);
 
-        JsonNode testCaseNodes = rootNode.get(testClass);
+        if (testCaseNodes == null || testCaseNodes.isNull()) {
+            throw new IllegalArgumentException("No data found for test class: " + testClass);
+        }
 
-        Object[][] datas;
-        Iterator<String> fieldNamesIterator;
+        List<Map<String, Object>> dataList = new ArrayList<>();
 
-        if(testCaseNodes.isArray()) {
-            datas = new Object[testCaseNodes.size()][testCaseNodes.get(0).size()];
-            fieldNamesIterator = testCaseNodes.get(0).fieldNames();
-
-            List<String> fieldNames = new ArrayList<>();
-
-            while (fieldNamesIterator.hasNext()) {
-                fieldNames.add(fieldNamesIterator.next());
-            }
-
-            for (int i = 0; i < datas.length; i++) {
-                JsonNode rowNode = testCaseNodes.get(i);
-                for (int j = 0; j < fieldNames.size(); j++) {
-                    JsonNode valueNode = rowNode.get(fieldNames.get(j));
-                    datas[i][j] = mapper.convertValue(valueNode, Object.class);
-                }
+        if (testCaseNodes.isArray()) {
+            for (JsonNode node : testCaseNodes) {
+                Map<String, Object> map = mapper.convertValue(node, Map.class);
+                dataList.add(map);
             }
         } else {
-            fieldNamesIterator = testCaseNodes.fieldNames();
-            List<String> fieldNames = new ArrayList<>();
+            Map<String, Object> map = mapper.convertValue(testCaseNodes, Map.class);
+            dataList.add(map);
+        }
 
-            while (fieldNamesIterator.hasNext()) {
-                fieldNames.add(fieldNamesIterator.next());
-            }
-
-            datas = new Object[1][testCaseNodes.size()];
-            for (int i = 0; i < fieldNames.size(); i++) {
-                datas[0][i] = mapper.convertValue(testCaseNodes.get(fieldNames.get(i)), Object.class);
-            }
+        // Convert List<Map<...>> thành Object[][] cho TestNG
+        Object[][] datas = new Object[dataList.size()][1];
+        for (int i = 0; i < dataList.size(); i++) {
+            datas[i][0] = dataList.get(i);
         }
 
         return datas;
     }
+
 }

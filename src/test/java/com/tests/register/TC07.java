@@ -11,10 +11,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 
 public class TC07 extends TestBase {
     @Test(dataProvider = "dataTestProvider", dataProviderClass = TestBase.class)
-    public void userCanCreateNewAccount(String username, String password, String confirmPassword, String pid) {
+    public void userCanCreateNewAccount(Map<String, Object> data) {
         HomePage homePage = new HomePage();
         RegisterPage registerPage = new RegisterPage();
         ThankRegisterPage thankRegisterPage = new ThankRegisterPage();
@@ -27,10 +28,11 @@ public class TC07 extends TestBase {
         LogUtils.info("3. Enter valid information into all fields");
         LogUtils.info("4. Click on 'Register' button");
         Account account = new Account(
-                LocalDateTime.now().format(Constants.MyDateTimeFormat.HH_mm_ss) + username,
-                password,
-                confirmPassword,
-                pid
+                LocalDateTime.now().format(Constants.MyDateTimeFormat.HH_mm_ss)
+                        + data.get(Constants.DataKeys.USERNAME).toString(),
+                data.get(Constants.DataKeys.PASSWORD).toString(),
+                data.get(Constants.DataKeys.CONFIRM_PASSWORD).toString(),
+                data.get(Constants.DataKeys.PID).toString()
         );
         registerPage.registerUserAccount(account);
 

@@ -9,9 +9,11 @@ import com.railway.utilities.enums.AccountEnum;
 import com.tests.base.TestBase;
 import org.testng.annotations.Test;
 
+import java.util.Map;
+
 public class TC11 extends TestBase {
     @Test(dataProvider = "dataTestProvider", dataProviderClass = TestBase.class)
-    public void userCannotCreateAccountWhilePasswordAndPIDFieldsAreEmpty(String username, String password, String confirmPassword, String pid) {
+    public void userCannotCreateAccountWhilePasswordAndPIDFieldsAreEmpty(Map<String, Object> data) {
         HomePage homePage = new HomePage();
         RegisterPage registerPage = new RegisterPage();
 
@@ -22,7 +24,12 @@ public class TC11 extends TestBase {
 
         LogUtils.info("3. Enter valid email address and leave other fields empty");
         LogUtils.info("4. Click on 'Register' button");
-        Account account = new Account(username, password, confirmPassword, pid);
+        Account account = new Account(
+                data.get(Constants.DataKeys.USERNAME).toString(),
+                data.get(Constants.DataKeys.PASSWORD).toString(),
+                data.get(Constants.DataKeys.CONFIRM_PASSWORD).toString(),
+                data.get(Constants.DataKeys.PID).toString()
+        );
         registerPage.registerUserAccount(account);
 
         softAssert.assertEquals(registerPage.getErrorRegisterMessage(), Constants.RegisterMessage.ERROR_REGISTER_WITH_INVALID_INFO);

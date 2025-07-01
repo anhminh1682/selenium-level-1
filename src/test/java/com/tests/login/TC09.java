@@ -11,9 +11,11 @@ import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Map;
+
 public class TC09 extends TestBase {
     @Test(dataProvider = "dataTestProvider", dataProviderClass = TestBase.class)
-    public void userCanChangePassword(String password, String newPassword, String confirmPassword) {
+    public void userCanChangePassword(Map<String, Object> data) {
         LoginPage loginPage = new LoginPage();
         HomePage homePage = new HomePage();
         ChangePasswordPage changePasswordPage = new ChangePasswordPage();
@@ -30,7 +32,11 @@ public class TC09 extends TestBase {
         LogUtils.info("5. Click on 'Change Password' button");
         homePage.clickOnTab(Constants.TabMenu.CHANGE_PASSWORD_TAB);
 
-        Account account = new Account(password, newPassword, confirmPassword);
+        Account account = new Account(
+            data.get(Constants.DataKeys.PASSWORD).toString(),
+            data.get(Constants.DataKeys.NEW_PASSWORD).toString(),
+            data.get(Constants.DataKeys.CONFIRM_PASSWORD).toString()
+        );
         changePasswordPage.changePassword(account);
 
         Assert.assertTrue(changePasswordPage.isChangePasswordTabDisplayed());

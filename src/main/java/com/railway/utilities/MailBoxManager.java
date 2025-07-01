@@ -28,16 +28,14 @@ public class MailBoxManager {
         String[] emailSplit = validEmail.split("@");
 
         clickOnElement(emailTextBox);
-        waitForElement(10, emailTextBoxEditable);
         sendKeyElement(emailTextBoxEditable, emailSplit[0]);
         clickOnElement(setButton);
 
         selectElementByVisibleText(emailDomainSelectBox, emailSplit[1]);
 
         waitForElement(10, emailConfirmUnread);
-        clickOnElement(emailConfirmUnread);
-
+        webElement(emailConfirmUnread).click();
         waitForElement(10, resetPasswordLink);
-        clickOnElement(resetPasswordLink);
+        webElement(resetPasswordLink).click();
     }
 }

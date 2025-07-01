@@ -4,7 +4,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.railway.driver.DriverManager;
 import org.openqa.selenium.*;
+import org.openqa.selenium.devtools.v135.runtime.model.RemoteObjectId;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.*;
 
 import java.io.File;
@@ -48,14 +50,35 @@ public class DriverUtils {
 
     public static void fluentWaitForElement(By elementBy) {
         Wait<WebDriver> wait = new FluentWait<>(DriverManager.getDriver())
-                .withTimeout(Duration.ofSeconds(5000))
-                .pollingEvery(Duration.ofSeconds(200))
+                .withTimeout(Duration.ofSeconds(5))
+                .pollingEvery(Duration.ofMillis(200))
                 .ignoring(TimeoutException.class)
                 .ignoring(NoSuchElementException.class)
                 .ignoring(StaleElementReferenceException.class);
 
         try {
             wait.until(ExpectedConditions.visibilityOf(webElement(elementBy)));
+        } catch (TimeoutException e) {
+            System.out.println("Timed out waiting for element");
+        }
+    }
+
+    public static void fluentWaitForDynamicElement(By elementBy, String currentElementId) {
+        Wait<WebDriver> wait = new FluentWait<>(DriverManager.getDriver())
+                .withTimeout(Duration.ofSeconds(5))
+                .pollingEvery(Duration.ofMillis(200))
+                .ignoring(TimeoutException.class)
+                .ignoring(NoSuchElementException.class)
+                .ignoring(StaleElementReferenceException.class);
+
+        try {
+            wait.until(d -> {
+                RemoteWebElement remoteWebElement = (RemoteWebElement) webElement(elementBy);
+                String newElementId = remoteWebElement.getId();
+                System.out.println("Old Element Id: " + currentElementId);
+                System.out.println("New Element Id: " + newElementId);
+                return !currentElementId.equals(newElementId);
+            });
         } catch (TimeoutException e) {
             System.out.println("Timed out waiting for element");
         }
