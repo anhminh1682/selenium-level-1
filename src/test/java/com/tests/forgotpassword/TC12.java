@@ -4,10 +4,11 @@ import com.mailslurp.clients.ApiException;
 import com.railway.constant.Constants;
 import com.railway.driver.DriverManager;
 import com.railway.pages.*;
+import com.railway.utilities.Account;
 import com.railway.utilities.LogUtils;
 import com.railway.utilities.MailBoxManager;
 import com.railway.utilities.MailSlurp;
-import com.railway.utilities.enums.Account;
+import com.railway.utilities.enums.AccountEnum;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -15,8 +16,8 @@ import org.testng.annotations.Test;
 import java.util.Objects;
 
 public class TC12 extends TestBase {
-    @Test
-    public void errorsDisplayWhenPasswordResetTokenIsBlankUseUI() {
+    @Test(dataProvider = "dataTestProvider", dataProviderClass = TestBase.class)
+    public void errorsDisplayWhenPasswordResetTokenIsBlankUseUI(String username, String newPassword, String confirmPassword) {
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
@@ -32,7 +33,7 @@ public class TC12 extends TestBase {
         // Forgot password
         LogUtils.info("3. Enter the email address of the created account in Pre-condition");
         LogUtils.info("4. Click on 'Send Instructions' button");
-        forgotPasswordPage.sendInstructions(Account.VALID_ACCOUNT_LOGIN.getUsername());
+        forgotPasswordPage.sendInstructions(username);
 
         LogUtils.info("5. Open mailbox and click on reset password link");
         forgotPasswordPage.goToMailBox();
@@ -46,15 +47,16 @@ public class TC12 extends TestBase {
 
         LogUtils.info("6. Enter new passwords and remove the Password Reset Token");
         LogUtils.info("7. Click 'Reset Password' button");
-        resetPasswordPage.resetPassword(Account.BLANK_TOKEN_RESET_PASSWORD);
+        Account account = new Account(newPassword, confirmPassword, false);
+        resetPasswordPage.resetPassword(account);
 
         Assert.assertTrue(resetPasswordPage.isErrorMessageAboveDisplayed(), "Error message element does not exist");
         Assert.assertEquals(resetPasswordPage.getErrorMessageAbove(), Constants.ResetPasswordMessage.ERROR_MESSAGE_INCORRECT_RESET_TOKEN_ABOVE);
         Assert.assertEquals(resetPasswordPage.getErrorMessageInvalidResetTokenNextToField(), Constants.ResetPasswordMessage.ERROR_MESSAGE_INVALID_RESET_TOKEN_NEXT_TO_FIELD);
     }
 
-    @Test
-    public void errorsDisplayWhenPasswordResetTokenIsBlankUseMailAPI() throws ApiException {
+    @Test(dataProvider = "dataTestProvider", dataProviderClass = TestBase.class)
+    public void errorsDisplayWhenPasswordResetTokenIsBlankUseMailAPI(String username, String newPassword, String confirmPassword) throws ApiException {
         HomePage homePage = new HomePage();
         RegisterPage registerPage = new RegisterPage();
         LoginPage loginPage = new LoginPage();
@@ -86,7 +88,8 @@ public class TC12 extends TestBase {
 
         LogUtils.info("6. Enter new passwords and remove the Password Reset Token");
         LogUtils.info("7. Click 'Reset Password' button");
-        resetPasswordPage.resetPassword(Account.BLANK_TOKEN_RESET_PASSWORD);
+        Account account = new Account(newPassword, confirmPassword, false);
+        resetPasswordPage.resetPassword(account);
 
         Assert.assertTrue(resetPasswordPage.isErrorMessageAboveDisplayed(), "Error message element does not exist");
         Assert.assertEquals(resetPasswordPage.getErrorMessageAbove(), Constants.ResetPasswordMessage.ERROR_MESSAGE_INCORRECT_RESET_TOKEN_ABOVE);

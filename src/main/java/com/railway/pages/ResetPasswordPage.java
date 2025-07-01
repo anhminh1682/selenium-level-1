@@ -2,12 +2,15 @@ package com.railway.pages;
 
 import com.railway.constant.Constants;
 import com.railway.driver.DriverManager;
-import com.railway.utilities.Helpers;
-import com.railway.utilities.enums.Account;
+import com.railway.utilities.Account;
+import com.railway.utilities.DriverUtils;
+import com.railway.utilities.enums.AccountEnum;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
 import java.util.Objects;
+
+import static com.railway.utilities.DriverUtils.*;
 
 public class ResetPasswordPage extends BasePage {
     private final By newPasswordTextBox = By.id("newPassword");
@@ -26,18 +29,28 @@ public class ResetPasswordPage extends BasePage {
         }
     }
 
-    public void resetPassword(Account account) {
-        webElement(newPasswordTextBox).sendKeys(account.getPassword());
-        webElement(confirmPasswordTextBox).sendKeys(account.getConfirmPassword());
+    public void resetPassword(AccountEnum accountEnum) {
+        webElement(newPasswordTextBox).sendKeys(accountEnum.getPassword());
+        webElement(confirmPasswordTextBox).sendKeys(accountEnum.getConfirmPassword());
 
-        if(!account.getToken()) {
+        if(!accountEnum.getToken()) {
             webElement(resetTokenTextBox).sendKeys(Keys.CONTROL + "a");
             webElement(resetTokenTextBox).sendKeys(Keys.DELETE);
         }
 
-        Helpers.scrollToElement(webElement(submitButton));
+        clickOnElement(submitButton);
+    }
 
-        webElement(submitButton).click();
+    public void resetPassword(Account account) {
+        webElement(newPasswordTextBox).sendKeys(account.getNewPassword());
+        webElement(confirmPasswordTextBox).sendKeys(account.getConfirmPassword());
+
+        if(!account.isToken()) {
+            webElement(resetTokenTextBox).sendKeys(Keys.CONTROL + "a");
+            webElement(resetTokenTextBox).sendKeys(Keys.DELETE);
+        }
+
+        clickOnElement(submitButton);
     }
 
     public boolean isErrorMessageAboveDisplayed() {

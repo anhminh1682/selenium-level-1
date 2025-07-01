@@ -2,9 +2,12 @@ package com.railway.utilities;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.railway.constant.Constants;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -21,6 +24,14 @@ public class Ticket {
 
     public Ticket(String date, String departStation, String arriveStation, String seatType, String ticketAmount) {
         this.departDate = date;
+        this.departStation = departStation;
+        this.arriveStation = arriveStation;
+        this.seatType = seatType;
+        this.ticketAmount = ticketAmount;
+    }
+
+    public Ticket(int days, String departStation, String arriveStation, String seatType, String ticketAmount) {
+        this.departDate = LocalDateTime.now().plusDays(days + 3).format(Constants.MyDateTimeFormat.M_d_yyyy);
         this.departStation = departStation;
         this.arriveStation = arriveStation;
         this.seatType = seatType;

@@ -4,25 +4,19 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.railway.driver.DriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Helpers {
+public class DriverUtils {
     public static void scrollToElement(WebElement element) {
         new Actions(DriverManager.getDriver())
                 .scrollByAmount(0, element.getRect().y)
@@ -35,7 +29,7 @@ public class Helpers {
     }
 
     public static void waitForDynamicElement(int duration, String elementXpath, List<WebElement> oldList) {
-        WebDriverWait wait = (WebDriverWait) new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(duration));
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(duration));
 
         try {
             wait.until(d -> {
@@ -51,6 +45,20 @@ public class Helpers {
     public static void waitAlert(int duration) {
         WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(duration));
         wait.until(ExpectedConditions.alertIsPresent());
+    }
+
+    public static WebElement webElement(By element) {
+        return DriverManager.getDriver().findElement(element);
+    }
+
+    public static String getElementText(WebElement element) {
+        return element.getText().trim();
+    }
+
+    public static void clickOnElement(By elementBy) {
+        WebElement element = DriverManager.getDriver().findElement(elementBy);
+        scrollToElement(element);
+        element.click();
     }
 
     private static List<Ticket> saveDatasetIntoTicketList() throws IOException {

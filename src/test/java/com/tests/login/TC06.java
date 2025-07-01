@@ -2,14 +2,15 @@ package com.tests.login;
 
 import com.railway.constant.Constants;
 import com.railway.pages.*;
+import com.railway.utilities.Account;
 import com.railway.utilities.LogUtils;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC06 extends TestBase {
-    @Test
-    public void additionalPagesDisplayOnceUserLoggedIn() {
+    @Test(dataProvider = "dataTestProvider", dataProviderClass = TestBase.class)
+    public void additionalPagesDisplayOnceUserLoggedIn(String username, String password) {
         LoginPage loginPage = new LoginPage();
         HomePage homePage = new HomePage();
         ChangePasswordPage changePasswordPage = new ChangePasswordPage();
@@ -20,7 +21,8 @@ public class TC06 extends TestBase {
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
 
         LogUtils.info("3. Login with valid account");
-        loginPage.loginSuccess();
+        Account account = new Account(username, password);
+        loginPage.login(account);
 
         Assert.assertTrue(homePage.isMyTicketTabDisplayed(), "Check my ticket tab is displayed");
         Assert.assertTrue(homePage.isChangePasswordTabDisplayed(), "Check change password tab is displayed");

@@ -1,10 +1,13 @@
 package com.railway.pages;
 
-import com.railway.utilities.Helpers;
+import com.railway.utilities.Account;
+import com.railway.utilities.DriverUtils;
 import com.railway.utilities.LogUtils;
 import com.railway.utilities.MailSlurp;
-import com.railway.utilities.enums.Account;
+import com.railway.utilities.enums.AccountEnum;
 import org.openqa.selenium.By;
+
+import static com.railway.utilities.DriverUtils.*;
 
 public class RegisterPage extends BasePage {
     private final By emailTextBox = By.id("email");
@@ -15,6 +18,26 @@ public class RegisterPage extends BasePage {
     private final By errorRegisterMessage = By.xpath("//p[@class='message error']");
     private final By errorMessageOfPasswordField = By.xpath("//label[@class='validation-error' and @for='password']");
     private final By errorMessageOfPIDField = By.xpath("//label[@class='validation-error' and @for='pid']");
+
+    public void registerUserAccount(AccountEnum accountEnum) {
+        LogUtils.info("Enter email: " + accountEnum.getUsername());
+        webElement(emailTextBox).clear();
+        webElement(emailTextBox).sendKeys(accountEnum.getUsername());
+
+        LogUtils.info("Enter password: " + accountEnum.getPassword());
+        webElement(passwordTextBox).clear();
+        webElement(passwordTextBox).sendKeys(accountEnum.getPassword());
+
+        LogUtils.info("Enter confirm password: " + accountEnum.getConfirmPassword());
+        webElement(confirmPasswordTextBox).sendKeys(accountEnum.getConfirmPassword());
+
+        LogUtils.info("Enter PID: " + accountEnum.getPID());
+        webElement(pidTextBox).clear();
+        webElement(pidTextBox).sendKeys(accountEnum.getPID());
+
+        LogUtils.info("Click button: " + webElement(registerButton).getText());
+        clickOnElement(registerButton);
+    }
 
     public void registerUserAccount(Account account) {
         LogUtils.info("Enter email: " + account.getUsername());
@@ -28,25 +51,24 @@ public class RegisterPage extends BasePage {
         LogUtils.info("Enter confirm password: " + account.getConfirmPassword());
         webElement(confirmPasswordTextBox).sendKeys(account.getConfirmPassword());
 
-        LogUtils.info("Enter PID: " + account.getPID());
+        LogUtils.info("Enter PID: " + account.getPid());
         webElement(pidTextBox).clear();
-        webElement(pidTextBox).sendKeys(account.getPID());
+        webElement(pidTextBox).sendKeys(account.getPid());
 
         LogUtils.info("Click button: " + webElement(registerButton).getText());
-        Helpers.scrollToElement(webElement(registerButton));
-        webElement(registerButton).click();
+        clickOnElement(registerButton);
     }
 
     public void registerWithValidInfo() {
-        registerUserAccount(Account.VALID_ACCOUNT_REGISTER);
+        registerUserAccount(AccountEnum.VALID_ACCOUNT_REGISTER);
     }
 
     public String registerWithMailSlurp() {
         try {
             MailSlurp.createEmailInbox();
-            Account account = Account.VALID_ACCOUNT_REGISTER_MAIL_SLURP;
-            registerUserAccount(account);
-            return account.getUsername();
+            AccountEnum accountEnum = AccountEnum.VALID_ACCOUNT_REGISTER_MAIL_SLURP;
+            registerUserAccount(accountEnum);
+            return accountEnum.getUsername();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

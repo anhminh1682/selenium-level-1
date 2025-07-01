@@ -4,14 +4,16 @@ import com.railway.constant.Constants;
 import com.railway.pages.ChangePasswordPage;
 import com.railway.pages.HomePage;
 import com.railway.pages.LoginPage;
+import com.railway.utilities.Account;
 import com.railway.utilities.LogUtils;
+import com.railway.utilities.enums.AccountEnum;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC09 extends TestBase {
-    @Test
-    public void userCanChangePassword() {
+    @Test(dataProvider = "dataTestProvider", dataProviderClass = TestBase.class)
+    public void userCanChangePassword(String password, String newPassword, String confirmPassword) {
         LoginPage loginPage = new LoginPage();
         HomePage homePage = new HomePage();
         ChangePasswordPage changePasswordPage = new ChangePasswordPage();
@@ -27,7 +29,9 @@ public class TC09 extends TestBase {
         LogUtils.info("4. Enter valid value into all fields.");
         LogUtils.info("5. Click on 'Change Password' button");
         homePage.clickOnTab(Constants.TabMenu.CHANGE_PASSWORD_TAB);
-        changePasswordPage.changePassword(Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PASSWORD);
+
+        Account account = new Account(password, newPassword, confirmPassword);
+        changePasswordPage.changePassword(account);
 
         Assert.assertTrue(changePasswordPage.isChangePasswordTabDisplayed());
         Assert.assertEquals(changePasswordPage.getChangePasswordSuccessMessage(), Constants.ChangePasswordMessage.CHANGE_PASSWORD_SUCCESSFUL_MESSAGE);

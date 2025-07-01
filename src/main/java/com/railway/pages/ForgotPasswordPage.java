@@ -1,28 +1,22 @@
 package com.railway.pages;
 
 import com.railway.driver.DriverManager;
-import com.railway.utilities.Helpers;
+import com.railway.utilities.DriverUtils;
 import com.railway.utilities.MailBoxManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
+import static com.railway.utilities.DriverUtils.clickOnElement;
+import static com.railway.utilities.DriverUtils.webElement;
 
 public class ForgotPasswordPage extends BasePage {
     private final By emailTextBox = By.id("email");
     private final By submitButton = By.xpath("//input[@type='submit']");
 
-    private WebElement getEmailTextBox() {
-        return DriverManager.getDriver().findElement(emailTextBox);
-    }
-
-    private WebElement getSubmitButton() {
-        return DriverManager.getDriver().findElement(submitButton);
-    }
-
     public void sendInstructions(String email) {
-        getEmailTextBox().sendKeys(email);
+        webElement(emailTextBox).sendKeys(email);
 
-        Helpers.scrollToElement(getSubmitButton());
-        getSubmitButton().click();
+        clickOnElement(submitButton);
     }
 
     public void goToMailBox() {

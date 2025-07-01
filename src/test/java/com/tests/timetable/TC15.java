@@ -6,14 +6,14 @@ import com.railway.pages.HomePage;
 import com.railway.pages.LoginPage;
 import com.railway.pages.TimetablePage;
 import com.railway.utilities.LogUtils;
-import com.railway.utilities.enums.ProvincesEnums;
+import com.railway.utilities.enums.StationEnum;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TC15 extends TestBase {
-    @Test
-    public void userCanOpenBookTicketPageByClickingOnBookTicketLinkInTrainTimetablePage() {
+    @Test(dataProvider = "dataTestProvider", dataProviderClass = TestBase.class)
+    public void userCanOpenBookTicketPageByClickingOnBookTicketLinkInTrainTimetablePage(String departFrom, String arriveAt) {
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
         TimetablePage timetablePage = new TimetablePage();
@@ -33,16 +33,19 @@ public class TC15 extends TestBase {
 
         // 4. Click on "book ticket" link of the route from "Huế" to "Sài Gòn"
         LogUtils.info("4. Click on 'book ticket' link of the route from 'Huế' to 'Sài Gòn'");
-        timetablePage.clickOnBookTicketButton(ProvincesEnums.HUE.getDisplayName(), ProvincesEnums.SAI_GON.getDisplayName());
+        timetablePage.clickOnBookTicketButton(
+                StationEnum.fromStationName(departFrom).getStationName(),
+                StationEnum.fromStationName(arriveAt).getStationName()
+        );
 
         // "Book ticket" page is loaded with correct "Depart from" and "Arrive at" values.
         Assert.assertEquals(
                 bookTicketPage.getCurrentValueOfASelectBox(Constants.BookTicket.DEPART_FROM_NAME_SELECT_BOX),
-                ProvincesEnums.HUE.getDisplayName()
+                StationEnum.HUE.getStationName()
         );
         Assert.assertEquals(
                 bookTicketPage.getCurrentValueOfASelectBox(Constants.BookTicket.ARRIVE_AT_NAME_SELECT_BOX),
-                ProvincesEnums.SAI_GON.getDisplayName()
+                StationEnum.SAI_GON.getStationName()
         );
     }
 }

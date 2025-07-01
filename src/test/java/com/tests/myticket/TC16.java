@@ -2,9 +2,10 @@ package com.tests.myticket;
 
 import com.railway.constant.Constants;
 import com.railway.pages.*;
-import com.railway.utilities.Helpers;
 import com.railway.utilities.LogUtils;
 import com.railway.utilities.Ticket;
+import com.railway.utilities.enums.SeatTypeEnum;
+import com.railway.utilities.enums.StationEnum;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,8 +13,14 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class TC16 extends TestBase {
-    @Test
-    public void userCanCancelATicket () throws IOException {
+    @Test(dataProvider = "dataTestProvider", dataProviderClass = TestBase.class)
+    public void userCanCancelATicket (
+            String departStation,
+            String arriveStation,
+            Integer days,
+            String seatTypes,
+            Integer amount
+    ) throws IOException {
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
         BookTicketPage bookTicketPage = new BookTicketPage();
@@ -31,7 +38,14 @@ public class TC16 extends TestBase {
         LogUtils.info("3. Book a ticket");
         homePage.clickOnTab(Constants.TabMenu.BOOK_TICKET_TAB);
 
-        Ticket ticket = Helpers.getRandomTicket();
+//        Ticket ticket = Helpers.getRandomTicket();
+        Ticket ticket = new Ticket(
+                days,
+                StationEnum.fromStationName(departStation).getStationName(),
+                StationEnum.fromStationName(arriveStation).getStationName(),
+                SeatTypeEnum.fromSeatType(seatTypes).getSeatTypeName(),
+                amount.toString()
+        );
 
         bookTicketPage.bookATicket(ticket);
 
