@@ -4,6 +4,7 @@ import com.railway.constant.Constants;
 import com.railway.driver.DriverManager;
 import com.railway.utilities.Account;
 import com.railway.utilities.DriverUtils;
+import com.railway.utilities.LogUtils;
 import com.railway.utilities.enums.AccountEnum;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -30,26 +31,34 @@ public class ResetPasswordPage extends BasePage {
     }
 
     public void resetPassword(AccountEnum accountEnum) {
+        LogUtils.info("Enter new password: " + accountEnum.getNewPassword());
         sendKeyElement(newPasswordTextBox, accountEnum.getPassword());
+        LogUtils.info("Enter confirm password: " + accountEnum.getConfirmPassword());
         sendKeyElement(confirmPasswordTextBox, accountEnum.getConfirmPassword());
 
         if(!accountEnum.getToken()) {
+            LogUtils.info("Remove token");
             sendKeyElement(resetTokenTextBox, Keys.CONTROL + "a");
             sendKeyElement(resetTokenTextBox, Keys.DELETE);
         }
 
+        LogUtils.info("Click button: " + webElement(submitButton).getAttribute("value"));
         clickOnElement(submitButton);
     }
 
     public void resetPassword(Account account) {
+        LogUtils.info("Enter new password: " + account.getNewPassword());
         sendKeyElement(newPasswordTextBox, account.getNewPassword());
+        LogUtils.info("Enter confirm password: " + account.getConfirmPassword());
         sendKeyElement(confirmPasswordTextBox, account.getConfirmPassword());
 
         if(!account.isToken()) {
+            LogUtils.info("Remove token");
             sendKeyElement(resetTokenTextBox, Keys.CONTROL + "a");
             sendKeyElement(resetTokenTextBox, Keys.DELETE);
         }
 
+        LogUtils.info("Click button: " + webElement(submitButton).getAttribute("value"));
         clickOnElement(submitButton);
     }
 

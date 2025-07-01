@@ -32,7 +32,7 @@ public class RegisterPage extends BasePage {
         LogUtils.info("Enter PID: " + accountEnum.getPID());
         sendKeyElement(pidTextBox, accountEnum.getPID());
 
-        LogUtils.info("Click button: " + getElementText(registerButton));
+        LogUtils.info("Click button: " + webElement(registerButton).getAttribute("value"));
         clickOnElement(registerButton);
     }
 
@@ -49,7 +49,7 @@ public class RegisterPage extends BasePage {
         LogUtils.info("Enter PID: " + account.getPid());
         sendKeyElement(pidTextBox, account.getPid());
 
-        LogUtils.info("Click button: " + getElementText(registerButton));
+        LogUtils.info("Click button: " + webElement(registerButton).getAttribute("value"));
         clickOnElement(registerButton);
     }
 

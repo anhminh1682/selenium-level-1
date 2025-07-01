@@ -14,8 +14,8 @@ public class TC04 extends TestBase {
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
 
-        LogUtils.info("1. Navigate to QA Railway Website");
-        LogUtils.info("2. Click on 'Book ticket' tab");
+        LogUtils.startStep("1. Navigate to QA Railway Website");
+        LogUtils.startStep("2. Click on 'Book ticket' tab");
         homePage.clickOnTab(Constants.TabMenu.BOOK_TICKET_TAB);
 
         Assert.assertEquals(loginPage.getLoginPageTitle(), Constants.PageTitles.LOGIN_PAGE_TITLE);

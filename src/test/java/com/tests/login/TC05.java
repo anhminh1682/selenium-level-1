@@ -19,13 +19,11 @@ public class TC05 extends TestBase {
         LoginPage loginPage = new LoginPage();
         int n = 4;
 
-        LogUtils.info("1. Navigate to QA Railway Website");
-        LogUtils.info("2. Click on 'Login' tab");
+        LogUtils.startStep("1. Navigate to QA Railway Website");
+        LogUtils.startStep("2. Click on 'Login' tab");
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
 
-        LogUtils.info("3. Enter valid information into 'Username' textbox except 'Password' textbox.");
-        LogUtils.info("4. Click on 'Login' button");
-        LogUtils.info("5. Repeat step 3 three more times.");
+        LogUtils.startStep("3. Login with valid information into 'Username' textbox except 'Password' textbox and repeat three more times.");
         Account account = new Account(data.get(Constants.DataKeys.USERNAME).toString(), data.get(Constants.DataKeys.PASSWORD).toString());
         loginPage.loginMultipleTimes(n, account);
 

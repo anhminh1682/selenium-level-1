@@ -21,17 +21,16 @@ public class TC09 extends TestBase {
         ChangePasswordPage changePasswordPage = new ChangePasswordPage();
 
         // Login
-        LogUtils.info("1. Navigate to QA Railway Website");
-        LogUtils.info("2. Login with valid account");
+        LogUtils.startStep("1. Navigate to QA Railway Website");
+        LogUtils.startStep("2. Login with valid account");
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
         loginPage.loginSuccess();
 
         // Change Password
-        LogUtils.info("3. Click on 'Change Password' tab");
-        LogUtils.info("4. Enter valid value into all fields.");
-        LogUtils.info("5. Click on 'Change Password' button");
+        LogUtils.startStep("3. Click on 'Change Password' tab");
         homePage.clickOnTab(Constants.TabMenu.CHANGE_PASSWORD_TAB);
 
+        LogUtils.startStep("4. Change password with valid value into all fields.");
         Account account = new Account(
             data.get(Constants.DataKeys.PASSWORD).toString(),
             data.get(Constants.DataKeys.NEW_PASSWORD).toString(),

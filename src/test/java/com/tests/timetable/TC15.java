@@ -22,19 +22,19 @@ public class TC15 extends TestBase {
         BookTicketPage bookTicketPage = new BookTicketPage();
 
         // 2. Login with a valid account
-        LogUtils.info("Pre-condition: Create and activate a new account");
-        LogUtils.info("1. Navigate to QA Railway Website");
+        LogUtils.startStep("Pre-condition: Create and activate a new account");
+        LogUtils.startStep("1. Navigate to QA Railway Website");
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
 
-        LogUtils.info("2. Login with a valid account");
+        LogUtils.startStep("2. Login with a valid account");
         loginPage.loginSuccess();
 
         // 3. Click on "Timetable" tab
-        LogUtils.info("3. Click on 'Timetable' tab");
+        LogUtils.startStep("3. Click on 'Timetable' tab");
         homePage.clickOnTab(Constants.TabMenu.TIMETABLE_TAB);
 
         // 4. Click on "book ticket" link of the route from "Huế" to "Sài Gòn"
-        LogUtils.info("4. Click on 'book ticket' link of the route from 'Huế' to 'Sài Gòn'");
+        LogUtils.startStep("4. Click on 'book ticket' link of the route from 'Huế' to 'Sài Gòn'");
         timetablePage.clickOnBookTicketButton(
                 StationEnum.fromStationName(data.get(Constants.DataKeys.DEPART_STATION).toString()).getStationName(),
                 StationEnum.fromStationName(data.get(Constants.DataKeys.ARRIVE_STATION).toString()).getStationName()

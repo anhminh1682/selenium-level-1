@@ -21,12 +21,11 @@ public class TC07 extends TestBase {
         ThankRegisterPage thankRegisterPage = new ThankRegisterPage();
 
         // Register
-        LogUtils.info("1. Navigate to QA Railway Website");
-        LogUtils.info("2. Click on 'Register' tab");
+        LogUtils.startStep("1. Navigate to QA Railway Website");
+        LogUtils.startStep("2. Click on 'Register' tab");
         homePage.clickOnTab(Constants.TabMenu.REGISTER_TAB);
 
-        LogUtils.info("3. Enter valid information into all fields");
-        LogUtils.info("4. Click on 'Register' button");
+        LogUtils.startStep("3. Register with valid info");
         Account account = new Account(
                 LocalDateTime.now().format(Constants.MyDateTimeFormat.HH_mm_ss)
                         + data.get(Constants.DataKeys.USERNAME).toString(),

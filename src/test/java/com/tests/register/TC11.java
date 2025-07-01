@@ -18,12 +18,11 @@ public class TC11 extends TestBase {
         RegisterPage registerPage = new RegisterPage();
 
         // Register
-        LogUtils.info("1. Navigate to QA Railway Website");
-        LogUtils.info("2. Click on 'Register' tab");
+        LogUtils.startStep("1. Navigate to QA Railway Website");
+        LogUtils.startStep("2. Click on 'Register' tab");
         homePage.clickOnTab(Constants.TabMenu.REGISTER_TAB);
 
-        LogUtils.info("3. Enter valid email address and leave other fields empty");
-        LogUtils.info("4. Click on 'Register' button");
+        LogUtils.startStep("3. Register with valid email address and leave other fields empty");
         Account account = new Account(
                 data.get(Constants.DataKeys.USERNAME).toString(),
                 data.get(Constants.DataKeys.PASSWORD).toString(),

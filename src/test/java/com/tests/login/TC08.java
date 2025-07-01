@@ -19,12 +19,11 @@ public class TC08 extends TestBase {
         LoginPage loginPage = new LoginPage();
 
         // Login
-        LogUtils.info("1. Navigate to QA Railway Website");
-        LogUtils.info("2. Click on 'Login' tab");
+        LogUtils.startStep("1. Navigate to QA Railway Website");
+        LogUtils.startStep("2. Click on 'Login' tab");
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
 
-        LogUtils.info("3. Enter username and password of account hasn't been activated.");
-        LogUtils.info("4. Click on 'Login' button");
+        LogUtils.startStep("3. Register with an account hasn't been activated.");
         Account account = new Account(data.get(Constants.DataKeys.USERNAME).toString(), data.get(Constants.DataKeys.PASSWORD).toString());
         loginPage.login(account);
 

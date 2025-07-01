@@ -23,14 +23,14 @@ public class TC16 extends TestBase {
         MyTicketPage myTicketPage = new MyTicketPage();
 
         // 2. Login with a valid account
-        LogUtils.info("Pre-condition: Create and activate a new account");
-        LogUtils.info("1. Navigate to QA Railway Website");
-        LogUtils.info("2. Login with a valid account");
+        LogUtils.startStep("Pre-condition: Create and activate a new account");
+        LogUtils.startStep("1. Navigate to QA Railway Website");
+        LogUtils.startStep("2. Login with a valid account");
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
         loginPage.loginSuccess();
 
         // 3. Book a ticket
-        LogUtils.info("3. Book a ticket");
+        LogUtils.startStep("3. Book a ticket");
         homePage.clickOnTab(Constants.TabMenu.BOOK_TICKET_TAB);
 
         Ticket ticket = new Ticket(
@@ -44,7 +44,7 @@ public class TC16 extends TestBase {
         bookTicketPage.bookATicket(ticket);
 
         // 4. Click on "My ticket" tab
-        LogUtils.info("4. Click on 'My ticket' tab");
+        LogUtils.startStep("4. Click on 'My ticket' tab");
         bookTicketSuccessfulPage.clickOnTab(Constants.TabMenu.MY_TICKET_TAB);
 
         // Count the amount of tickets before cancel

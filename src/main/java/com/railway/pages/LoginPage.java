@@ -28,11 +28,11 @@ public class LoginPage extends BasePage {
 
     public void login(Account account) {
         LogUtils.info("Enter username: " + account.getUsername());
-        webElement(userNameTextBox).sendKeys(account.getUsername());
+        sendKeyElement(userNameTextBox, account.getUsername());
         LogUtils.info("Enter password: " + account.getPassword());
-        webElement(passwordTextBox).sendKeys(account.getPassword());
+        sendKeyElement(passwordTextBox, account.getPassword());
 
-        LogUtils.info("click button: " + webElement(loginButton).getText());
+        LogUtils.info("click button: " + webElement(loginButton).getAttribute("value"));
         clickOnElement(loginButton);
     }
 
@@ -53,7 +53,7 @@ public class LoginPage extends BasePage {
     }
 
     public String getErrorMessage() {
-        LogUtils.info("Error message" + webElement(errorMessage).getText());
+        LogUtils.info("Error message: " + webElement(errorMessage).getText());
         return webElement(errorMessage).getText();
     }
 

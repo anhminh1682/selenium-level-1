@@ -21,11 +21,11 @@ public class TC14 extends TestBase {
         BookTicketSuccessfulPage bookTicketSuccessfulPage = new BookTicketSuccessfulPage();
         MyTicketPage myTicketPage = new MyTicketPage();
 
-        LogUtils.info("Pre-condition: Create and activate a new account");
-        LogUtils.info("1. Navigate to QA Railway Website");
+        LogUtils.startStep("Pre-condition: Create and activate a new account");
+        LogUtils.startStep("1. Navigate to QA Railway Website");
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
 
-        LogUtils.info("2. Login with a valid account");
+        LogUtils.startStep("2. Login with a valid account");
         loginPage.loginSuccess();
 
         // Check the number of ticket rows before booking a ticket
@@ -41,9 +41,10 @@ public class TC14 extends TestBase {
         homePage.clickOnTab(Constants.TabMenu.MY_TICKET_TAB);
         int countTicketBeforeAdd = myTicketPage.countOfRowTicket(ticket);
 
-        LogUtils.info("3. Click on 'Book ticket' tab");
+        LogUtils.startStep("3. Click on 'Book ticket' tab");
         homePage.clickOnTab(Constants.TabMenu.BOOK_TICKET_TAB);
 
+        LogUtils.startStep("4. Book a ticket");
         bookTicketPage.bookATicket(ticket);
 
         // Check Message "Ticket booked successfully!" displays

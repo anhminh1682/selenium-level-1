@@ -18,11 +18,11 @@ public class TC06 extends TestBase {
         ChangePasswordPage changePasswordPage = new ChangePasswordPage();
         MyTicketPage myTicketPage = new MyTicketPage();
 
-        LogUtils.info("1. Navigate to QA Railway Website");
-        LogUtils.info("2. Click on 'Login' tab");
+        LogUtils.startStep("1. Navigate to QA Railway Website");
+        LogUtils.startStep("2. Click on 'Login' tab");
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
 
-        LogUtils.info("3. Login with valid account");
+        LogUtils.startStep("3. Login with valid account");
         Account account = new Account(data.get(Constants.DataKeys.USERNAME).toString(), data.get(Constants.DataKeys.PASSWORD).toString());
         loginPage.login(account);
 
