@@ -10,17 +10,11 @@ import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
+import java.util.Map;
 
 public class TC16 extends TestBase {
     @Test(dataProvider = "dataTestProvider", dataProviderClass = TestBase.class)
-    public void userCanCancelATicket (
-            String departStation,
-            String arriveStation,
-            Integer days,
-            String seatTypes,
-            Integer amount
-    ) throws IOException {
+    public void userCanCancelATicket (Map<String, Object> data) {
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
         BookTicketPage bookTicketPage = new BookTicketPage();
@@ -28,29 +22,32 @@ public class TC16 extends TestBase {
         MyTicketPage myTicketPage = new MyTicketPage();
 
         // 2. Login with a valid account
-        LogUtils.info("Pre-condition: Create and activate a new account");
-        LogUtils.info("1. Navigate to QA Railway Website");
-        LogUtils.info("2. Login with a valid account");
+        LogUtils.startStep("Pre-condition: Create and activate a new account");
+        LogUtils.startStep("1. Navigate to QA Railway Website");
+        LogUtils.startStep("2. Login with a valid account");
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
         loginPage.loginSuccess();
 
         // 3. Book a ticket
-        LogUtils.info("3. Book a ticket");
+        LogUtils.startStep("3. Book a ticket");
         homePage.clickOnTab(Constants.TabMenu.BOOK_TICKET_TAB);
 
-//        Ticket ticket = Helpers.getRandomTicket();
         Ticket ticket = new Ticket(
-                days,
-                StationEnum.fromStationName(departStation).getStationName(),
-                StationEnum.fromStationName(arriveStation).getStationName(),
-                SeatTypeEnum.fromSeatType(seatTypes).getSeatTypeName(),
-                amount.toString()
+                Integer.parseInt(data.get(Constants.DataKeys.DAYS).toString()),
+                StationEnum.fromStationName(data.get(Constants.DataKeys.DEPART_STATION).toString()).getStationName(),
+                StationEnum.fromStationName(data.get(Constants.DataKeys.ARRIVE_STATION).toString()).getStationName(),
+                SeatTypeEnum.fromSeatType(data.get(Constants.DataKeys.SEAT_TYPES).toString()).getSeatTypeName(),
+                data.get(Constants.DataKeys.AMOUNT).toString()
         );
 
         bookTicketPage.bookATicket(ticket);
 
+        // Check Message "Ticket booked successfully!" displays
+        Assert.assertEquals(bookTicketSuccessfulPage.getPageTitle(), Constants.PageTitles.BOOK_TICKET_SUCCESS_PAGE_TITLE, "Book ticket failed!");
+        Assert.assertEquals(bookTicketSuccessfulPage.getBookSuccessHeadingMessage(), Constants.BookTicketMessage.SUCCESSFUL_MESSAGE, "Book ticket failed!");
+
         // 4. Click on "My ticket" tab
-        LogUtils.info("4. Click on 'My ticket' tab");
+        LogUtils.startStep("4. Click on 'My ticket' tab");
         bookTicketSuccessfulPage.clickOnTab(Constants.TabMenu.MY_TICKET_TAB);
 
         // Count the amount of tickets before cancel

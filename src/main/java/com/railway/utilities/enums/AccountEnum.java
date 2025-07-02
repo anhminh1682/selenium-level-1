@@ -13,7 +13,6 @@ public enum AccountEnum {
     INACTIVE_USERNAME_LOGIN("minh@gmail.com", "minh12345"),
 
     VALID_ACCOUNT_REGISTER("minh" + LocalDateTime.now().format(Constants.MyDateTimeFormat.HH_mm_ss) + "@gmail.com", "minh12345", "minh12345", "27183714777"),
-    VALID_ACCOUNT_REGISTER_MAIL_SLURP(getMailSlurpAccount(), "minh12345", "minh12345", "27183714777"),
     INVALID_CONFIRM_PASSWORD_REGISTER("vffaebxr@sharklasers.com", "minh12345", "abc1234", "27183714777"),
     VALID_EMAIL_AND_BLANK_OTHER_FIELDS_REGISTER("vffaebxr@sharklasers.com", "", "", ""),
 
@@ -76,14 +75,5 @@ public enum AccountEnum {
 
     public boolean getToken() {
         return this.hasToken;
-    }
-
-    public static String getMailSlurpAccount() {
-        try {
-            return MailSlurp.getEmailAddressCreated();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return null;
     }
 }

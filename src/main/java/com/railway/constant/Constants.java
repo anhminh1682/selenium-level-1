@@ -1,6 +1,5 @@
 package com.railway.constant;
 
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Constants {
@@ -88,9 +87,23 @@ public class Constants {
     }
 
     public static class MailSlurp {
-        public static final String API_KEY = "03cb16e7a290b8f1606c32e65039b57d0038f6b1d88f48ea6808bce4070baaeb";
+        public static final String API_KEY = "e78ac8c36e3f4f15b95a5e4d1d414ccf698037d241c8c39f39f8de95f33894a5";
         public static final String REGEX_GET_LINK_FROM_EMAIL = "https?://[^\"\\s]*(confirmationCode|resetToken)=[^\"\\s]+";
         public static final String SUBJECT_EMAIL_CONFIRM = "Please confirm your account";
         public static final String SUBJECT_EMAIL_RESET_PASSWORD = "Please reset your password";
+    }
+
+    public static class DataKeys {
+        public static final String DEPART_STATION = "departStation";
+        public static final String ARRIVE_STATION = "arriveStation";
+        public static final String SEAT_TYPES = "seatType";
+        public static final String AMOUNT = "amount";
+        public static final String DAYS = "days";
+
+        public static final String USERNAME = "username";
+        public static final String PASSWORD = "password";
+        public static final String NEW_PASSWORD = "newPassword";
+        public static final String CONFIRM_PASSWORD = "confirmPassword";
+        public static final String PID = "pid";
     }
 }

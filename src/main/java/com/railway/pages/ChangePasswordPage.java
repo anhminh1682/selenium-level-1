@@ -1,7 +1,6 @@
 package com.railway.pages;
 
 import com.railway.utilities.Account;
-import com.railway.utilities.DriverUtils;
 import com.railway.utilities.LogUtils;
 import com.railway.utilities.enums.AccountEnum;
 import org.openqa.selenium.By;
@@ -42,6 +41,6 @@ public class ChangePasswordPage extends BasePage {
     }
 
     public String getChangePasswordSuccessMessage() {
-        return getElementText(webElement(changePasswordSuccessMessage));
+        return getElementText(changePasswordSuccessMessage);
     }
 }

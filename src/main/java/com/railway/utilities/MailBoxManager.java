@@ -1,12 +1,7 @@
 package com.railway.utilities;
 
-import com.railway.driver.DriverManager;
 import com.railway.utilities.enums.AccountEnum;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.*;
-
-import java.time.Duration;
 
 import static com.railway.utilities.DriverUtils.*;
 
@@ -27,22 +22,16 @@ public class MailBoxManager {
         String validEmail = AccountEnum.VALID_ACCOUNT_LOGIN.getUsername();
         String[] emailSplit = validEmail.split("@");
 
-//        clickOnElement(emailTextBox);
         webElement(emailTextBox).click();
-        waitForElement(10, emailTextBoxEditable);
         webElement(emailTextBoxEditable).sendKeys(emailSplit[0]);
-//        clickOnElement(setButton);
         webElement(setButton).click();
 
-        Select emailDomainSelect = new Select(webElement(emailDomainSelectBox));
-        emailDomainSelect.selectByVisibleText(emailSplit[1]);
+        selectElementByVisibleText(emailDomainSelectBox, emailSplit[1]);
 
-        waitForElement(10, emailConfirmUnread);
+        waitForElement(15, emailConfirmUnread);
         webElement(emailConfirmUnread).click();
-//        clickOnElement(emailConfirmUnread);
 
-        waitForElement(10, resetPasswordLink);
+        waitForElement(15, resetPasswordLink);
         webElement(resetPasswordLink).click();
-//        clickOnElement(resetPasswordLink);
     }
 }

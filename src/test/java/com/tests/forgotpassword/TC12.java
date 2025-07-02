@@ -13,29 +13,29 @@ import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Map;
 import java.util.Objects;
 
 public class TC12 extends TestBase {
     @Test(dataProvider = "dataTestProvider", dataProviderClass = TestBase.class)
-    public void errorsDisplayWhenPasswordResetTokenIsBlankUseUI(String username, String newPassword, String confirmPassword) {
+    public void errorsDisplayWhenPasswordResetTokenIsBlankUseUI(Map<String, Object> data) {
         HomePage homePage = new HomePage();
         LoginPage loginPage = new LoginPage();
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
         ResetPasswordPage resetPasswordPage = new ResetPasswordPage();
 
-        LogUtils.info("Pre-condition: Create and activate a new account");
-        LogUtils.info("1. Navigate to QA Railway Login page");
+        LogUtils.startStep("Pre-condition: Create and activate a new account");
+        LogUtils.startStep("1. Navigate to QA Railway Login page");
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
 
-        LogUtils.info("2. Click on 'Forgot Password page' link");
+        LogUtils.startStep("2. Click on 'Forgot Password page' link");
         loginPage.goToForgotPasswordLink();
 
         // Forgot password
-        LogUtils.info("3. Enter the email address of the created account in Pre-condition");
-        LogUtils.info("4. Click on 'Send Instructions' button");
-        forgotPasswordPage.sendInstructions(username);
+        LogUtils.startStep("3. Enter the email address of the created account in Pre-condition");
+        forgotPasswordPage.sendInstructions(data.get(Constants.DataKeys.USERNAME).toString());
 
-        LogUtils.info("5. Open mailbox and click on reset password link");
+        LogUtils.startStep("4. Open mailbox and click on reset password link");
         forgotPasswordPage.goToMailBox();
 
         // Mailbox
@@ -45,9 +45,12 @@ public class TC12 extends TestBase {
         resetPasswordPage.switchToResetPasswordTab();
         Assert.assertEquals(resetPasswordPage.getPageTitle(), Constants.PageTitles.RESET_PASSWORD_PAGE_TITLE);
 
-        LogUtils.info("6. Enter new passwords and remove the Password Reset Token");
-        LogUtils.info("7. Click 'Reset Password' button");
-        Account account = new Account(newPassword, confirmPassword, false);
+        LogUtils.startStep("5. Reset password with new passwords and remove the Password Reset Token");
+        Account account = new Account(
+                data.get(Constants.DataKeys.NEW_PASSWORD).toString(),
+                data.get(Constants.DataKeys.CONFIRM_PASSWORD).toString(),
+                false
+        );
         resetPasswordPage.resetPassword(account);
 
         Assert.assertTrue(resetPasswordPage.isErrorMessageAboveDisplayed(), "Error message element does not exist");
@@ -56,39 +59,50 @@ public class TC12 extends TestBase {
     }
 
     @Test(dataProvider = "dataTestProvider", dataProviderClass = TestBase.class)
-    public void errorsDisplayWhenPasswordResetTokenIsBlankUseMailAPI(String username, String newPassword, String confirmPassword) throws ApiException {
+    public void errorsDisplayWhenPasswordResetTokenIsBlankUseMailAPI(Map<String, Object> data) throws ApiException {
         HomePage homePage = new HomePage();
         RegisterPage registerPage = new RegisterPage();
         LoginPage loginPage = new LoginPage();
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
         ResetPasswordPage resetPasswordPage = new ResetPasswordPage();
 
+        MailSlurp mailSlurp = new MailSlurp();
+        mailSlurp.createEmailInbox();
+
         // Created Email
-        LogUtils.info("Pre-condition: Create and activate a new account");
+        LogUtils.startStep("Pre-condition: Create and activate a new account");
         homePage.clickOnTab(Constants.TabMenu.REGISTER_TAB);
-        String emailSlurp = registerPage.registerWithMailSlurp();
+        Account accountRegister = new Account(
+                mailSlurp.getEmailAddressCreated(),
+                AccountEnum.VALID_ACCOUNT_REGISTER.getPassword(),
+                AccountEnum.VALID_ACCOUNT_REGISTER.getPassword(),
+                AccountEnum.VALID_ACCOUNT_REGISTER.getPID()
+        );
+        String emailSlurp = mailSlurp.getEmailAddressCreated();
+        registerPage.registerUserAccount(accountRegister);
+        DriverManager.getDriver().get(Objects.requireNonNull(mailSlurp.getLinkInEmail(mailSlurp.receiveEmail(Constants.MailSlurp.SUBJECT_EMAIL_CONFIRM))));
 
-        DriverManager.getDriver().get(Objects.requireNonNull(MailSlurp.getLinkInEmail(MailSlurp.receiveEmail(Constants.MailSlurp.SUBJECT_EMAIL_CONFIRM))));
-
-        LogUtils.info("1. Navigate to QA Railway Login page");
-        LogUtils.info("2. Click on 'Forgot Password page' link");
+        LogUtils.startStep("1. Navigate to QA Railway Login page");
+        LogUtils.startStep("2. Click on 'Forgot Password page' link");
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
         loginPage.goToForgotPasswordLink();
 
         // Forgot password
-        LogUtils.info("3. Enter the email address of the created account in Pre-condition");
-        LogUtils.info("4. Click on 'Send Instructions' button");
+        LogUtils.startStep("3. Enter the email address of the created account in Pre-condition");
         forgotPasswordPage.sendInstructions(emailSlurp);
 
-        LogUtils.info("5. Open mailbox and click on reset password link");
-        DriverManager.getDriver().get(Objects.requireNonNull(MailSlurp.getLinkInEmail(MailSlurp.receiveEmail(Constants.MailSlurp.SUBJECT_EMAIL_RESET_PASSWORD))));
+        LogUtils.startStep("4. Open mailbox and click on reset password link");
+        DriverManager.getDriver().get(Objects.requireNonNull(mailSlurp.getLinkInEmail(mailSlurp.receiveEmail(Constants.MailSlurp.SUBJECT_EMAIL_RESET_PASSWORD))));
 
         // Reset password
         Assert.assertEquals(resetPasswordPage.getPageTitle(), Constants.PageTitles.RESET_PASSWORD_PAGE_TITLE);
 
-        LogUtils.info("6. Enter new passwords and remove the Password Reset Token");
-        LogUtils.info("7. Click 'Reset Password' button");
-        Account account = new Account(newPassword, confirmPassword, false);
+        LogUtils.startStep("5. Reset password new passwords and remove the Password Reset Token");
+        Account account = new Account(
+                data.get(Constants.DataKeys.NEW_PASSWORD).toString(),
+                data.get(Constants.DataKeys.CONFIRM_PASSWORD).toString(),
+                false
+        );
         resetPasswordPage.resetPassword(account);
 
         Assert.assertTrue(resetPasswordPage.isErrorMessageAboveDisplayed(), "Error message element does not exist");

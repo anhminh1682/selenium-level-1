@@ -58,30 +58,16 @@
   },
   "TC14": [
     {
-      "departStation": "Sài Gòn",
-      "arriveStation": "Phan Thiết",
-      "days": 2,
-      "seatType": "Soft bed with air conditioner",
-      "amount": 1
-    },
-    {
       "departStation": "Huế",
       "arriveStation": "Quảng Ngãi",
-      "days": 21,
-      "seatType": "Soft bed",
-      "amount": 1
-    },
-    {
-      "departStation": "Nha Trang",
-      "arriveStation": "Đà Nẵng",
-      "days": 15,
-      "seatType": "Hard bed",
+      "days": 2,
+      "seatType": "Soft bed with air conditioner",
       "amount": 1
     }
   ],
   "TC15": {
-    "departFrom": "Huế",
-    "arriveAt": "Sài Gòn"
+    "departStation": "Huế",
+    "arriveStation": "Sài Gòn"
   },
   "TC16": [
     {
@@ -89,7 +75,7 @@
       "arriveStation": "Huế",
       "days": 4,
       "seatType": "Soft bed with air conditioner",
-      "amount": 2
+      "amount": 1
     },
     {
       "departStation": "Quảng Ngãi",

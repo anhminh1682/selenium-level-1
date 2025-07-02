@@ -2,7 +2,6 @@ package com.railway.pages;
 
 import com.railway.driver.DriverManager;
 import com.railway.utilities.Account;
-import com.railway.utilities.DriverUtils;
 import com.railway.utilities.LogUtils;
 import com.railway.utilities.enums.AccountEnum;
 import org.openqa.selenium.By;
@@ -18,9 +17,9 @@ public class LoginPage extends BasePage {
 
     public void login(AccountEnum accountEnum) {
         LogUtils.info("Enter username: " + accountEnum.getUsername());
-        webElement(userNameTextBox).sendKeys(accountEnum.getUsername());
+        sendKeyElement(userNameTextBox, accountEnum.getUsername());
         LogUtils.info("Enter password: " + accountEnum.getPassword());
-        webElement(passwordTextBox).sendKeys(accountEnum.getPassword());
+        sendKeyElement(passwordTextBox, accountEnum.getPassword());
 
         LogUtils.info("click button: " + webElement(loginButton).getText());
         clickOnElement(loginButton);
@@ -28,11 +27,11 @@ public class LoginPage extends BasePage {
 
     public void login(Account account) {
         LogUtils.info("Enter username: " + account.getUsername());
-        webElement(userNameTextBox).sendKeys(account.getUsername());
+        sendKeyElement(userNameTextBox, account.getUsername());
         LogUtils.info("Enter password: " + account.getPassword());
-        webElement(passwordTextBox).sendKeys(account.getPassword());
+        sendKeyElement(passwordTextBox, account.getPassword());
 
-        LogUtils.info("click button: " + webElement(loginButton).getText());
+        LogUtils.info("click button: " + getValueOfButton(loginButton));
         clickOnElement(loginButton);
     }
 
@@ -53,7 +52,7 @@ public class LoginPage extends BasePage {
     }
 
     public String getErrorMessage() {
-        LogUtils.info("Error message" + webElement(errorMessage).getText());
+        LogUtils.info("Error message: " + webElement(errorMessage).getText());
         return webElement(errorMessage).getText();
     }
 

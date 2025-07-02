@@ -1,20 +1,14 @@
 package com.railway.utilities;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.railway.driver.DriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.remote.RemoteWebElement;
+import org.openqa.selenium.support.ui.*;
 
-import java.io.File;
-import java.io.IOException;
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+import java.util.NoSuchElementException;
 
 public class DriverUtils {
     public static void scrollToElement(WebElement element) {
@@ -24,7 +18,7 @@ public class DriverUtils {
     }
 
     public static void waitForElement(int duration, By elementBy) {
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(duration));
         wait.until(ExpectedConditions.elementToBeClickable(elementBy));
     }
 
@@ -47,41 +41,77 @@ public class DriverUtils {
         wait.until(ExpectedConditions.alertIsPresent());
     }
 
-    public static WebElement webElement(By element) {
-        return DriverManager.getDriver().findElement(element);
+    public static void fluentWaitForElement(By elementBy) {
+        Wait<WebDriver> wait = new FluentWait<>(DriverManager.getDriver())
+                .withTimeout(Duration.ofSeconds(5))
+                .pollingEvery(Duration.ofMillis(200))
+                .ignoring(TimeoutException.class)
+                .ignoring(NoSuchElementException.class)
+                .ignoring(StaleElementReferenceException.class);
+
+        try {
+            wait.until(ExpectedConditions.visibilityOf(webElement(elementBy)));
+        } catch (TimeoutException e) {
+            System.out.println("Timed out waiting for element");
+        }
     }
 
-    public static String getElementText(WebElement element) {
-        return element.getText().trim();
+    public static void fluentWaitForDynamicElement(By elementBy, String currentElementId) {
+        Wait<WebDriver> wait = new FluentWait<>(DriverManager.getDriver())
+                .withTimeout(Duration.ofSeconds(5))
+                .pollingEvery(Duration.ofMillis(200))
+                .ignoring(TimeoutException.class)
+                .ignoring(NoSuchElementException.class)
+                .ignoring(StaleElementReferenceException.class);
+
+        try {
+            wait.until(d -> {
+                RemoteWebElement remoteWebElement = (RemoteWebElement) webElement(elementBy);
+                String newElementId = remoteWebElement.getId();
+                System.out.println("Old Element Id: " + currentElementId);
+                System.out.println("New Element Id: " + newElementId);
+                return !currentElementId.equals(newElementId);
+            });
+        } catch (TimeoutException e) {
+            System.out.println("Timed out waiting for element");
+        }
+    }
+
+    public static WebElement webElement(By elementBy) {
+        return DriverManager.getDriver().findElement(elementBy);
+    }
+
+    public static String getElementText(By elementBy) {
+        fluentWaitForElement(elementBy);
+        return webElement(elementBy).getText().trim();
+    }
+
+    public static String getValueOfButton(By elementBy) {
+        fluentWaitForElement(elementBy);
+        scrollToElement(webElement(elementBy));
+        return webElement(elementBy).getAttribute("value");
     }
 
     public static void clickOnElement(By elementBy) {
+        fluentWaitForElement(elementBy);
         WebElement element = DriverManager.getDriver().findElement(elementBy);
         scrollToElement(element);
         element.click();
     }
 
-    private static List<Ticket> saveDatasetIntoTicketList() throws IOException {
-        File file = new File("src/main/resources/dataset/tickets.json");
-
-        ObjectMapper mapper = new ObjectMapper();
-        JsonNode rootNode = mapper.readTree(file);
-        List<Ticket> tickets = new ArrayList<>();
-
-        for (JsonNode node : rootNode) {
-            Ticket ticket = new Ticket();
-            ticket.setDepartStation(node.get("DepartStation").asText());
-            ticket.setArriveStation(node.get("ArriveStation").asText());
-            ticket.setDepartDate(node.get("Date").asText());
-            ticket.setSeatType(node.get("SeatType").asText());
-            ticket.setTicketAmount(node.get("Amount").asText());
-            tickets.add(ticket);
-        }
-
-        return tickets;
+    public static void sendKeyElement(By elementBy, CharSequence charSequence) {
+        fluentWaitForElement(elementBy);
+        WebElement element = webElement(elementBy);
+        scrollToElement(element);
+        element.clear();
+        element.sendKeys(charSequence);
     }
 
-    public static Ticket getRandomTicket() throws IOException {
-        return saveDatasetIntoTicketList().get(new Random().nextInt(saveDatasetIntoTicketList().size()));
+    public static void selectElementByVisibleText(By elementBy, String text) {
+        fluentWaitForElement(elementBy);
+        WebElement element = webElement(elementBy);
+        Select select = new Select(element);
+        scrollToElement(element);
+        select.selectByVisibleText(text);
     }
 }

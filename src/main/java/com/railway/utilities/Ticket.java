@@ -1,16 +1,8 @@
 package com.railway.utilities;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.railway.constant.Constants;
 
-import java.io.File;
-import java.io.IOException;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 public class Ticket {
     private String departDate;

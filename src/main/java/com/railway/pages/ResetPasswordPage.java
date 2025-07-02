@@ -3,7 +3,7 @@ package com.railway.pages;
 import com.railway.constant.Constants;
 import com.railway.driver.DriverManager;
 import com.railway.utilities.Account;
-import com.railway.utilities.DriverUtils;
+import com.railway.utilities.LogUtils;
 import com.railway.utilities.enums.AccountEnum;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -30,26 +30,34 @@ public class ResetPasswordPage extends BasePage {
     }
 
     public void resetPassword(AccountEnum accountEnum) {
-        webElement(newPasswordTextBox).sendKeys(accountEnum.getPassword());
-        webElement(confirmPasswordTextBox).sendKeys(accountEnum.getConfirmPassword());
+        LogUtils.info("Enter new password: " + accountEnum.getNewPassword());
+        sendKeyElement(newPasswordTextBox, accountEnum.getPassword());
+        LogUtils.info("Enter confirm password: " + accountEnum.getConfirmPassword());
+        sendKeyElement(confirmPasswordTextBox, accountEnum.getConfirmPassword());
 
         if(!accountEnum.getToken()) {
-            webElement(resetTokenTextBox).sendKeys(Keys.CONTROL + "a");
-            webElement(resetTokenTextBox).sendKeys(Keys.DELETE);
+            LogUtils.info("Remove token");
+            sendKeyElement(resetTokenTextBox, Keys.CONTROL + "a");
+            sendKeyElement(resetTokenTextBox, Keys.DELETE);
         }
 
+        LogUtils.info("Click button: " + getValueOfButton(submitButton));
         clickOnElement(submitButton);
     }
 
     public void resetPassword(Account account) {
-        webElement(newPasswordTextBox).sendKeys(account.getNewPassword());
-        webElement(confirmPasswordTextBox).sendKeys(account.getConfirmPassword());
+        LogUtils.info("Enter new password: " + account.getNewPassword());
+        sendKeyElement(newPasswordTextBox, account.getNewPassword());
+        LogUtils.info("Enter confirm password: " + account.getConfirmPassword());
+        sendKeyElement(confirmPasswordTextBox, account.getConfirmPassword());
 
         if(!account.isToken()) {
-            webElement(resetTokenTextBox).sendKeys(Keys.CONTROL + "a");
-            webElement(resetTokenTextBox).sendKeys(Keys.DELETE);
+            LogUtils.info("Remove token");
+            sendKeyElement(resetTokenTextBox, Keys.CONTROL + "a");
+            sendKeyElement(resetTokenTextBox, Keys.DELETE);
         }
 
+        LogUtils.info("Click button: " + getValueOfButton(submitButton));
         clickOnElement(submitButton);
     }
 
@@ -58,14 +66,14 @@ public class ResetPasswordPage extends BasePage {
     }
 
     public String getErrorMessageAbove() {
-        return getElementText(webElement(errorMessage));
+        return getElementText(errorMessage);
     }
 
     public String getErrorMessageInvalidResetTokenNextToField() {
-        return getElementText(webElement(errorResetTokenMessage));
+        return getElementText(errorResetTokenMessage);
     }
 
     public String getErrorMessageConfirmPasswordNextToField() {
-        return getElementText(webElement(errorConfirmPasswordMessage));
+        return getElementText(errorConfirmPasswordMessage);
     }
 }

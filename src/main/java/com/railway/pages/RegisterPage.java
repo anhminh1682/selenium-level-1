@@ -1,7 +1,6 @@
 package com.railway.pages;
 
 import com.railway.utilities.Account;
-import com.railway.utilities.DriverUtils;
 import com.railway.utilities.LogUtils;
 import com.railway.utilities.MailSlurp;
 import com.railway.utilities.enums.AccountEnum;
@@ -21,41 +20,35 @@ public class RegisterPage extends BasePage {
 
     public void registerUserAccount(AccountEnum accountEnum) {
         LogUtils.info("Enter email: " + accountEnum.getUsername());
-        webElement(emailTextBox).clear();
-        webElement(emailTextBox).sendKeys(accountEnum.getUsername());
+        sendKeyElement(emailTextBox, accountEnum.getUsername());
 
         LogUtils.info("Enter password: " + accountEnum.getPassword());
-        webElement(passwordTextBox).clear();
-        webElement(passwordTextBox).sendKeys(accountEnum.getPassword());
+        sendKeyElement(passwordTextBox, accountEnum.getPassword());
 
         LogUtils.info("Enter confirm password: " + accountEnum.getConfirmPassword());
-        webElement(confirmPasswordTextBox).sendKeys(accountEnum.getConfirmPassword());
+        sendKeyElement(confirmPasswordTextBox, accountEnum.getConfirmPassword());
 
         LogUtils.info("Enter PID: " + accountEnum.getPID());
-        webElement(pidTextBox).clear();
-        webElement(pidTextBox).sendKeys(accountEnum.getPID());
+        sendKeyElement(pidTextBox, accountEnum.getPID());
 
-        LogUtils.info("Click button: " + webElement(registerButton).getText());
+        LogUtils.info("Click button: " + getValueOfButton(registerButton));
         clickOnElement(registerButton);
     }
 
     public void registerUserAccount(Account account) {
         LogUtils.info("Enter email: " + account.getUsername());
-        webElement(emailTextBox).clear();
-        webElement(emailTextBox).sendKeys(account.getUsername());
+        sendKeyElement(emailTextBox, account.getUsername());
 
         LogUtils.info("Enter password: " + account.getPassword());
-        webElement(passwordTextBox).clear();
-        webElement(passwordTextBox).sendKeys(account.getPassword());
+        sendKeyElement(passwordTextBox, account.getPassword());
 
         LogUtils.info("Enter confirm password: " + account.getConfirmPassword());
-        webElement(confirmPasswordTextBox).sendKeys(account.getConfirmPassword());
+        sendKeyElement(confirmPasswordTextBox, account.getConfirmPassword());
 
         LogUtils.info("Enter PID: " + account.getPid());
-        webElement(pidTextBox).clear();
-        webElement(pidTextBox).sendKeys(account.getPid());
+        sendKeyElement(pidTextBox, account.getPid());
 
-        LogUtils.info("Click button: " + webElement(registerButton).getText());
+        LogUtils.info("Click button: " + getValueOfButton(registerButton));
         clickOnElement(registerButton);
     }
 
@@ -63,27 +56,15 @@ public class RegisterPage extends BasePage {
         registerUserAccount(AccountEnum.VALID_ACCOUNT_REGISTER);
     }
 
-    public String registerWithMailSlurp() {
-        try {
-            MailSlurp.createEmailInbox();
-            AccountEnum accountEnum = AccountEnum.VALID_ACCOUNT_REGISTER_MAIL_SLURP;
-            registerUserAccount(accountEnum);
-            return accountEnum.getUsername();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return null;
-    }
-
     public String getErrorRegisterMessage() {
-        return getElementText(webElement(errorRegisterMessage));
+        return getElementText(errorRegisterMessage);
     }
 
     public String getRegisterFailedWithInvalidPasswordMessage() {
-        return getElementText(webElement(errorMessageOfPasswordField));
+        return getElementText(errorMessageOfPasswordField);
     }
 
     public String getRegisterFailedWithInvalidPIDMessage() {
-        return getElementText(webElement(errorMessageOfPIDField));
+        return getElementText(errorMessageOfPIDField);
     }
 }

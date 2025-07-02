@@ -11,7 +11,6 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 import static com.railway.utilities.DriverUtils.clickOnElement;
-import static com.railway.utilities.DriverUtils.webElement;
 
 public class MyTicketPage extends BasePage {
     private final String rowOfTicketXpath = "//table[contains(@class, 'MyTable')]//tr[td[text()='%s'] and td[text()='%s'] and td[text()='%s'] and td[text()='%s'] and td[text()='%s']]//input[@value='Cancel']";
