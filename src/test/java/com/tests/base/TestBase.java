@@ -6,6 +6,7 @@ import com.railway.constant.Constants;
 import com.railway.driver.DriverManager;
 import com.railway.utilities.LogUtils;
 import com.tests.ultilities.AppListener;
+import com.tests.ultilities.extentreport.ExtentTestManager;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -49,7 +50,11 @@ public class TestBase {
         JsonNode testCaseNodes = mapper.readTree(file).get(testClass);
 
         if (testCaseNodes == null || testCaseNodes.isNull()) {
-            throw new IllegalArgumentException("No data found for test class: " + testClass);
+            if(ExtentTestManager.getTest() == null) {
+                ExtentTestManager.startTest(method.getName());
+                LogUtils.error("No data found for test class: " + testClass + " — skipping test.");
+            }
+            return new Object[0][0];
         }
 
         List<Map<String, Object>> dataList = new ArrayList<>();

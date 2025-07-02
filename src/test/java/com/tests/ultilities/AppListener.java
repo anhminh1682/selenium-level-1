@@ -26,9 +26,6 @@ public class AppListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
-//        if(ExtentTestManager.getTest() == null) {
-//            ExtentTestManager.startTest(result.getMethod().getMethodName());
-//        }
         LogUtils.error(result.getThrowable());
         String imagePath = HelpersListener.TakeScreenshot(result);
 
