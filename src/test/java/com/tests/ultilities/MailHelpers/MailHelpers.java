@@ -1,25 +1,24 @@
-package com.tests.ultilities;
+package com.tests.ultilities.MailHelpers;
 
 import com.railway.constant.Constants;
 import com.railway.utilities.Helpers;
-import com.railway.utilities.LogUtils;
-import io.restassured.internal.http.Status;
+import io.github.cdimascio.dotenv.Dotenv;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.Objects;
 
 import static io.restassured.RestAssured.given;
 
 public class MailHelpers {
-    private static RequestSpecification requestSpecification;
+    private static final Dotenv dotenv = Dotenv.load();
+    private static final String apiKey = dotenv.get("API_MAIL_SLURP_KEY");
 
     private static RequestSpecification getRequestSpecification() {
         return  given()
                 .baseUri(Constants.MailSlurp.URI)
                 .header("accept", "*/*")
-                .header("x-api-key", Constants.MailSlurp.API_KEY)
+                .header("x-api-key", apiKey)
                 .urlEncodingEnabled(true);
     }
 
@@ -32,7 +31,17 @@ public class MailHelpers {
                 .queryParam("unreadOnly", true)
                 .queryParam("searchFilter", subject);
 
-        Response response = request.get();
+        long startTime = System.currentTimeMillis();
+        long duration = 5000;
+        long currentTime = startTime;
+
+        Response response;
+
+        do {
+            response = request.get();
+            currentTime += 500;
+        } while (response.jsonPath().getList(jsonPath).isEmpty() && currentTime < startTime + duration);
+
         return response.jsonPath().getList(jsonPath).get(0).toString();
     }
 
@@ -40,21 +49,24 @@ public class MailHelpers {
         RequestSpecification request = getRequestSpecification()
                 .basePath(String.format("emails/%s/body", emailId));
 
-        Response response = request.get();
-        return response.getBody().print().toString();
+        long startTime = System.currentTimeMillis();
+        long duration = 5000;
+        long currentTime = startTime;
+
+        Response response;
+        do {
+            response = request.get();
+            currentTime += 500;
+        } while (Objects.equals(response.getBody().print(), null) && currentTime < startTime + duration);
+
+        return response.getBody().print();
     }
 
     public static String getLinkInEmailByAPI(String subject) {
         String emailId = MailHelpers.callToGetEmailInfor("content.id", subject);
         String body = MailHelpers.callToGetEmailBody(emailId);
 
-        String linkInEmail = "";
-
-        while (linkInEmail.isEmpty()) {
-            linkInEmail = Helpers.getLinkInEmail(body);
-        }
-
-        return linkInEmail;
+        return Helpers.getLinkInEmail(body);
     }
 
     public static boolean callToCheckInboxIdExpired(String inboxId) {
@@ -73,25 +85,19 @@ public class MailHelpers {
         return response.statusCode() == 200;
     }
 
-    public static String callToCreateInbox() {
+    public static String[] callToCreateInbox() {
         RequestSpecification request = getRequestSpecification()
                 .basePath("inboxes")
                 .queryParam("useShortAddress", true);
 
         Response response = request.post();
-        String emailAddress = "";
 
-        while (emailAddress.isEmpty()) {
-            emailAddress = response.jsonPath().getString("emailAddress");
+        if(response.statusCode() == 201) {
+            String emailAddress = response.jsonPath().getString("emailAddress");
+            String inboxId = response.jsonPath().getString("id");
+            return new String[]{emailAddress, inboxId};
         }
 
-        return emailAddress;
-    }
-
-    public static void main(String[] args) {
-//        String body = callToGetEmailBody(emailId);
-//
-//        String linkInEmail = Helpers.getLinkInEmail(body);
-//        callToCheckInboxIdExpired("82b3c89e-310d-48db-bef4-c6ae41d1a5a7");
+        return null;
     }
 }

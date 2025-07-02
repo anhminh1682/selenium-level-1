@@ -5,16 +5,18 @@ import com.mailslurp.apis.WaitForControllerApi;
 import com.mailslurp.clients.ApiClient;
 import com.mailslurp.clients.ApiException;
 import com.mailslurp.clients.Configuration;
-import com.mailslurp.models.*;
-import com.railway.constant.Constants;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import com.mailslurp.models.Email;
+import com.mailslurp.models.InboxDto;
+import com.mailslurp.models.MatchOption;
+import com.mailslurp.models.MatchOptions;
+import io.github.cdimascio.dotenv.Dotenv;
 
 public class MailSlurp {
     private InboxDto inbox;
     private ApiClient client;
     private WaitForControllerApi waitForControllerApi;
+    private static final Dotenv dotenv = Dotenv.load();
+    private static final String apiKey = dotenv.get("API_MAIL_SLURP_KEY");
 
     public MailSlurp() {
         client = Configuration.getDefaultApiClient();
@@ -22,7 +24,7 @@ public class MailSlurp {
         client.setReadTimeout(30000);
         client.setWriteTimeout(30000);
 
-        client.setApiKey(Constants.MailSlurp.API_KEY);
+        client.setApiKey(apiKey);
 
         waitForControllerApi = new WaitForControllerApi(client);
     }
@@ -51,14 +53,5 @@ public class MailSlurp {
 
         Email email = waitForControllerApi.waitForMatchingFirstEmail(getInboxDto().getId(), matchOptions).timeout(12000L).unreadOnly(true).execute();
         return email.getBody();
-    }
-
-    public String getLinkInEmail(String body) {
-        Pattern pattern = Pattern.compile(Constants.MailSlurp.REGEX_GET_LINK_FROM_EMAIL);
-        Matcher matcher = pattern.matcher(body);
-        if (matcher.find()) {
-            return matcher.group(0);
-        }
-        return null;
     }
 }

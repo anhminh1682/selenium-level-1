@@ -3,14 +3,15 @@ package com.tests.ultilities.MailHelpers;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.railway.constant.Constants;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ReadDataFromJSON {
-    private static String filePath = "src/test/java/com/tests/ultilities/MailHelpers/maildata.json";
+public class mailDataFromJSON {
+    private static String filePath = Constants.URL.MAIL_DATA_PATH;
 
     public static Map<String, String> mailData() {
         try {
@@ -41,7 +42,6 @@ public class ReadDataFromJSON {
                 throw new IllegalArgumentException("File not found: " + filePath);
             }
 
-            // Đọc JSON hiện có
             JsonNode root = mapper.readTree(file);
             if (!root.isObject()) {
                 throw new IllegalArgumentException("File does not contain a JSON object: " + filePath);

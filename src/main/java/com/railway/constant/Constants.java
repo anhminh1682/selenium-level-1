@@ -7,6 +7,7 @@ public class Constants {
     public static class URL {
         public static final String RAILWAY_URL = "http://saferailway.somee.com/";
         public static final String DATA_PATH="src/test/java/com/tests/datasets/dataset.json";
+        public static final String MAIL_DATA_PATH= "src/test/java/com/tests/ultilities/MailHelpers/maildata.json";
     }
 
     public static class MyDateTimeFormat {
@@ -19,8 +20,8 @@ public class Constants {
         // Register message
         public static final String REGISTER_VALID_INFOR_HEADING = "Thank you for registering your account";
         public static final String ERROR_REGISTER_WITH_INVALID_INFO = "There're errors in the form. Please correct the errors and try again.";
-        public static final String ERROR_REGISTER_WITH_INVALID_PASSWORD_LENGTH = "Invalid password length.";
-        public static final String ERROR_REGISTER_WITH_INVALID_PID_LENGTH = "Invalid ID length.";
+        public static final String ERROR_REGISTER_WITH_INVALID_PASSWORD_LENGTH = "Invalid password length";
+        public static final String ERROR_REGISTER_WITH_INVALID_PID_LENGTH = "Invalid ID length";
     }
 
     public static class LoginMessage {
@@ -32,7 +33,7 @@ public class Constants {
 
     public static class ChangePasswordMessage {
         // Change Password message
-        public static final String CHANGE_PASSWORD_SUCCESSFUL_MESSAGE = "Your password has been updated";
+        public static final String CHANGE_PASSWORD_SUCCESSFUL_MESSAGE = "Your password has been updated!";
     }
 
     public static class ResetPasswordMessage {
@@ -87,10 +88,12 @@ public class Constants {
     }
 
     public static class MailSlurp {
-        public static final String API_KEY = "e78ac8c36e3f4f15b95a5e4d1d414ccf698037d241c8c39f39f8de95f33894a5";
         public static final String REGEX_GET_LINK_FROM_EMAIL = "https?://[^\"\\s]*(confirmationCode|resetToken)=[^\"\\s]+";
         public static final String SUBJECT_EMAIL_CONFIRM = "Please confirm your account";
         public static final String SUBJECT_EMAIL_RESET_PASSWORD = "Please reset your password";
+        public static final String URI = "https://api.mailslurp.com";
+        public static final String EMAIL_RESET_PASSWORD_SUBJECT = "Please reset your password";
+        public static final String EMAIL_CONFIRM_SUBJECT = "Please confirm your account";
     }
 
     public static class DataKeys {

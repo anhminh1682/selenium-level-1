@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.railway.constant.Constants;
 import com.railway.driver.DriverManager;
+import com.railway.utilities.LogUtils;
 import com.tests.ultilities.AppListener;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -63,7 +64,6 @@ public class TestBase {
             dataList.add(map);
         }
 
-        // Convert List<Map<...>> thành Object[][] cho TestNG
         Object[][] datas = new Object[dataList.size()][1];
         for (int i = 0; i < dataList.size(); i++) {
             datas[i][0] = dataList.get(i);
