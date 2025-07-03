@@ -1,14 +1,16 @@
 package com.tests.forgotpassword;
 
 import com.railway.constant.Constants;
+import com.railway.driver.DriverManager;
 import com.railway.pages.ForgotPasswordPage;
 import com.railway.pages.HomePage;
 import com.railway.pages.LoginPage;
 import com.railway.pages.ResetPasswordPage;
 import com.railway.utilities.Account;
 import com.railway.utilities.LogUtils;
-import com.railway.utilities.MailBoxManager;
 import com.tests.base.TestBase;
+import com.tests.utilities.Helpers;
+import com.tests.utilities.MailHelpers.MailHelpers;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -22,7 +24,11 @@ public class TC13 extends TestBase {
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
         ResetPasswordPage resetPasswordPage = new ResetPasswordPage();
 
+        MailHelpers mailHelpers = new MailHelpers();
+
         LogUtils.startStep("Pre-condition: Create and activate a new account");
+        String emailAddress = Helpers.registerNewAccountUsingAPI();
+
         LogUtils.startStep("1. Navigate to QA Railway Login page");
         LogUtils.startStep("2. Click on 'Forgot Password page' link");
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
@@ -30,17 +36,11 @@ public class TC13 extends TestBase {
 
         // Forgot password
         LogUtils.startStep("3. Enter the email address of the created account in Pre-condition");
-        forgotPasswordPage.sendInstructions(data.get(Constants.DataKeys.USERNAME).toString());
+        forgotPasswordPage.sendInstructions(emailAddress);
 
         LogUtils.startStep("4. Open mailbox and click on reset password link");
-        forgotPasswordPage.goToMailBox();
-
-        // Mailbox
-        MailBoxManager.clickResetPasswordLink();
-
-        // Reset password
-        resetPasswordPage.switchToResetPasswordTab();
-        Assert.assertEquals(resetPasswordPage.getPageTitle(), Constants.PageTitles.RESET_PASSWORD_PAGE_TITLE);
+        String linkResetPassword = mailHelpers.getLinkInEmailByAPI(Constants.MailSlurp.EMAIL_RESET_PASSWORD_SUBJECT + " " + emailAddress);
+        DriverManager.getDriver().get(linkResetPassword);
 
         LogUtils.startStep("5. Reset password different values for password fields");
         Account account = new Account(

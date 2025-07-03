@@ -7,7 +7,7 @@ public class Constants {
     public static class URL {
         public static final String RAILWAY_URL = "http://saferailway.somee.com/";
         public static final String DATA_PATH="src/test/java/com/tests/datasets/dataset.json";
-        public static final String MAIL_DATA_PATH= "src/test/java/com/tests/ultilities/MailHelpers/maildata.json";
+        public static final String MAIL_DATA_PATH= "src/test/java/com/tests/utilities/MailHelpers/maildata.json";
     }
 
     public static class MyDateTimeFormat {

@@ -16,27 +16,27 @@ public class ChangePasswordPage extends BasePage {
 
     public void changePassword(AccountEnum accountEnum) {
         LogUtils.info("Password" + accountEnum.getPassword());
-        webElement(currentPasswordTextBox).sendKeys(accountEnum.getPassword());
+        getWebElement(currentPasswordTextBox).sendKeys(accountEnum.getPassword());
 
         LogUtils.info("New Password" + accountEnum.getNewPassword());
-        webElement(newPasswordTextBox).sendKeys(accountEnum.getNewPassword());
+        getWebElement(newPasswordTextBox).sendKeys(accountEnum.getNewPassword());
         LogUtils.info("Confirm Password" + accountEnum.getConfirmPassword());
-        webElement(confirmPasswordTextBox).sendKeys(accountEnum.getConfirmPassword());
+        getWebElement(confirmPasswordTextBox).sendKeys(accountEnum.getConfirmPassword());
 
-        LogUtils.info("Click button " + webElement(changePasswordButton).getText());
+        LogUtils.info("Click button " + getWebElement(changePasswordButton).getText());
         clickOnElement(changePasswordButton);
     }
 
     public void changePassword(Account account) {
         LogUtils.info("Password" + account.getPassword());
-        webElement(currentPasswordTextBox).sendKeys(account.getPassword());
+        getWebElement(currentPasswordTextBox).sendKeys(account.getPassword());
 
         LogUtils.info("New Password" + account.getNewPassword());
-        webElement(newPasswordTextBox).sendKeys(account.getNewPassword());
+        getWebElement(newPasswordTextBox).sendKeys(account.getNewPassword());
         LogUtils.info("Confirm Password" + account.getConfirmPassword());
-        webElement(confirmPasswordTextBox).sendKeys(account.getConfirmPassword());
+        getWebElement(confirmPasswordTextBox).sendKeys(account.getConfirmPassword());
 
-        LogUtils.info("Click button " + webElement(changePasswordButton).getText());
+        LogUtils.info("Click button " + getWebElement(changePasswordButton).getText());
         clickOnElement(changePasswordButton);
     }
 

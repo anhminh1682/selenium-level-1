@@ -1,4 +1,4 @@
-package com.tests.ultilities.MailHelpers;
+package com.tests.utilities.MailHelpers;
 
 import com.railway.constant.Constants;
 import com.railway.utilities.Helpers;
@@ -11,10 +11,14 @@ import java.util.Objects;
 import static io.restassured.RestAssured.given;
 
 public class MailHelpers {
-    private static final Dotenv dotenv = Dotenv.load();
-    private static final String apiKey = dotenv.get("API_MAIL_SLURP_KEY");
+    private String apiKey;
 
-    private static RequestSpecification getRequestSpecification() {
+    public MailHelpers() {
+        Dotenv dotenv = Dotenv.load();
+        apiKey = dotenv.get("API_MAIL_SLURP_KEY");
+    }
+
+    private RequestSpecification getRequestSpecification() {
         return  given()
                 .baseUri(Constants.MailSlurp.URI)
                 .header("accept", "*/*")
@@ -22,7 +26,7 @@ public class MailHelpers {
                 .urlEncodingEnabled(true);
     }
 
-    public static String callToGetEmailInfor(String jsonPath, String subject) {
+    public String callToGetEmailInfor(String jsonPath, String subject) {
         RequestSpecification request = getRequestSpecification()
                 .basePath("emails")
                 .queryParam("page", 0)
@@ -45,7 +49,7 @@ public class MailHelpers {
         return response.jsonPath().getList(jsonPath).get(0).toString();
     }
 
-    public static String callToGetEmailBody(String emailId) {
+    public String callToGetEmailBody(String emailId) {
         RequestSpecification request = getRequestSpecification()
                 .basePath(String.format("emails/%s/body", emailId));
 
@@ -62,14 +66,14 @@ public class MailHelpers {
         return response.getBody().print();
     }
 
-    public static String getLinkInEmailByAPI(String subject) {
-        String emailId = MailHelpers.callToGetEmailInfor("content.id", subject);
-        String body = MailHelpers.callToGetEmailBody(emailId);
+    public String getLinkInEmailByAPI(String subject) {
+        String emailId = callToGetEmailInfor("content.id", subject);
+        String body = callToGetEmailBody(emailId);
 
         return Helpers.getLinkInEmail(body);
     }
 
-    public static boolean callToCheckInboxIdExpired(String inboxId) {
+    public boolean callToCheckInboxIdExpired(String inboxId) {
         RequestSpecification request = getRequestSpecification()
                 .basePath(String.format("expired/inbox/%s", inboxId));
 
@@ -77,7 +81,7 @@ public class MailHelpers {
         return response.statusCode() == 200;
     }
 
-    public static boolean callToDeleteAllInboxes() {
+    public boolean callToDeleteAllInboxes() {
         RequestSpecification request = getRequestSpecification()
                 .basePath("inboxes");
 
@@ -85,7 +89,7 @@ public class MailHelpers {
         return response.statusCode() == 200;
     }
 
-    public static String[] callToCreateInbox() {
+    public String[] callToCreateInbox() {
         RequestSpecification request = getRequestSpecification()
                 .basePath("inboxes")
                 .queryParam("useShortAddress", true);

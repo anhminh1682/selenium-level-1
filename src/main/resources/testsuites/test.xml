@@ -1,6 +1,6 @@
 <suite name="TestSuite1" parallel="methods" thread-count="6">
     <listeners>
-        <listener class-name="com.tests.ultilities.AppListener"/>
+        <listener class-name="com.tests.utilities.AppListener"/>
     </listeners>
 
     <test name="Railway">

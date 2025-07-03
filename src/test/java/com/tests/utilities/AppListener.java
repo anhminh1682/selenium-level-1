@@ -1,9 +1,9 @@
-package com.tests.ultilities;
+package com.tests.utilities;
 
 import com.aventstack.extentreports.Status;
 import com.railway.utilities.LogUtils;
-import com.tests.ultilities.extentreport.ExtentReport;
-import com.tests.ultilities.extentreport.ExtentTestManager;
+import com.tests.utilities.extentreport.ExtentReport;
+import com.tests.utilities.extentreport.ExtentTestManager;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -27,7 +27,7 @@ public class AppListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
         LogUtils.error(result.getThrowable());
-        String imagePath = HelpersListener.TakeScreenshot(result);
+        String imagePath = Helpers.TakeScreenshot(result);
 
         ExtentTestManager.getTest().addScreenCaptureFromBase64String("data:image/png;base64," + imagePath);
         ExtentTestManager.getTest().log(Status.FAIL, result.getThrowable());

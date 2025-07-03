@@ -50,7 +50,7 @@ public class DriverUtils {
                 .ignoring(StaleElementReferenceException.class);
 
         try {
-            wait.until(ExpectedConditions.visibilityOf(webElement(elementBy)));
+            wait.until(ExpectedConditions.visibilityOf(getWebElement(elementBy)));
         } catch (TimeoutException e) {
             System.out.println("Timed out waiting for element");
         }
@@ -66,7 +66,7 @@ public class DriverUtils {
 
         try {
             wait.until(d -> {
-                RemoteWebElement remoteWebElement = (RemoteWebElement) webElement(elementBy);
+                RemoteWebElement remoteWebElement = (RemoteWebElement) getWebElement(elementBy);
                 String newElementId = remoteWebElement.getId();
                 System.out.println("Old Element Id: " + currentElementId);
                 System.out.println("New Element Id: " + newElementId);
@@ -77,19 +77,19 @@ public class DriverUtils {
         }
     }
 
-    public static WebElement webElement(By elementBy) {
+    public static WebElement getWebElement(By elementBy) {
         return DriverManager.getDriver().findElement(elementBy);
     }
 
     public static String getElementText(By elementBy) {
         fluentWaitForElement(elementBy);
-        return webElement(elementBy).getText().trim();
+        return getWebElement(elementBy).getText().trim();
     }
 
     public static String getValueOfButton(By elementBy) {
         fluentWaitForElement(elementBy);
-        scrollToElement(webElement(elementBy));
-        return webElement(elementBy).getAttribute("value");
+        scrollToElement(getWebElement(elementBy));
+        return getWebElement(elementBy).getAttribute("value");
     }
 
     public static void clickOnElement(By elementBy) {
@@ -101,7 +101,7 @@ public class DriverUtils {
 
     public static void sendKeyElement(By elementBy, CharSequence charSequence) {
         fluentWaitForElement(elementBy);
-        WebElement element = webElement(elementBy);
+        WebElement element = getWebElement(elementBy);
         scrollToElement(element);
         element.clear();
         element.sendKeys(charSequence);
@@ -109,7 +109,7 @@ public class DriverUtils {
 
     public static void selectElementByVisibleText(By elementBy, String text) {
         fluentWaitForElement(elementBy);
-        WebElement element = webElement(elementBy);
+        WebElement element = getWebElement(elementBy);
         Select select = new Select(element);
         scrollToElement(element);
         select.selectByVisibleText(text);

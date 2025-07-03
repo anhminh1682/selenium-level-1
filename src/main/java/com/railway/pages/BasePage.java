@@ -7,7 +7,7 @@ import com.railway.utilities.LogUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import static com.railway.utilities.DriverUtils.webElement;
+import static com.railway.utilities.DriverUtils.getWebElement;
 
 public class BasePage {
     private final String tabXpath = "//a//span[text()='%s']";
@@ -41,6 +41,6 @@ public class BasePage {
     }
 
     public String getWelComeText() {
-        return webElement(welcomeText).getText();
+        return getWebElement(welcomeText).getText();
     }
 }
