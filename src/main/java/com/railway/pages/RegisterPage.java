@@ -2,7 +2,6 @@ package com.railway.pages;
 
 import com.railway.utilities.Account;
 import com.railway.utilities.LogUtils;
-import com.railway.utilities.MailSlurp;
 import com.railway.utilities.enums.AccountEnum;
 import org.openqa.selenium.By;
 

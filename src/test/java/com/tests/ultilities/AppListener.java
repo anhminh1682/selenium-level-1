@@ -34,6 +34,11 @@ public class AppListener implements ITestListener {
     }
 
     @Override
+    public void onTestSkipped(ITestResult result) {
+        LogUtils.error(result.getThrowable());
+    }
+
+    @Override
     public void onFinish(ITestContext context) {
         ExtentReport.flushExtent();
     }

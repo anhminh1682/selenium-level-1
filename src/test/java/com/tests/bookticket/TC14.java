@@ -77,5 +77,8 @@ public class TC14 extends TestBase {
         int countTicketAfterAdd = myTicketPage.countOfRowTicket(ticket);
 
         Assert.assertEquals(countTicketBeforeAdd, countTicketAfterAdd - 1);
+
+        // Delete ticket after book success
+        myTicketPage.cancelATicket(ticket);
     }
 }
