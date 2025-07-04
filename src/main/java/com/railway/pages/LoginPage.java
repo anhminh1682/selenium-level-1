@@ -21,7 +21,7 @@ public class LoginPage extends BasePage {
         LogUtils.info("Enter password: " + accountEnum.getPassword());
         sendKeyElement(passwordTextBox, accountEnum.getPassword());
 
-        LogUtils.info("click button: " + webElement(loginButton).getText());
+        LogUtils.info("click button: " + getWebElement(loginButton).getText());
         clickOnElement(loginButton);
     }
 
@@ -52,8 +52,8 @@ public class LoginPage extends BasePage {
     }
 
     public String getErrorMessage() {
-        LogUtils.info("Error message: " + webElement(errorMessage).getText());
-        return webElement(errorMessage).getText();
+        LogUtils.info("Error message: " + getWebElement(errorMessage).getText());
+        return getWebElement(errorMessage).getText();
     }
 
     public String getLoginPageTitle() {

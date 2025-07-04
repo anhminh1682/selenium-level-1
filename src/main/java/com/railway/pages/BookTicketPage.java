@@ -36,7 +36,7 @@ public class BookTicketPage extends BasePage {
         selectElementByVisibleText(getSelectBoxByName(Constants.BookTicket.DEPART_DATE_NAME_SELECT_BOX), ticket.getDepartDate());
 
         LogUtils.info("Select " + ticket.getDepartStation() + " for 'Depart from' and " + ticket.getArriveStation() + " for 'Arrive at'.");
-        RemoteWebElement oldOptionArriveAtElement = (RemoteWebElement) webElement(By.xpath(String.format(selectBoxXpath, Constants.BookTicket.ARRIVE_AT_NAME_SELECT_BOX)));
+        RemoteWebElement oldOptionArriveAtElement = (RemoteWebElement) getWebElement(By.xpath(String.format(selectBoxXpath, Constants.BookTicket.ARRIVE_AT_NAME_SELECT_BOX)));
         selectElementByVisibleText(getSelectBoxByName(Constants.BookTicket.DEPART_FROM_NAME_SELECT_BOX), ticket.getDepartStation());
 
         // Wait for arrive at select box update DOM

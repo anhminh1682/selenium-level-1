@@ -1,7 +1,6 @@
 package com.railway.utilities.enums;
 
 import com.railway.constant.Constants;
-import com.railway.utilities.MailSlurp;
 
 import java.time.LocalDateTime;
 

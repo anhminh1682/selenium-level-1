@@ -1,4 +1,4 @@
-package com.tests.ultilities.MailHelpers;
+package com.tests.utilities.MailHelpers;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,10 +10,14 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class mailDataFromJSON {
-    private static String filePath = Constants.URL.MAIL_DATA_PATH;
+public class MailDataFromJSON {
+    private String filePath;
 
-    public static Map<String, String> mailData() {
+    public MailDataFromJSON() {
+        filePath = Constants.URL.MAIL_DATA_PATH;
+    }
+
+    public synchronized Map<String, String> mailData() {
         try {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode root = mapper.readTree(new File(filePath));
@@ -33,7 +37,7 @@ public class mailDataFromJSON {
         return null;
     }
 
-    public static void writeDataToJsonFile(String inboxId, String email) {
+    public synchronized void writeDataToJsonFile(String inboxId, String email) {
         try {
             File file = new File(filePath);
             ObjectMapper mapper = new ObjectMapper();

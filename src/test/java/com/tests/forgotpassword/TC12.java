@@ -7,8 +7,7 @@ import com.railway.pages.*;
 import com.railway.utilities.*;
 import com.railway.utilities.enums.AccountEnum;
 import com.tests.base.TestBase;
-import com.tests.ultilities.MailHelpers.MailHelpers;
-import com.tests.ultilities.MailHelpers.mailDataFromJSON;
+import com.tests.utilities.MailHelpers.MailHelpers;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -115,40 +114,10 @@ public class TC12 extends TestBase {
         LoginPage loginPage = new LoginPage();
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
         ResetPasswordPage resetPasswordPage = new ResetPasswordPage();
-        RegisterPage registerPage = new RegisterPage();
 
-        Map<String, String> emailDatas = mailDataFromJSON.mailData();
+        MailHelpers mailHelpers = new MailHelpers();
 
-        String emailAddress = emailDatas.get("emailAddress");
-        String inboxId = emailDatas.get("inboxId");
-
-        boolean isEmailExpired = MailHelpers.callToCheckInboxIdExpired(inboxId);
-
-        if(isEmailExpired) {
-            String[] emailInfos = MailHelpers.callToCreateInbox();
-            emailAddress = emailInfos[0];
-            inboxId = emailInfos[1];
-        }
-        mailDataFromJSON.writeDataToJsonFile(inboxId, emailAddress);
-
-        String [] emailSplit = emailAddress.split("@");
-        emailAddress = emailSplit[0] + "+" + Helpers.randomBase62(4) + "@" + emailSplit[1];
-
-        LogUtils.startStep("Pre-condition: Create and activate a new account");
-        homePage.clickOnTab(Constants.TabMenu.REGISTER_TAB);
-        Account accountRegister = new Account(
-                emailAddress,
-                AccountEnum.VALID_ACCOUNT_REGISTER.getPassword(),
-                AccountEnum.VALID_ACCOUNT_REGISTER.getPassword(),
-                AccountEnum.VALID_ACCOUNT_REGISTER.getPID()
-        );
-
-        registerPage.registerUserAccount(accountRegister);
-
-        String linkRegister = MailHelpers.getLinkInEmailByAPI(Constants.MailSlurp.EMAIL_CONFIRM_SUBJECT + " " + emailAddress);
-
-        Assert.assertNotNull(linkRegister);
-        DriverManager.getDriver().get(linkRegister);
+        String emailAddress = com.tests.utilities.Helpers.registerNewAccountUsingAPI();
 
         LogUtils.startStep("1. Navigate to QA Railway Login page");
         homePage.clickOnTab(Constants.TabMenu.LOGIN_TAB);
@@ -162,7 +131,7 @@ public class TC12 extends TestBase {
 
         LogUtils.startStep("4. Open mailbox and click on reset password link");
 
-        String linkResetPassword = MailHelpers.getLinkInEmailByAPI(Constants.MailSlurp.EMAIL_RESET_PASSWORD_SUBJECT + " " + emailAddress);
+        String linkResetPassword = mailHelpers.getLinkInEmailByAPI(Constants.MailSlurp.EMAIL_RESET_PASSWORD_SUBJECT + " " + emailAddress);
         DriverManager.getDriver().get(linkResetPassword);
 
         // Reset password
@@ -181,4 +150,5 @@ public class TC12 extends TestBase {
         Assert.assertEquals(resetPasswordPage.getErrorMessageAbove(), Constants.ResetPasswordMessage.ERROR_MESSAGE_INCORRECT_RESET_TOKEN_ABOVE);
         Assert.assertEquals(resetPasswordPage.getErrorMessageInvalidResetTokenNextToField(), Constants.ResetPasswordMessage.ERROR_MESSAGE_INVALID_RESET_TOKEN_NEXT_TO_FIELD);
     }
+
 }

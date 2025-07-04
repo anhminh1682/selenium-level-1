@@ -52,7 +52,6 @@
     "confirmPassword": "minh12345"
   },
   "TC13": {
-    "username": "vffaebxr@sharklasers.com",
     "newPassword": "minh12345",
     "confirmPassword": "minh"
   },
@@ -60,6 +59,13 @@
     {
       "departStation": "Huế",
       "arriveStation": "Quảng Ngãi",
+      "days": 2,
+      "seatType": "Soft bed with air conditioner",
+      "amount": 1
+    },
+    {
+      "departStation": "Sài Gòn",
+      "arriveStation": "Phan Thiết",
       "days": 2,
       "seatType": "Soft bed with air conditioner",
       "amount": 1
